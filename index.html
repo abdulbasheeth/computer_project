@@ -357,7 +357,7 @@
       <div class="logo-box"></div>
       <img src="images/logoo.jpg" alt="My Website Logo" class="logo">
         <div class="logo-text">Royal Touch Computer TR L.L.C.S.P</div>
-      </a>
+    </div>
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -459,24 +459,7 @@
     </div>
   </section>
 
-  <!-- VIDEO -->
-  <section id="video">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-tag">Watch & Learn</div>
-        <h2 class="section-title">Our Story in Motion</h2>
-        <p class="section-desc">Take a behind-the-scenes look at Royal Touch Computer TR.</p>
-      </div>
-      <div class="video-wrapper reveal">
-        <video poster="https://images.unsplash.com/photo-1518770660439-4636190af475?w=960&q=80" preload="none" id="heroVideo">
-          <source src="" type="video/mp4">
-        </video>
-        <div class="video-play-btn" id="videoPlayBtn">
-          <div class="play-circle"><i class="fas fa-play" style="margin-left:4px;"></i></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- SERVICES -->
   <section id="services">
@@ -652,16 +635,7 @@
       particlesEl.appendChild(p);
     }
 
-    // ===== VIDEO =====
-    const video = document.getElementById('heroVideo');
-    const playBtn = document.getElementById('videoPlayBtn');
-    playBtn.addEventListener('click', () => {
-      video.play();
-      playBtn.style.display = 'none';
-    });
-    video.addEventListener('pause', () => playBtn.style.display = 'flex');
-    video.addEventListener('ended', () => playBtn.style.display = 'flex');
-
+    
     // ===== PRODUCTS =====
     const products = [
       { name: 'Laptops', cat: 'Mobile Computing', desc: 'High-performance business & gaming laptops', img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&q=80', price: 'From AED 1,999' },
@@ -857,10 +831,7 @@
       }
     });
 
-    // ===== SEARCH (inline) =====
-    document.getElementById('searchBtn').addEventListener('click', () => {
-      showToast('Search feature coming soon!', 'fas fa-search');
-    });
+
 
     // Dark mode styles (injected)
     const darkStyle = document.createElement('style');
