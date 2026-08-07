@@ -148,12 +148,19 @@
             padding: 0 2.5rem;
             gap: 1rem;
         }
-        .logo {
-            height: 44px;
-            width: auto;
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             flex-shrink: 0;
-            border-radius: 6px;
-            object-fit: contain;
+            text-decoration: none;
+        }
+        .logo-svg {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            overflow: hidden;
         }
         .logo-text {
             font-size: 1.4rem;
@@ -295,6 +302,17 @@
             height: 100%;
             object-fit: cover;
             filter: brightness(0.35);
+        }
+        .hero-bg .fallback-color {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            display: none;
+        }
+        .hero-bg img:not([src])+.fallback-color,
+        .hero-bg img[src=""]+.fallback-color,
+        .hero-bg img.error+.fallback-color {
+            display: block;
         }
         .hero-overlay {
             position: absolute;
@@ -875,6 +893,14 @@
             filter: grayscale(0);
             opacity: 1;
         }
+        .brand-item .brand-fallback {
+            font-size: .7rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
         @keyframes scrollBrands {
             0% {
                 transform: translateX(0);
@@ -1324,7 +1350,8 @@
                 font-size: 1.1rem;
                 white-space: normal;
             }
-            .logo {
+            .logo-svg {
+                width: 36px;
                 height: 36px;
             }
             .nav-links {
@@ -1413,7 +1440,8 @@
             .logo-text {
                 font-size: 0.9rem;
             }
-            .logo {
+            .logo-svg {
+                width: 30px;
                 height: 30px;
             }
             .hero-float-card {
@@ -1421,16 +1449,14 @@
             }
         }
 
-        /* ── dark mode (injected via JS) ── */
+        /* ── dark mode ── */
         .dark-mode {
             background: #0d0d0d;
             color: #e0e0e0;
         }
         .dark-mode .product-card,
         .dark-mode .service-card,
-        .dark-mode .testimonial-card,
         .dark-mode .stat-box,
-        .dark-mode .faq-item,
         .dark-mode .contact-form {
             background: #1a1a1a;
             color: #e0e0e0;
@@ -1457,8 +1483,7 @@
         }
         .dark-mode #about,
         .dark-mode #services,
-        .dark-mode #gallery,
-        .dark-mode #faq {
+        .dark-mode #gallery {
             background: #111;
         }
         .dark-mode .section-desc {
@@ -1492,6 +1517,12 @@
         .dark-mode .hero-float-card .card-text span {
             color: #aaa;
         }
+        .dark-mode .brand-track::before {
+            background: linear-gradient(to right, #0d0d0d, transparent);
+        }
+        .dark-mode .brand-track::after {
+            background: linear-gradient(to left, #0d0d0d, transparent);
+        }
     </style>
 </head>
 <body>
@@ -1519,9 +1550,15 @@
     <header id="header">
         <div class="nav-wrap">
 
-            <!-- Logo + text -->
-            <img src="https://placehold.co/44x44/E65100/FFF?text=RT" alt="Royal Touch Logo" class="logo">
-            <span class="logo-text">Royal Touch Computer TR</span>
+            <!-- Logo with inline SVG -->
+            <a href="#home" class="logo-wrap" aria-label="Royal Touch Home">
+                <svg class="logo-svg" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="44" height="44" rx="8" fill="#E65100" />
+                    <text x="22" y="30" font-family="'Poppins',sans-serif" font-size="18" font-weight="800"
+                    fill="#fff" text-anchor="middle" letter-spacing="-0.5">RT</text>
+                </svg>
+                <span class="logo-text">Royal Touch Computer TR</span>
+            </a>
 
             <!-- Navigation -->
             <ul class="nav-links" id="navLinks">
@@ -1540,8 +1577,8 @@
                 <button class="btn-nav btn-wa-nav" onclick="showToast('Opening WhatsApp...','fab fa-whatsapp')">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </button>
-                <i class="fas fa-moon" id="darkToggle"></i>
-                <div class="hamburger" id="hamburger">
+                <i class="fas fa-moon" id="darkToggle" role="button" aria-label="Toggle dark mode"></i>
+                <div class="hamburger" id="hamburger" role="button" aria-label="Toggle navigation">
                     <span></span><span></span><span></span>
                 </div>
             </div>
@@ -1552,7 +1589,8 @@
     <!-- HERO -->
     <section id="home" class="hero">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1920&q=80" alt="Tech Background">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1920&q=80" alt="Tech Background" onerror="this.style.display='none';document.querySelector('.hero-bg .fallback-color').style.display='block'">
+            <div class="fallback-color"></div>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-particles" id="particles"></div>
@@ -1572,7 +1610,7 @@
             </div>
             <div class="hero-right">
                 <div class="hero-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=700&q=80" alt="Modern Laptop">
+                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=700&q=80" alt="Modern Laptop" loading="lazy">
                 </div>
                 <div class="hero-float-card card-a">
                     <div class="icon-circle" style="background:linear-gradient(135deg,#25D366,#128C7E);"><i class="fab fa-whatsapp"></i></div>
@@ -1597,7 +1635,7 @@
             </div>
             <div class="about-grid">
                 <div class="about-image reveal">
-                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80" alt="Our Office">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80" alt="Our Office" loading="lazy">
                     <div class="about-exp-badge">
                         <div class="num">15+</div>
                         <div class="label">Years Experience</div>
@@ -1692,19 +1730,19 @@
                         <div class="contact-card"><div class="ci-icon"><i class="fas fa-clock"></i></div><div><strong>Working Hours</strong><span>Mon–Sat: 9:00 – 20:00</span></div></div>
                     </div>
                     <div class="contact-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.174369598659!2d55.27078131544396!3d25.197197983895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67acbd%3A0xff45e502e1ceb7e2!2sDubai%20Mall!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae" allowfullscreen loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.174369598659!2d55.27078131544396!3d25.197197983895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67acbd%3A0xff45e502e1ceb7e2!2sDubai%20Mall!5e0!3m2!1sen!2sae!4v1738886400000!5m2!1sen!2sae" allowfullscreen loading="lazy" title="Google Maps location of Royal Touch Computer TR"></iframe>
                     </div>
                 </div>
-                <form class="contact-form reveal" id="contactForm">
+                <form class="contact-form reveal" id="contactForm" novalidate>
                     <div class="form-row">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Email Address" required>
+                        <input type="text" placeholder="Your Name" required aria-required="true">
+                        <input type="email" placeholder="Email Address" required aria-required="true">
                     </div>
                     <div class="form-row">
                         <input type="tel" placeholder="Phone Number">
                         <input type="text" placeholder="Subject">
                     </div>
-                    <textarea rows="5" placeholder="Your Message..." required></textarea>
+                    <textarea rows="5" placeholder="Your Message..." required aria-required="true"></textarea>
                     <button type="submit"><i class="fas fa-paper-plane"></i>&nbsp; Send Message</button>
                 </form>
             </div>
@@ -1718,11 +1756,11 @@
                 <span class="logo-text">Royal<span>Touch</span></span>
                 <p>Your trusted IT partner delivering premium computer electronics, expert repair, and comprehensive networking solutions since 2012.</p>
                 <div class="footer-socials">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -1748,18 +1786,18 @@
     </footer>
 
     <!-- BACK TO TOP -->
-    <button id="backTop"><i class="fas fa-chevron-up"></i></button>
+    <button id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
 
     <script>
         // ── LOADER ──
         window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('hide'), 400));
 
         // ── TOAST ──
-        function showToast(msg, icon = 'fas fa-check-circle') {
+        function showToast(msg, icon) {
             const container = document.getElementById('toastContainer');
             const toast = document.createElement('div');
             toast.className = 'toast';
-            toast.innerHTML = `<i class="${icon}"></i><span>${msg}</span>`;
+            toast.innerHTML = `<i class="${icon || 'fas fa-check-circle'}"></i><span>${msg}</span>`;
             container.appendChild(toast);
             requestAnimationFrame(() => toast.classList.add('show'));
             setTimeout(() => {
@@ -1769,20 +1807,25 @@
         }
 
         // ── SCROLL PROGRESS & HEADER ──
+        const progressBar = document.getElementById('progress');
+        const header = document.getElementById('header');
+        const backTop = document.getElementById('backTop');
+
         window.addEventListener('scroll', () => {
-            const s = window.scrollY,
-                h = document.documentElement.scrollHeight - window.innerHeight;
-            document.getElementById('progress').style.width = (s / h * 100) + '%';
-            document.getElementById('header').classList.toggle('scrolled', s > 50);
-            document.getElementById('backTop').classList.toggle('visible', s > 500);
+            const s = window.scrollY;
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (s / h * 100) + '%';
+            header.classList.toggle('scrolled', s > 50);
+            backTop.classList.toggle('visible', s > 500);
         });
 
         // ── BACK TO TOP ──
-        document.getElementById('backTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
         // ── HAMBURGER ──
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
+
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
@@ -1793,10 +1836,14 @@
         }));
 
         // ── DARK MODE ──
-        document.getElementById('darkToggle').addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
-            this.classList.toggle('fa-moon');
-            this.classList.toggle('fa-sun');
+        const darkToggle = document.getElementById('darkToggle');
+        let darkMode = false;
+
+        darkToggle.addEventListener('click', function() {
+            darkMode = !darkMode;
+            document.body.classList.toggle('dark-mode', darkMode);
+            this.classList.toggle('fa-moon', !darkMode);
+            this.classList.toggle('fa-sun', darkMode);
         });
 
         // ── PARTICLES ──
@@ -1805,7 +1852,8 @@
             const p = document.createElement('div');
             p.className = 'particle';
             p.style.left = Math.random() * 100 + '%';
-            p.style.width = p.style.height = (Math.random() * 4 + 2) + 'px';
+            const size = Math.random() * 4 + 2;
+            p.style.width = p.style.height = size + 'px';
             p.style.animationDuration = (Math.random() * 10 + 8) + 's';
             p.style.animationDelay = (Math.random() * 8) + 's';
             particlesEl.appendChild(p);
@@ -1838,13 +1886,14 @@
             { name: 'Routers', cat: 'Networking', desc: 'WiFi 6E & mesh network systems', img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&q=80',
                 price: 'From AED 249' },
         ];
+
         const pGrid = document.getElementById('productGrid');
         products.forEach((p, i) => {
             const card = document.createElement('div');
             card.className = 'product-card reveal';
             card.style.transitionDelay = (i % 4) * 0.08 + 's';
             card.innerHTML = `
-                <div class="img-wrap"><img src="${p.img}" alt="${p.name}" loading="lazy"></div>
+                <div class="img-wrap"><img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#f0f0f0';this.parentElement.innerHTML+='<span style=\"display:flex;align-items:center;justify-content:center;height:100%;color:#999;font-size:.85rem;\">${p.name}</span>'"></div>
                 <div class="card-body">
                     <div class="card-cat">${p.cat}</div>
                     <h4>${p.name}</h4>
@@ -1876,6 +1925,7 @@
             { name: 'AMC Contracts', desc: 'Annual maintenance contracts for businesses of all sizes.', icon: 'fas fa-file-contract' },
             { name: 'IT Consulting', desc: 'Strategic technology planning and infrastructure advice.', icon: 'fas fa-lightbulb' },
         ];
+
         const sGrid = document.getElementById('serviceGrid');
         services.forEach((s, i) => {
             const card = document.createElement('div');
@@ -1904,13 +1954,18 @@
             'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/200px-Samsung_Logo.svg.png',
             'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/TP-Link_logo.svg/200px-TP-Link_logo.svg.png',
         ];
+
         const brandSlide = document.getElementById('brandSlide');
         const allBrands = [...brandLogos, ...brandLogos];
         allBrands.forEach(src => {
             const item = document.createElement('div');
             item.className = 'brand-item';
-            item.innerHTML =
-                `<img src="${src}" alt="Brand" loading="lazy" onerror="this.parentElement.textContent='Brand'">`;
+            const fallbackName = src.split('/').pop().replace(/_logo.*/i, '').replace(/\.svg.*/, '').replace(/[^a-zA-Z]/g,
+            '') || 'Brand';
+            item.innerHTML = `
+                <img src="${src}" alt="Brand" loading="lazy" 
+                     onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\\'brand-fallback\\'>${fallbackName || 'Brand'}</span>'">
+            `;
             brandSlide.appendChild(item);
         });
 
@@ -1927,13 +1982,16 @@
             { src: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80', cls: '' },
             { src: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80', cls: 'tall' },
         ];
+
         const gGrid = document.getElementById('galleryGrid');
+        const gallerySrcs = galleryImages.map(g => g.src);
+
         galleryImages.forEach((g, i) => {
             const item = document.createElement('div');
             item.className = `gallery-item ${g.cls} reveal`;
             item.style.transitionDelay = (i % 4) * 0.1 + 's';
             item.innerHTML =
-                `<img src="${g.src}" alt="Gallery" loading="lazy"><div class="gallery-overlay"><i class="fas fa-expand"></i></div>`;
+                `<img src="${g.src}" alt="Gallery" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#e0e0e0';this.parentElement.innerHTML+='<span style=\"display:flex;align-items:center;justify-content:center;height:100%;color:#999;font-size:.8rem;\">Image</span>'"><div class="gallery-overlay"><i class="fas fa-expand"></i></div>`;
             item.addEventListener('click', () => openLightbox(i));
             gGrid.appendChild(item);
         });
@@ -1945,7 +2003,7 @@
 
         function openLightbox(i) {
             currentLB = i;
-            lbImg.src = galleryImages[i].src;
+            lbImg.src = gallerySrcs[i] || '';
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -1954,16 +2012,20 @@
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
         }
+
         document.getElementById('lbClose').addEventListener('click', closeLightbox);
         lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
         document.getElementById('lbPrev').addEventListener('click', () => {
-            currentLB = (currentLB - 1 + galleryImages.length) % galleryImages.length;
-            lbImg.src = galleryImages[currentLB].src;
+            currentLB = (currentLB - 1 + gallerySrcs.length) % gallerySrcs.length;
+            lbImg.src = gallerySrcs[currentLB];
         });
+
         document.getElementById('lbNext').addEventListener('click', () => {
-            currentLB = (currentLB + 1) % galleryImages.length;
-            lbImg.src = galleryImages[currentLB].src;
+            currentLB = (currentLB + 1) % gallerySrcs.length;
+            lbImg.src = gallerySrcs[currentLB];
         });
+
         document.addEventListener('keydown', e => {
             if (!lightbox.classList.contains('active')) return;
             if (e.key === 'Escape') closeLightbox();
@@ -2007,15 +2069,22 @@
         // ── CONTACT FORM ──
         document.getElementById('contactForm').addEventListener('submit', e => {
             e.preventDefault();
-            const inputs = e.target.querySelectorAll('input, textarea');
+            const inputs = e.target.querySelectorAll('input[required], textarea[required]');
             let allFilled = true;
-            inputs.forEach(inp => { if (inp.required && !inp.value.trim()) allFilled = false; });
+            inputs.forEach(inp => { if (!inp.value.trim()) allFilled = false; });
             if (allFilled) {
                 showToast('Message sent successfully! We\'ll get back to you soon.', 'fas fa-check-circle');
                 e.target.reset();
             } else {
                 showToast('Please fill in all required fields.', 'fas fa-exclamation-circle');
             }
+        });
+
+        // ── handle hero image load error ──
+        document.querySelector('.hero-bg img')?.addEventListener('error', function() {
+            this.style.display = 'none';
+            const fallback = document.querySelector('.hero-bg .fallback-color');
+            if (fallback) fallback.style.display = 'block';
         });
     </script>
 </body>
