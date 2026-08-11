@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,6 +18,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         :root {
             --primary: #E65100;
             --primary-light: #FF8F00;
@@ -39,9 +41,11 @@
             --ease: cubic-bezier(0.4, 0, 0.2, 1);
             --transition: 0.35s var(--ease);
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             font-family: 'Poppins', sans-serif;
             background: var(--bg);
@@ -61,10 +65,12 @@
             z-index: 9999;
             transition: opacity .5s ease, visibility .5s ease;
         }
+
         #loader.hide {
             opacity: 0;
             visibility: hidden;
         }
+
         .loader-ring {
             width: 60px;
             height: 60px;
@@ -73,6 +79,7 @@
             border-radius: 50%;
             animation: spin .8s linear infinite;
         }
+
         @keyframes spin {
             to {
                 transform: rotate(360deg);
@@ -100,6 +107,7 @@
             flex-direction: column;
             gap: 12px;
         }
+
         .toast {
             background: var(--dark);
             color: #fff;
@@ -114,9 +122,11 @@
             transition: transform .4s var(--ease);
             max-width: 360px;
         }
+
         .toast.show {
             transform: translateX(0);
         }
+
         .toast i {
             color: var(--primary-light);
             font-size: 1.2rem;
@@ -135,9 +145,11 @@
             border-bottom: 1px solid rgba(230, 81, 0, 0.06);
             transition: var(--transition);
         }
+
         header.scrolled {
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
         }
+
         .nav-wrap {
             max-width: 1400px;
             margin: 0 auto;
@@ -148,20 +160,21 @@
             padding: 0 2.5rem;
             gap: 1rem;
         }
+
         .logo-wrap {
             display: flex;
             align-items: center;
-            gap: 10px;
-            flex-shrink: 0;
+            gap: 5px;
             text-decoration: none;
         }
-        .logo-svg {
-            width: 44px;
-            height: 44px;
-            flex-shrink: 0;
-            border-radius: 8px;
-            overflow: hidden;
+
+        .logo-img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-left: -40px;
         }
+
         .logo-text {
             font-size: 1.4rem;
             font-weight: 800;
@@ -173,13 +186,16 @@
             background-clip: text;
             text-shadow: 0 2px 6px rgba(150, 75, 0, 0.15);
             white-space: nowrap;
+            margin-left: -20px;
         }
+
         .nav-links {
             display: flex;
             align-items: center;
             gap: 2rem;
             list-style: none;
         }
+
         .nav-links a {
             text-decoration: none;
             color: var(--text);
@@ -189,6 +205,7 @@
             padding: 4px 0;
             transition: var(--transition);
         }
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -200,18 +217,22 @@
             border-radius: 4px;
             transition: var(--transition);
         }
+
         .nav-links a:hover {
             color: var(--primary);
         }
+
         .nav-links a:hover::after {
             width: 100%;
         }
+
         .nav-right {
             display: flex;
             align-items: center;
             gap: 14px;
             flex-shrink: 0;
         }
+
         .nav-right i {
             font-size: 1.15rem;
             color: var(--text);
@@ -224,10 +245,12 @@
             justify-content: center;
             border-radius: 50%;
         }
+
         .nav-right i:hover {
             color: var(--primary);
             background: var(--primary-pale);
         }
+
         .btn-nav {
             padding: 8px 18px;
             border-radius: 50px;
@@ -237,28 +260,33 @@
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 0px;
             transition: var(--transition);
             font-family: inherit;
         }
+
         .btn-call-nav {
             background: var(--primary);
             color: #fff;
             box-shadow: var(--shadow-primary);
         }
+
         .btn-wa-nav {
             background: #25D366;
             color: #fff;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
         }
+
         .btn-call-nav:hover {
             background: #BF360C;
             transform: translateY(-2px);
         }
+
         .btn-wa-nav:hover {
             background: #1B9E4B;
             transform: translateY(-2px);
         }
+
         .hamburger {
             display: none;
             flex-direction: column;
@@ -266,6 +294,7 @@
             cursor: pointer;
             padding: 8px;
         }
+
         .hamburger span {
             width: 26px;
             height: 2.5px;
@@ -273,12 +302,15 @@
             border-radius: 6px;
             transition: var(--transition);
         }
+
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
+
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
+
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
         }
@@ -292,65 +324,40 @@
             overflow: hidden;
             padding: 78px 2.5rem 4rem;
         }
+
         .hero-bg {
             position: absolute;
             inset: 0;
             z-index: 0;
         }
-        .hero-bg img {
+
+        .hero-bg video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.35);
+            
         }
+
+        /* fallback color – visible only when video fails */
         .hero-bg .fallback-color {
+            display: none;
             position: absolute;
             inset: 0;
             background: linear-gradient(135deg, #1a1a2e, #16213e);
-            display: none;
-        }
-        .hero-bg img:not([src])+.fallback-color,
-        .hero-bg img[src=""]+.fallback-color,
-        .hero-bg img.error+.fallback-color {
-            display: block;
-        }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(230, 81, 0, 0.82) 0%, rgba(17, 17, 17, 0.88) 100%);
             z-index: 1;
         }
-        .hero-particles {
+
+        .hero-bg .fallback-color.show {
+            display: block;
+        }
+
+        .hero-bg .hero-overlay {
             position: absolute;
             inset: 0;
+            background: rgba(0, 0, 0, 0.35);
             z-index: 2;
-            overflow: hidden;
-            pointer-events: none;
         }
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 50%;
-            animation: drift linear infinite;
-        }
-        @keyframes drift {
-            0% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1);
-                opacity: 0;
-            }
-        }
+
         .hero-inner {
             max-width: 1400px;
             margin: 0 auto;
@@ -362,23 +369,7 @@
             position: relative;
             z-index: 3;
         }
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(8px);
-            padding: 8px 18px;
-            border-radius: 50px;
-            color: #fff;
-            font-size: .82rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-        .hero-badge i {
-            color: var(--primary-light);
-        }
+
         .hero h1 {
             font-size: 3.8rem;
             font-weight: 900;
@@ -387,12 +378,14 @@
             margin-bottom: 1.4rem;
             letter-spacing: -1px;
         }
+
         .hero h1 .highlight {
             background: linear-gradient(135deg, #FFB74D, var(--primary-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .hero p {
             font-size: 1.15rem;
             color: rgba(255, 255, 255, 0.8);
@@ -400,11 +393,13 @@
             margin-bottom: 2.2rem;
             line-height: 1.8;
         }
+
         .hero-btns {
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
         }
+
         .btn-hero-primary {
             padding: 16px 36px;
             border-radius: 60px;
@@ -421,10 +416,12 @@
             gap: 10px;
             font-family: inherit;
         }
+
         .btn-hero-primary:hover {
             transform: translateY(-4px);
             box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
         }
+
         .btn-hero-secondary {
             padding: 16px 36px;
             border-radius: 60px;
@@ -440,14 +437,17 @@
             align-items: center;
             gap: 10px;
         }
+
         .btn-hero-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.5);
             transform: translateY(-4px);
         }
+
         .hero-right {
             position: relative;
         }
+
         .hero-image-wrapper {
             position: relative;
             border-radius: var(--radius);
@@ -455,12 +455,14 @@
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
             border: 2px solid rgba(255, 255, 255, 0.1);
         }
+
         .hero-image-wrapper img {
             width: 100%;
             height: 460px;
             object-fit: cover;
             display: block;
         }
+
         .hero-float-card {
             position: absolute;
             background: rgba(255, 255, 255, 0.95);
@@ -473,15 +475,18 @@
             gap: 12px;
             animation: cardFloat 4s ease-in-out infinite alternate;
         }
+
         .hero-float-card.card-a {
             bottom: -20px;
             left: -30px;
         }
+
         .hero-float-card.card-b {
             top: -20px;
             right: -20px;
             animation-delay: 1s;
         }
+
         .hero-float-card .icon-circle {
             width: 44px;
             height: 44px;
@@ -493,15 +498,18 @@
             color: #fff;
             flex-shrink: 0;
         }
+
         .hero-float-card .card-text strong {
             display: block;
             font-size: .85rem;
             color: var(--dark);
         }
+
         .hero-float-card .card-text span {
             font-size: .75rem;
             color: var(--text-light);
         }
+
         @keyframes cardFloat {
             0% {
                 transform: translateY(0);
@@ -510,9 +518,10 @@
                 transform: translateY(-10px);
             }
         }
+
         .hero-scroll {
             position: absolute;
-            bottom: 2rem;
+            top: 95%;
             left: 50%;
             transform: translateX(-50%);
             z-index: 3;
@@ -520,17 +529,21 @@
             text-align: center;
             animation: bounce 2.5s infinite;
         }
+
         .hero-scroll i {
             font-size: 1.5rem;
             display: block;
             margin-bottom: 4px;
         }
+
         .hero-scroll span {
             font-size: .72rem;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
+
         @keyframes bounce {
+
             0%,
             100% {
                 transform: translateX(-50%) translateY(0);
@@ -544,14 +557,17 @@
         section {
             padding: 6rem 2.5rem;
         }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
         }
+
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
         }
+
         .section-tag {
             display: inline-flex;
             align-items: center;
@@ -563,6 +579,7 @@
             letter-spacing: 2px;
             margin-bottom: .8rem;
         }
+
         .section-tag::before,
         .section-tag::after {
             content: '';
@@ -571,6 +588,7 @@
             background: var(--primary);
             border-radius: 4px;
         }
+
         .section-title {
             font-size: 2.8rem;
             font-weight: 800;
@@ -578,6 +596,7 @@
             letter-spacing: -.5px;
             line-height: 1.2;
         }
+
         .section-desc {
             color: var(--text-light);
             max-width: 600px;
@@ -589,15 +608,18 @@
         #about {
             background: var(--section);
         }
+
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
+
         .about-image {
             position: relative;
         }
+
         .about-image img {
             width: 100%;
             height: 480px;
@@ -605,6 +627,7 @@
             border-radius: var(--radius);
             box-shadow: var(--shadow-lg);
         }
+
         .about-exp-badge {
             position: absolute;
             bottom: 24px;
@@ -616,33 +639,39 @@
             text-align: center;
             box-shadow: var(--shadow-primary);
         }
+
         .about-exp-badge .num {
             font-size: 2.6rem;
             font-weight: 800;
             line-height: 1;
         }
+
         .about-exp-badge .label {
             font-size: .78rem;
             font-weight: 500;
             opacity: .9;
         }
+
         .about-content h3 {
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--dark);
         }
+
         .about-content p {
             color: var(--text-light);
             margin-bottom: 1.2rem;
             font-size: .98rem;
         }
+
         .about-features {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 14px;
             margin: 2rem 0;
         }
+
         .about-feat {
             display: flex;
             align-items: center;
@@ -651,6 +680,7 @@
             font-weight: 500;
             color: var(--dark);
         }
+
         .about-feat i {
             color: var(--primary);
             font-size: 1rem;
@@ -663,12 +693,14 @@
             justify-content: center;
             flex-shrink: 0;
         }
+
         .about-stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 16px;
             margin-top: 2rem;
         }
+
         .stat-box {
             background: var(--bg);
             padding: 20px 14px;
@@ -678,17 +710,20 @@
             border: 1px solid rgba(0, 0, 0, 0.04);
             transition: var(--transition);
         }
+
         .stat-box:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-md);
             border-color: var(--primary);
         }
+
         .stat-num {
             font-size: 2.2rem;
             font-weight: 800;
             color: var(--primary);
             line-height: 1;
         }
+
         .stat-label {
             font-size: .8rem;
             color: var(--text-light);
@@ -701,6 +736,7 @@
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 24px;
         }
+
         .product-card {
             background: var(--bg);
             border-radius: var(--radius);
@@ -710,29 +746,58 @@
             transition: var(--transition);
             position: relative;
         }
+
         .product-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
             border-color: rgba(230, 81, 0, 0.15);
         }
+
         .product-card .img-wrap {
             position: relative;
             overflow: hidden;
             height: 200px;
             background: #f5f5f5;
         }
+
         .product-card .img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform .6s var(--ease);
         }
+
+        .product-card .img-wrap img.product-rotating {
+            transition: opacity .35s ease, transform .6s var(--ease);
+        }
+
+        .product-card .img-wrap img.product-rotating.is-changing {
+            opacity: 0;
+        }
+
+        .product-card .brand-badge {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            z-index: 2;
+            background: rgba(255, 255, 255, .94);
+            color: var(--dark);
+            padding: 5px 10px;
+            border-radius: 999px;
+            font-size: .72rem;
+            font-weight: 700;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, .10);
+            pointer-events: none;
+        }
+
         .product-card:hover .img-wrap img {
             transform: scale(1.08);
         }
+
         .product-card .card-body {
             padding: 20px;
         }
+
         .product-card .card-cat {
             font-size: .72rem;
             text-transform: uppercase;
@@ -740,22 +805,26 @@
             color: var(--primary);
             font-weight: 600;
         }
+
         .product-card h4 {
             font-size: 1.05rem;
             font-weight: 600;
             margin: 6px 0;
             color: var(--dark);
         }
+
         .product-card p {
             font-size: .85rem;
             color: var(--text-light);
             margin-bottom: 12px;
         }
+
         .product-card .card-footer {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
+
         .product-card .price {
             font-size: 1.1rem;
             font-weight: 700;
@@ -766,11 +835,13 @@
         #services {
             background: var(--section);
         }
+
         .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             gap: 24px;
         }
+
         .service-card {
             background: var(--bg);
             padding: 32px 24px;
@@ -782,6 +853,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .service-card::before {
             content: '';
             position: absolute;
@@ -794,13 +866,16 @@
             transform-origin: left;
             transition: transform .4s var(--ease);
         }
+
         .service-card:hover::before {
             transform: scaleX(1);
         }
+
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-md);
         }
+
         .service-icon {
             width: 64px;
             height: 64px;
@@ -814,16 +889,19 @@
             color: var(--primary);
             transition: var(--transition);
         }
+
         .service-card:hover .service-icon {
             background: var(--primary);
             color: #fff;
         }
+
         .service-card h4 {
             font-size: 1.05rem;
             font-weight: 600;
             color: var(--dark);
             margin-bottom: 8px;
         }
+
         .service-card p {
             font-size: .85rem;
             color: var(--text-light);
@@ -838,6 +916,7 @@
             position: relative;
             padding: 2rem 0;
         }
+
         .brand-track::before,
         .brand-track::after {
             content: '';
@@ -847,20 +926,24 @@
             width: 100px;
             z-index: 2;
         }
+
         .brand-track::before {
             left: 0;
             background: linear-gradient(to right, var(--bg), transparent);
         }
+
         .brand-track::after {
             right: 0;
             background: linear-gradient(to left, var(--bg), transparent);
         }
+
         .brand-slide {
             display: flex;
             gap: 24px;
             animation: scrollBrands 30s linear infinite;
             flex-shrink: 0;
         }
+
         .brand-item {
             width: 140px;
             height: 80px;
@@ -876,11 +959,13 @@
             overflow: hidden;
             padding: 10px;
         }
+
         .brand-item:hover {
             border-color: var(--primary);
             box-shadow: var(--shadow-md);
             transform: scale(1.05);
         }
+
         .brand-item img {
             max-width: 100%;
             max-height: 100%;
@@ -889,10 +974,12 @@
             opacity: .6;
             transition: var(--transition);
         }
+
         .brand-item:hover img {
             filter: grayscale(0);
             opacity: 1;
         }
+
         .brand-item .brand-fallback {
             font-size: .7rem;
             font-weight: 600;
@@ -901,6 +988,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
         @keyframes scrollBrands {
             0% {
                 transform: translateX(0);
@@ -914,33 +1002,40 @@
         #gallery {
             background: var(--section);
         }
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-auto-rows: 220px;
             gap: 16px;
         }
+
         .gallery-item {
             overflow: hidden;
             border-radius: var(--radius-sm);
             cursor: pointer;
             position: relative;
         }
+
         .gallery-item.tall {
             grid-row: span 2;
         }
+
         .gallery-item.wide {
             grid-column: span 2;
         }
+
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform .6s var(--ease);
         }
+
         .gallery-item:hover img {
             transform: scale(1.06);
         }
+
         .gallery-item .gallery-overlay {
             position: absolute;
             inset: 0;
@@ -951,15 +1046,18 @@
             opacity: 0;
             transition: var(--transition);
         }
+
         .gallery-item:hover .gallery-overlay {
             opacity: 1;
         }
+
         .gallery-overlay i {
             color: #fff;
             font-size: 1.8rem;
             transform: scale(0.5);
             transition: var(--transition);
         }
+
         .gallery-item:hover .gallery-overlay i {
             transform: scale(1);
         }
@@ -978,10 +1076,12 @@
             transition: var(--transition);
             backdrop-filter: blur(8px);
         }
+
         .lightbox.active {
             opacity: 1;
             visibility: visible;
         }
+
         .lightbox img {
             max-width: 85vw;
             max-height: 85vh;
@@ -990,9 +1090,11 @@
             transform: scale(0.9);
             transition: transform .4s var(--ease);
         }
+
         .lightbox.active img {
             transform: scale(1);
         }
+
         .lightbox-close {
             position: absolute;
             top: 24px;
@@ -1009,9 +1111,11 @@
             background: rgba(255, 255, 255, 0.1);
             transition: var(--transition);
         }
+
         .lightbox-close:hover {
             background: rgba(255, 255, 255, 0.2);
         }
+
         .lightbox-nav {
             position: absolute;
             top: 50%;
@@ -1028,12 +1132,15 @@
             background: rgba(255, 255, 255, 0.1);
             transition: var(--transition);
         }
+
         .lightbox-nav:hover {
             background: rgba(255, 255, 255, 0.2);
         }
+
         .lightbox-prev {
             left: 24px;
         }
+
         .lightbox-next {
             right: 24px;
         }
@@ -1045,12 +1152,14 @@
             gap: 4rem;
             align-items: start;
         }
+
         .contact-info-cards {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
             margin-bottom: 2rem;
         }
+
         .contact-card {
             background: var(--primary-pale);
             padding: 20px;
@@ -1060,10 +1169,12 @@
             gap: 14px;
             transition: var(--transition);
         }
+
         .contact-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-md);
         }
+
         .contact-card .ci-icon {
             width: 44px;
             height: 44px;
@@ -1076,15 +1187,18 @@
             font-size: 1rem;
             flex-shrink: 0;
         }
+
         .contact-card strong {
             display: block;
             font-size: .9rem;
             color: var(--dark);
         }
+
         .contact-card span {
             font-size: .82rem;
             color: var(--text-light);
         }
+
         .contact-map {
             border-radius: var(--radius);
             overflow: hidden;
@@ -1092,11 +1206,13 @@
             height: 220px;
             background: #eee;
         }
+
         .contact-map iframe {
             width: 100%;
             height: 100%;
             border: 0;
         }
+
         .contact-form {
             background: var(--bg);
             padding: 40px;
@@ -1104,11 +1220,13 @@
             box-shadow: var(--shadow-md);
             border: 1px solid rgba(0, 0, 0, 0.04);
         }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
         }
+
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -1122,16 +1240,19 @@
             background: var(--section);
             outline: none;
         }
+
         .contact-form input:focus,
         .contact-form textarea:focus {
             border-color: var(--primary);
             box-shadow: 0 0 0 4px rgba(230, 81, 0, 0.08);
             background: #fff;
         }
+
         .contact-form textarea {
             resize: vertical;
             min-height: 120px;
         }
+
         .contact-form button {
             width: 100%;
             padding: 16px;
@@ -1146,6 +1267,7 @@
             font-family: inherit;
             box-shadow: var(--shadow-primary);
         }
+
         .contact-form button:hover {
             transform: translateY(-3px);
             box-shadow: 0 14px 40px rgba(230, 81, 0, 0.35);
@@ -1157,6 +1279,7 @@
             color: #aaa;
             padding: 5rem 2.5rem 0;
         }
+
         .footer-top {
             max-width: 1400px;
             margin: 0 auto;
@@ -1166,22 +1289,26 @@
             padding-bottom: 3rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
+
         .footer-brand .logo-text {
             color: #fff;
             font-size: 1.3rem;
             margin-bottom: 12px;
             display: block;
         }
+
         .footer-brand p {
             font-size: .88rem;
             line-height: 1.8;
             color: #888;
             margin-bottom: 1.5rem;
         }
+
         .footer-socials {
             display: flex;
             gap: 10px;
         }
+
         .footer-socials a {
             width: 40px;
             height: 40px;
@@ -1194,11 +1321,13 @@
             transition: var(--transition);
             text-decoration: none;
         }
+
         .footer-socials a:hover {
             background: var(--primary);
             color: #fff;
             transform: translateY(-3px);
         }
+
         .footer-col h4 {
             color: #fff;
             font-size: 1rem;
@@ -1207,6 +1336,7 @@
             position: relative;
             padding-bottom: 12px;
         }
+
         .footer-col h4::after {
             content: '';
             position: absolute;
@@ -1217,6 +1347,7 @@
             background: var(--primary);
             border-radius: 4px;
         }
+
         .footer-col a {
             color: #888;
             text-decoration: none;
@@ -1225,10 +1356,12 @@
             margin-bottom: 10px;
             transition: var(--transition);
         }
+
         .footer-col a:hover {
             color: var(--primary);
             padding-left: 4px;
         }
+
         .footer-col p {
             font-size: .88rem;
             color: #888;
@@ -1237,11 +1370,13 @@
             gap: 10px;
             margin-bottom: 10px;
         }
+
         .footer-col p i {
             color: var(--primary);
             width: 16px;
             text-align: center;
         }
+
         .footer-bottom {
             max-width: 1400px;
             margin: 0 auto;
@@ -1252,6 +1387,7 @@
             font-size: .82rem;
             color: #666;
         }
+
         .footer-bottom a {
             color: var(--primary);
             text-decoration: none;
@@ -1279,10 +1415,12 @@
             align-items: center;
             justify-content: center;
         }
+
         #backTop.visible {
             opacity: 1;
             visibility: visible;
         }
+
         #backTop:hover {
             transform: translateY(-4px);
             box-shadow: 0 14px 40px rgba(230, 81, 0, 0.4);
@@ -1294,6 +1432,7 @@
             transform: translateY(40px);
             transition: opacity .7s var(--ease), transform .7s var(--ease);
         }
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
@@ -1335,6 +1474,7 @@
                 gap: 2rem;
             }
         }
+
         @media(max-width:768px) {
             section {
                 padding: 4rem 1.5rem;
@@ -1350,9 +1490,10 @@
                 font-size: 1.1rem;
                 white-space: normal;
             }
-            .logo-svg {
-                width: 36px;
-                height: 36px;
+            .logo-img {
+                width: 80px;
+                height: 80px;
+                margin-left: 0;
             }
             .nav-links {
                 display: none;
@@ -1423,6 +1564,7 @@
                 font-size: 1rem;
             }
         }
+
         @media(max-width:480px) {
             .hero h1 {
                 font-size: 2rem;
@@ -1439,10 +1581,7 @@
             }
             .logo-text {
                 font-size: 0.9rem;
-            }
-            .logo-svg {
-                width: 30px;
-                height: 30px;
+                margin-left: 0;
             }
             .hero-float-card {
                 display: none;
@@ -1454,6 +1593,7 @@
             background: #0d0d0d;
             color: #e0e0e0;
         }
+
         .dark-mode .product-card,
         .dark-mode .service-card,
         .dark-mode .stat-box,
@@ -1462,69 +1602,87 @@
             color: #e0e0e0;
             border-color: #2a2a2a;
         }
+
         .dark-mode .contact-card {
             background: #1a1a1a;
         }
+
         .dark-mode .contact-card strong {
             color: #e0e0e0;
         }
+
         .dark-mode header {
             background: rgba(13, 13, 13, 0.92);
             border-bottom-color: #222;
         }
+
         .dark-mode .nav-links a {
             color: #ccc;
         }
+
         .dark-mode .about-content h3,
         .dark-mode .product-card h4,
         .dark-mode .service-card h4,
         .dark-mode .section-title {
             color: #f0f0f0;
         }
+
         .dark-mode #about,
         .dark-mode #services,
         .dark-mode #gallery {
             background: #111;
         }
+
         .dark-mode .section-desc {
             color: #999;
         }
+
         .dark-mode .contact-form input,
         .dark-mode .contact-form textarea {
             background: #111;
             border-color: #333;
             color: #e0e0e0;
         }
+
         .dark-mode .brand-item {
             background: #1a1a1a;
             border-color: #2a2a2a;
         }
+
         .dark-mode .product-card .card-body {
             background: #1a1a1a;
         }
+
         .dark-mode .product-card .img-wrap {
             background: #111;
         }
+
         .dark-mode .about-features .about-feat {
             color: #ddd;
         }
+
         .dark-mode .hero-float-card {
             background: rgba(30, 30, 30, 0.95);
         }
+
         .dark-mode .hero-float-card .card-text strong {
             color: #f0f0f0;
         }
+
         .dark-mode .hero-float-card .card-text span {
             color: #aaa;
         }
+
         .dark-mode .brand-track::before {
             background: linear-gradient(to right, #0d0d0d, transparent);
         }
+
         .dark-mode .brand-track::after {
             background: linear-gradient(to left, #0d0d0d, transparent);
         }
     </style>
 </head>
+
 <body>
 
     <!-- LOADER -->
@@ -1550,17 +1708,11 @@
     <header id="header">
         <div class="nav-wrap">
 
-            <!-- Logo with inline SVG -->
             <a href="#home" class="logo-wrap" aria-label="Royal Touch Home">
-                <svg class="logo-svg" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="44" height="44" rx="8" fill="#E65100" />
-                    <text x="22" y="30" font-family="'Poppins',sans-serif" font-size="18" font-weight="800"
-                    fill="#fff" text-anchor="middle" letter-spacing="-0.5">RT</text>
-                </svg>
+                <img src="images/Logoo.jpg" alt="Royal Touch Computer TR" class="logo-img" onerror="this.style.display='none'">
                 <span class="logo-text">Royal Touch Computer TR</span>
             </a>
 
-            <!-- Navigation -->
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -1569,7 +1721,6 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-            <!-- Right side -->
             <div class="nav-right">
                 <button class="btn-nav btn-call-nav" onclick="showToast('Calling +971 50 123 4567...','fas fa-phone-alt')">
                     <i class="fas fa-phone-alt"></i> Call
@@ -1586,42 +1737,34 @@
         </div>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO with Video Background -->
     <section id="home" class="hero">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1920&q=80" alt="Tech Background" onerror="this.style.display='none';document.querySelector('.hero-bg .fallback-color').style.display='block'">
-            <div class="fallback-color"></div>
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-particles" id="particles"></div>
-        <div class="hero-inner container">
-            <div class="hero-text">
-                <div class="hero-badge"><i class="fas fa-shield-halved"></i> Trusted Since 2012</div>
-                <h1>Premium <span class="highlight">Computer &amp; Electronics</span> Solutions</h1>
-                <p>Discover cutting-edge IT products, expert repair services, and comprehensive networking solutions — all under one roof at Royal Touch Computer TR.</p>
-                <div class="hero-btns">
-                    <button class="btn-hero-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-                        <i class="fas fa-arrow-right"></i> Explore Products
-                    </button>
-                    <button class="btn-hero-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-                        <i class="fas fa-envelope"></i> Get in Touch
-                    </button>
-                </div>
-            </div>
-            <div class="hero-right">
-                <div class="hero-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=700&q=80" alt="Modern Laptop" loading="lazy">
-                </div>
-                <div class="hero-float-card card-a">
-                    <div class="icon-circle" style="background:linear-gradient(135deg,#25D366,#128C7E);"><i class="fab fa-whatsapp"></i></div>
-                    <div class="card-text"><strong>WhatsApp Support</strong><span>Available 24/7</span></div>
-                </div>
-                <div class="hero-float-card card-b">
-                    <div class="icon-circle" style="background:linear-gradient(135deg,var(--primary),var(--accent));"><i class="fas fa-star"></i></div>
-                    <div class="card-text"><strong>4.9 / 5 Rating</strong><span>1,200+ Reviews</span></div>
-                </div>
+            <video autoplay muted loop playsinline preload="auto"
+            poster="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1920&q=80"
+            id="heroVideo">
+            <source src="images/herovide.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="fallback-color" id="heroFallback"></div>
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-inner container">
+        <div class="hero-text">
+            <h1>Premium <span class="highlight">Computer &amp; Electronics</span> Solutions</h1>
+            <p>Discover cutting-edge IT products, expert repair services, and comprehensive networking solutions — all under
+            one roof at Royal Touch Computer TR.</p>
+            <div class="hero-btns">
+                <button class="btn-hero-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+                    <i class="fas fa-arrow-right"></i> Explore Products
+                </button>
+                <button class="btn-hero-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                    <i class="fas fa-envelope"></i> Get in Touch
+                </button>
             </div>
         </div>
+
         <div class="hero-scroll"><span>Scroll</span><i class="fas fa-chevron-down"></i></div>
     </section>
 
@@ -1643,8 +1786,10 @@
                 </div>
                 <div class="about-content reveal">
                     <h3>Your Reliable Technology Partner</h3>
-                    <p>Royal Touch Computer TR has been a premier IT solutions provider since 2012, delivering cutting-edge computer electronics, professional repair, and enterprise networking services across the region.</p>
-                    <p>We combine deep technical expertise with a genuine passion for innovation, ensuring every client receives personalized solutions that drive real results.</p>
+                    <p>Royal Touch Computer TR has been a premier IT solutions provider since 2012, delivering cutting-edge
+                    computer electronics, professional repair, and enterprise networking services across the region.</p>
+                    <p>We combine deep technical expertise with a genuine passion for innovation, ensuring every client receives
+                    personalized solutions that drive real results.</p>
                     <div class="about-features">
                         <div class="about-feat"><i class="fas fa-check"></i> Genuine Products</div>
                         <div class="about-feat"><i class="fas fa-check"></i> Expert Technicians</div>
@@ -1654,10 +1799,22 @@
                         <div class="about-feat"><i class="fas fa-check"></i> On-Site Support</div>
                     </div>
                     <div class="about-stats">
-                        <div class="stat-box"><div class="stat-num" data-target="15">0</div><div class="stat-label">Years</div></div>
-                        <div class="stat-box"><div class="stat-num" data-target="1200">0</div><div class="stat-label">Clients</div></div>
-                        <div class="stat-box"><div class="stat-num" data-target="98">0</div><div class="stat-label">Satisfaction %</div></div>
-                        <div class="stat-box"><div class="stat-num" data-target="24">0</div><div class="stat-label">hr Support</div></div>
+                        <div class="stat-box">
+                            <div class="stat-num" data-target="15">0</div>
+                            <div class="stat-label">Years</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num" data-target="1200">0</div>
+                            <div class="stat-label">Clients</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num" data-target="98">0</div>
+                            <div class="stat-label">Satisfaction %</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num" data-target="24">0</div>
+                            <div class="stat-label">hr Support</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1724,13 +1881,34 @@
             <div class="contact-grid">
                 <div class="reveal">
                     <div class="contact-info-cards">
-                        <div class="contact-card"><div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div><div><strong>Visit Us</strong><span>123 Tech Park, Dubai, UAE</span></div></div>
-                        <div class="contact-card"><div class="ci-icon"><i class="fas fa-phone-alt"></i></div><div><strong>Call Us</strong><span>+971 50 123 4567</span></div></div>
-                        <div class="contact-card"><div class="ci-icon"><i class="fas fa-envelope"></i></div><div><strong>Email Us</strong><span>info@royaltouch.ae</span></div></div>
-                        <div class="contact-card"><div class="ci-icon"><i class="fas fa-clock"></i></div><div><strong>Working Hours</strong><span>Mon–Sat: 9:00 – 20:00</span></div></div>
+                        <div class="contact-card">
+                            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div><strong>Visit Us</strong><span>123 Tech Park, Dubai, UAE</span></div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="ci-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div><strong>Call Us</strong><span>+971 567113493</span></div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                            <div><strong>Email Us</strong><span>Rtouchcomputer@gmail.com</span></div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="ci-icon"><i class="fas fa-clock"></i></div>
+                            <div><strong>Working Hours</strong><span>Mon–Sat: 9:00 – 6:00</span></div>
+                        </div>
                     </div>
                     <div class="contact-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.174369598659!2d55.27078131544396!3d25.197197983895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67acbd%3A0xff45e502e1ceb7e2!2sDubai%20Mall!5e0!3m2!1sen!2sae!4v1738886400000!5m2!1sen!2sae" allowfullscreen loading="lazy" title="Google Maps location of Royal Touch Computer TR"></iframe>
+                        <iframe
+    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3801.6386896593285!2d55.38438247895027!3d25.351762429873027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDIxJzA2LjgiTiA1NcKwMjMnMTMuNSJF!5e0!3m2!1sen!2sae!4v1786448128429!5m2!1sen!2sae"
+    width="600"
+    height="450"
+    style="border:0;"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    title="Google Maps location of Royal Touch Computer TR">
+</iframe>
                     </div>
                 </div>
                 <form class="contact-form reveal" id="contactForm" novalidate>
@@ -1754,7 +1932,8 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <span class="logo-text">Royal<span>Touch</span></span>
-                <p>Your trusted IT partner delivering premium computer electronics, expert repair, and comprehensive networking solutions since 2012.</p>
+                <p>Your trusted IT partner delivering premium computer electronics, expert repair, and comprehensive networking
+                solutions since 2012.</p>
                 <div class="footer-socials">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -1769,19 +1948,20 @@
             </div>
             <div class="footer-col">
                 <h4>Services</h4>
-                <a href="#">Computer Repair</a><a href="#">Laptop Repair</a><a href="#">Networking</a><a href="#">CCTV Installation</a><a href="#">Data Recovery</a><a href="#">AMC Contracts</a>
+                <a href="#">Computer Repair</a><a href="#">Laptop Repair</a><a href="#">Networking</a><a href="#">CCTV
+                Installation</a><a href="#">Data Recovery</a><a href="#">AMC Contracts</a>
             </div>
             <div class="footer-col">
                 <h4>Contact Info</h4>
                 <p><i class="fas fa-map-marker-alt"></i> 123 Tech Park, Dubai, UAE</p>
-                <p><i class="fas fa-phone-alt"></i> +971 50 123 4567</p>
-                <p><i class="fas fa-envelope"></i> info@royaltouch.ae</p>
-                <p><i class="fas fa-clock"></i> Mon–Sat: 9AM – 8PM</p>
+                <p><i class="fas fa-phone-alt"></i> +971 567113493</p>
+                <p><i class="fas fa-envelope"></i> Rtouchcomputer@gmail.com </p>
+                <p><i class="fas fa-clock"></i> Mon–Sat: 9AM – 6PM</p>
             </div>
         </div>
         <div class="footer-bottom">
             <span>© 2026 Royal Touch Computer TR. All rights reserved.</span>
-            <span>Designed with <i class="fas fa-heart" style="color:var(--primary);"></i> by <a href="#">RoyalTouch Dev</a></span>
+           
         </div>
     </footer>
 
@@ -1846,69 +2026,229 @@
             this.classList.toggle('fa-sun', darkMode);
         });
 
-        // ── PARTICLES ──
-        const particlesEl = document.getElementById('particles');
-        for (let i = 0; i < 30; i++) {
-            const p = document.createElement('div');
-            p.className = 'particle';
-            p.style.left = Math.random() * 100 + '%';
-            const size = Math.random() * 4 + 2;
-            p.style.width = p.style.height = size + 'px';
-            p.style.animationDuration = (Math.random() * 10 + 8) + 's';
-            p.style.animationDelay = (Math.random() * 8) + 's';
-            particlesEl.appendChild(p);
+        // ── HERO VIDEO FALLBACK ──
+        const heroVideo = document.getElementById('heroVideo');
+        const heroFallback = document.getElementById('heroFallback');
+
+        if (heroVideo) {
+            // Show fallback if video fails to load
+            heroVideo.addEventListener('error', function() {
+                heroFallback.classList.add('show');
+                this.style.display = 'none';
+            });
+
+            // Also show fallback if video can't play (e.g. missing codec)
+            heroVideo.addEventListener('stalled', function() {
+                if (this.networkState === 3) { // NETWORK_NO_SOURCE
+                    heroFallback.classList.add('show');
+                    this.style.display = 'none';
+                }
+            });
+
+            // Timeout fallback: if video doesn't start playing within 5 seconds, show fallback
+            let videoTimeout = setTimeout(() => {
+                if (heroVideo.paused && heroVideo.currentTime === 0) {
+                    heroFallback.classList.add('show');
+                    heroVideo.style.display = 'none';
+                }
+            }, 5000);
+
+            heroVideo.addEventListener('playing', function() {
+                clearTimeout(videoTimeout);
+            });
         }
 
         // ── PRODUCTS ──
-        const products = [
-            { name: 'Laptops', cat: 'Mobile Computing', desc: 'High-performance business & gaming laptops', img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&q=80',
-                price: 'From AED 1,999' },
-            { name: 'Desktop PCs', cat: 'Workstations', desc: 'Powerful desktops for every need', img: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=400&q=80',
-                price: 'From AED 1,499' },
-            { name: 'Gaming PCs', cat: 'Gaming', desc: 'RTX-powered ultimate gaming rigs', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400&q=80',
-                price: 'From AED 3,499' },
-            { name: 'Monitors', cat: 'Displays', desc: '4K, ultrawide & gaming displays', img: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&q=80',
-                price: 'From AED 599' },
-            { name: 'Printers', cat: 'Peripherals', desc: 'Laser, inkjet & multifunction printers', img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=400&q=80',
-                price: 'From AED 299' },
-            { name: 'Networking', cat: 'Infrastructure', desc: 'Switches, routers & access points', img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&q=80',
-                price: 'From AED 149' },
-            { name: 'CCTV Cameras', cat: 'Security', desc: 'Professional surveillance systems', img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=400&q=80',
-                price: 'From AED 199' },
-            { name: 'Keyboards', cat: 'Accessories', desc: 'Mechanical, wireless & ergonomic', img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&q=80',
-                price: 'From AED 89' },
-            { name: 'Graphic Cards', cat: 'Components', desc: 'NVIDIA RTX & AMD Radeon GPUs', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=400&q=80',
-                price: 'From AED 799' },
-            { name: 'SSD Storage', cat: 'Storage', desc: 'NVMe & SATA lightning-fast drives', img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=400&q=80',
-                price: 'From AED 119' },
-            { name: 'RAM Memory', cat: 'Components', desc: 'DDR4 & DDR5 high-speed memory', img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=400&q=80',
-                price: 'From AED 89' },
-            { name: 'Routers', cat: 'Networking', desc: 'WiFi 6E & mesh network systems', img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&q=80',
-                price: 'From AED 249' },
-        ];
+        const products = [{
+            name: 'Laptops',
+            cat: 'Mobile Computing',
+            desc: 'Business, student & gaming laptops from leading brands',
+            variants: [
+                { brand: 'Dell', name: 'Dell Laptop', img: 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=700&q=85' },
+                { brand: 'HP', name: 'HP Laptop', img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700&q=85' },
+                { brand: 'Lenovo', name: 'Lenovo Laptop', img: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=700&q=85' },
+                { brand: 'ASUS', name: 'ASUS Laptop', img: 'https://images.unsplash.com/photo-1602080858428-57174f9431cf?w=700&q=85' },
+                { brand: 'Acer', name: 'Acer Laptop', img: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=700&q=85' },
+                { brand: 'Samsung', name: 'Samsung Laptop', img: 'https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=700&q=85' },
+                { brand: 'LG', name: 'LG Laptop', img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700&q=85' }
+            ]
+        }, {
+            name: 'Desktop PCs',
+            cat: 'Workstations',
+            desc: 'Powerful desktops for home, office & business',
+            variants: [
+                { brand: 'Dell', name: 'Dell Desktop PC', img: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=700&q=85' },
+                { brand: 'HP', name: 'HP Desktop PC', img: 'https://images.unsplash.com/photo-1547082299-de196ea013d6?w=700&q=85' },
+                { brand: 'Lenovo', name: 'Lenovo Desktop PC', img: 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=700&q=85' },
+                { brand: 'ASUS', name: 'ASUS Desktop PC', img: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=700&q=85' }
+            ]
+        }, {
+            name: 'Gaming PCs',
+            cat: 'Gaming',
+            desc: 'High-performance gaming machines & RGB builds',
+            variants: [
+                { brand: 'ASUS ROG', name: 'ASUS ROG Gaming PC', img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=700&q=85' },
+                { brand: 'MSI', name: 'MSI Gaming PC', img: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=700&q=85' },
+                { brand: 'Alienware', name: 'Alienware Gaming PC', img: 'https://images.unsplash.com/photo-1603481546238-487240415921?w=700&q=85' },
+                { brand: 'HP Omen', name: 'HP Omen Gaming PC', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85' }
+            ]
+        }, {
+            name: 'Monitors',
+            cat: 'Displays',
+            desc: '4K, ultrawide, business & gaming displays',
+            variants: [
+                { brand: 'LG', name: 'LG Monitor', img: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=700&q=85' },
+                { brand: 'Samsung', name: 'Samsung Monitor', img: 'https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=700&q=85' },
+                { brand: 'Dell', name: 'Dell Monitor', img: 'https://images.unsplash.com/photo-1593642532400-2682810df593?w=700&q=85' },
+                { brand: 'ASUS', name: 'ASUS Monitor', img: 'https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=700&q=85' },
+                { brand: 'HP', name: 'HP Monitor', img: 'https://images.unsplash.com/photo-1527443195645-1133f7f28990?w=700&q=85' }
+            ]
+        }, {
+            name: 'Printers',
+            cat: 'Peripherals',
+            desc: 'Laser, inkjet & multifunction printers',
+            variants: [
+                { brand: 'HP', name: 'HP Printer', img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85' },
+                { brand: 'Canon', name: 'Canon Printer', img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85' },
+                { brand: 'Epson', name: 'Epson Printer', img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85' },
+                { brand: 'Brother', name: 'Brother Printer', img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85' }
+            ]
+        }, {
+            name: 'Networking',
+            cat: 'Infrastructure',
+            desc: 'Switches, routers, access points & network gear',
+            variants: [
+                { brand: 'TP-Link', name: 'TP-Link Network Equipment', img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=700&q=85' },
+                { brand: 'Cisco', name: 'Cisco Network Equipment', img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=85' },
+                { brand: 'D-Link', name: 'D-Link Network Equipment', img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85' },
+                { brand: 'Ubiquiti', name: 'Ubiquiti Network Equipment', img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&q=85' }
+            ]
+        }, {
+            name: 'CCTV Cameras',
+            cat: 'Security',
+            desc: 'Professional surveillance cameras & systems',
+            variants: [
+                { brand: 'Hikvision', name: 'Hikvision CCTV Camera', img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85' },
+                { brand: 'Dahua', name: 'Dahua CCTV Camera', img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85' },
+                { brand: 'TP-Link VIGI', name: 'TP-Link VIGI Camera', img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85' },
+                { brand: 'Uniview', name: 'Uniview CCTV Camera', img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85' }
+            ]
+        }, {
+            name: 'Keyboards',
+            cat: 'Accessories',
+            desc: 'Mechanical, wireless & ergonomic keyboards',
+            variants: [
+                { brand: 'Logitech', name: 'Logitech Keyboard', img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85' },
+                { brand: 'HP', name: 'HP Keyboard', img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85' },
+                { brand: 'Dell', name: 'Dell Keyboard', img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85' },
+                { brand: 'Lenovo', name: 'Lenovo Keyboard', img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85' },
+                { brand: 'Razer', name: 'Razer Gaming Keyboard', img: 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=700&q=85' }
+            ]
+        }, {
+            name: 'Graphic Cards',
+            cat: 'Components',
+            desc: 'NVIDIA GeForce RTX & AMD Radeon GPUs',
+            variants: [
+                { brand: 'NVIDIA', name: 'NVIDIA GeForce RTX', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85' },
+                { brand: 'ASUS', name: 'ASUS GeForce RTX', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85' },
+                { brand: 'MSI', name: 'MSI GeForce RTX', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85' },
+                { brand: 'AMD', name: 'AMD Radeon', img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85' }
+            ]
+        }, {
+            name: 'SSD Storage',
+            cat: 'Storage',
+            desc: 'NVMe & SATA high-speed storage drives',
+            variants: [
+                { brand: 'Samsung', name: 'Samsung SSD', img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85' },
+                { brand: 'Kingston', name: 'Kingston SSD', img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85' },
+                { brand: 'WD', name: 'WD SSD', img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85' },
+                { brand: 'Crucial', name: 'Crucial SSD', img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85' }
+            ]
+        }, {
+            name: 'RAM Memory',
+            cat: 'Components',
+            desc: 'DDR4 & DDR5 high-speed memory',
+            variants: [
+                { brand: 'Kingston', name: 'Kingston RAM', img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85' },
+                { brand: 'Corsair', name: 'Corsair RAM', img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85' },
+                { brand: 'Crucial', name: 'Crucial RAM', img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85' },
+                { brand: 'G.Skill', name: 'G.Skill RAM', img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85' }
+            ]
+        }, {
+            name: 'Routers',
+            cat: 'Networking',
+            desc: 'WiFi 6/6E, mesh & business network systems',
+            variants: [
+                { brand: 'TP-Link', name: 'TP-Link Router', img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85' },
+                { brand: 'ASUS', name: 'ASUS Router', img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85' },
+                { brand: 'D-Link', name: 'D-Link Router', img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85' },
+                { brand: 'NETGEAR', name: 'NETGEAR Router', img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85' }
+            ]
+        }];
 
         const pGrid = document.getElementById('productGrid');
+        const ROTATION_MS = 3000;
+
         products.forEach((p, i) => {
+            const first = p.variants[0];
             const card = document.createElement('div');
             card.className = 'product-card reveal';
             card.style.transitionDelay = (i % 4) * 0.08 + 's';
+
             card.innerHTML = `
-                <div class="img-wrap"><img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='#f0f0f0';this.parentElement.innerHTML+='<span style=\"display:flex;align-items:center;justify-content:center;height:100%;color:#999;font-size:.85rem;\">${p.name}</span>'"></div>
-                <div class="card-body">
-                    <div class="card-cat">${p.cat}</div>
-                    <h4>${p.name}</h4>
-                    <p>${p.desc}</p>
-                    <div class="card-footer">
-                        <span class="price">${p.price}</span>
-                        <button style="background:var(--primary-pale);color:var(--primary);border:none;padding:8px 16px;border-radius:50px;font-weight:600;font-size:.78rem;cursor:pointer;transition:var(--transition);font-family:inherit;"
-                            onmouseover="this.style.background='var(--primary)';this.style.color='#fff'"
-                            onmouseout="this.style.background='var(--primary-pale)';this.style.color='var(--primary)'"
-                            onclick="window.open('https://wa.me/971568249900?text=Hello%2C%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}','_blank')">
-                            <i class="fas fa-plus"></i> Inquire
-                        </button>
-                    </div>
-                </div>
-            `;
+                        <div class="img-wrap">
+                            <img class="product-rotating" src="${first.img}" alt="${first.name}" loading="lazy">
+                            <span class="brand-badge">${first.brand}</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-cat">${p.cat}</div>
+                            <h4 class="product-name">${first.name}</h4>
+                            <p>${p.desc}</p>
+                            <div class="card-footer">
+                                <button style="background:var(--primary-pale);color:var(--primary);border:none;padding:8px 16px;border-radius:50px;font-weight:600;font-size:.78rem;cursor:pointer;transition:var(--transition);font-family:inherit;">
+                                    <i class="fas fa-plus"></i> Get Quote
+                                </button>
+                            </div>
+                        </div>
+                    `;
+
+            const img = card.querySelector('.product-rotating');
+            const badge = card.querySelector('.brand-badge');
+            const productName = card.querySelector('.product-name');
+            const inquireBtn = card.querySelector('button');
+
+            let variantIndex = 0;
+
+            const updateProduct = (animate = true) => {
+                variantIndex = (variantIndex + 1) % p.variants.length;
+                const variant = p.variants[variantIndex];
+                if (animate) img.classList.add('is-changing');
+                setTimeout(() => {
+                    img.src = variant.img;
+                    img.alt = variant.name;
+                    badge.textContent = variant.brand;
+                    productName.textContent = variant.name;
+                    if (animate) {
+                        requestAnimationFrame(() => img.classList.remove('is-changing'));
+                    }
+                }, animate ? 220 : 0);
+            };
+
+            if (p.variants.length > 1) {
+                setInterval(() => updateProduct(true), ROTATION_MS);
+            }
+
+            inquireBtn.addEventListener('click', () => {
+                const variant = p.variants[variantIndex];
+                const message = `Hello, I am interested in ${variant.name}`;
+                window.open(`https://wa.me/971568249900?text=${encodeURIComponent(message)}`, '_blank');
+            });
+
+            img.addEventListener('error', () => {
+                img.style.opacity = '0.25';
+                img.alt = 'Product image unavailable';
+            });
+
             pGrid.appendChild(card);
         });
 
@@ -1931,43 +2271,32 @@
             const card = document.createElement('div');
             card.className = 'service-card reveal';
             card.style.transitionDelay = (i % 5) * 0.08 + 's';
-            card.innerHTML = `<div class="service-icon"><i class="${s.icon}"></i></div><h4>${s.name}</h4><p>${s.desc}</p>`;
+            card.innerHTML =
+            `<div class="service-icon"><i class="${s.icon}"></i></div><h4>${s.name}</h4><p>${s.desc}</p>`;
             card.style.cursor = 'pointer';
             card.addEventListener('click', () => showToast(`Learning more about ${s.name}`, s.icon));
             sGrid.appendChild(card);
         });
 
         // ── BRANDS ──
-        const brandLogos = [
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_logo.svg/200px-Dell_logo.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/200px-HP_logo_2012.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Lenovo_2015.svg/200px-Lenovo_2015.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/ASUS_Logo.svg/200px-ASUS_Logo.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Acer_logo_2011.svg/200px-Acer_logo_2011.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/200px-Apple_logo_black.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/MSI_logo.svg/200px-MSI_logo.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Logitech.svg/200px-Logitech.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Canon_logo.svg/200px-Canon_logo.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Epson_logo.svg/200px-Epson_logo.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo.svg/200px-Intel_logo.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/AMD_logo.svg/200px-AMD_logo.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/200px-Samsung_Logo.svg.png',
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/TP-Link_logo.svg/200px-TP-Link_logo.svg.png',
-        ];
+const brandList = [
+    'Dell', 'HP', 'Lenovo', 'ASUS', 'Acer',
+    'Logitech', 'Canon', 'Epson', 'Intel', 'Samsung'
+];
 
-        const brandSlide = document.getElementById('brandSlide');
-        const allBrands = [...brandLogos, ...brandLogos];
-        allBrands.forEach(src => {
-            const item = document.createElement('div');
-            item.className = 'brand-item';
-            const fallbackName = src.split('/').pop().replace(/_logo.*/i, '').replace(/\.svg.*/, '').replace(/[^a-zA-Z]/g,
-            '') || 'Brand';
-            item.innerHTML = `
-                <img src="${src}" alt="Brand" loading="lazy" 
-                     onerror="this.style.display='none';this.parentElement.innerHTML='<span class=\\'brand-fallback\\'>${fallbackName || 'Brand'}</span>'">
-            `;
-            brandSlide.appendChild(item);
-        });
+const brandSlide = document.getElementById('brandSlide');
+const allBrands = [...brandList, ...brandList];
+
+allBrands.forEach(name => {
+    const item = document.createElement('div');
+    item.className = 'brand-item';
+
+    item.innerHTML = `
+        <span class="brand-fallback">${name}</span>
+    `;
+
+    brandSlide.appendChild(item);
+});
 
         // ── GALLERY ──
         const galleryImages = [
@@ -2079,13 +2408,7 @@
                 showToast('Please fill in all required fields.', 'fas fa-exclamation-circle');
             }
         });
-
-        // ── handle hero image load error ──
-        document.querySelector('.hero-bg img')?.addEventListener('error', function() {
-            this.style.display = 'none';
-            const fallback = document.querySelector('.hero-bg .fallback-color');
-            if (fallback) fallback.style.display = 'block';
-        });
     </script>
 </body>
+
 </html>
