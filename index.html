@@ -7,7 +7,8 @@
     <title>Royal Touch Computer TR</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         /* ── reset & vars ── */
@@ -44,6 +45,7 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
+
             *,
             *::before,
             *::after {
@@ -51,6 +53,7 @@
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
+
             html {
                 scroll-behavior: auto !important;
             }
@@ -81,6 +84,7 @@
             z-index: 9999;
             transition: opacity .5s ease, visibility .5s ease;
         }
+
         #loader.hide {
             opacity: 0;
             visibility: hidden;
@@ -95,6 +99,7 @@
             border-radius: 50%;
             animation: spin .8s linear infinite;
         }
+
         @keyframes spin {
             to {
                 transform: rotate(360deg);
@@ -124,6 +129,7 @@
             gap: 12px;
             max-width: min(360px, 90vw);
         }
+
         .toast {
             background: var(--dark);
             color: #fff;
@@ -138,9 +144,11 @@
             transition: transform .4s var(--ease);
             word-break: break-word;
         }
+
         .toast.show {
             transform: translateX(0);
         }
+
         .toast i {
             color: var(--primary-light);
             font-size: 1.2rem;
@@ -163,6 +171,7 @@
             display: flex;
             align-items: center;
         }
+
         header.scrolled {
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
         }
@@ -180,41 +189,72 @@
             min-height: var(--header-h);
         }
 
+        /* ── LOGO – FIXED ── */
         .logo-wrap {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: clamp(4px, 0.8vw, 10px);
             text-decoration: none;
             flex-shrink: 0;
+            min-width: 0;
+          
         }
 
         .logo-img {
-            width: clamp(44px, 8vw, 70px);
-            height: clamp(44px, 8vw, 70px);
+            width: clamp(130px, 6vw, 450px);
+            height: clamp(120px, 6vw, 450px);
             object-fit: contain;
             flex-shrink: 0;
+            border-radius: 6px;
+            display: block;
+            margin-left: -55px;
         }
 
         .logo-text {
-            font-size: clamp(0.85rem, 2.2vw, 1.4rem);
+            font-size: clamp(0.65rem, 1.6vw, 1.15rem);
             font-weight: 800;
-            letter-spacing: -0.6px;
+            letter-spacing: -0.4px;
             font-family: "Poppins", sans-serif;
             background: linear-gradient(135deg, #8a4300 0%, #d96f00 35%, #ffad33 65%, #9b4a00 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 2px 6px rgba(150, 75, 0, 0.15);
+            text-shadow: 0 2px 6px rgba(150, 75, 0, 0.12);
             white-space: nowrap;
             line-height: 1.2;
+            margin-left: -30px;
         }
+
+        /* small tweak for very narrow screens */
         @media (max-width: 420px) {
             .logo-text {
-                font-size: 0.7rem;
-                letter-spacing: -0.3px;
+                font-size: 0.55rem;
+                letter-spacing: -0.2px;
+                margin-left: 0;
+            }
+            .logo-img {
+                width: 450px;
+                height: 450px;
+                margin-left: 0px;
+            }
+            .logo-wrap {
+                gap: 4px;
             }
         }
 
+        @media (max-width: 360px) {
+            .logo-text {
+                font-size: 0.45rem;
+                margin-left: 0px;
+            }
+            .logo-img {
+                width: 24px;
+                height: 24px;
+                margin-left: 0px;
+            }
+        }
+
+        /* ── nav ── */
         .nav-links {
             display: flex;
             align-items: center;
@@ -223,6 +263,7 @@
             margin: 0;
             padding: 0;
         }
+
         .nav-links a {
             text-decoration: none;
             color: var(--text);
@@ -236,6 +277,7 @@
             display: flex;
             align-items: center;
         }
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -247,14 +289,17 @@
             border-radius: 4px;
             transition: var(--transition);
         }
+
         .nav-links a:hover,
         .nav-links a:focus-visible {
             color: var(--primary);
         }
+
         .nav-links a:hover::after,
         .nav-links a:focus-visible::after {
             width: 100%;
         }
+
         .nav-links a:focus-visible {
             outline: 2px solid var(--primary);
             outline-offset: 4px;
@@ -267,6 +312,7 @@
             gap: clamp(4px, 1.2vw, 14px);
             flex-shrink: 0;
         }
+
         .nav-right .nav-icon-btn {
             width: clamp(38px, 5vw, 44px);
             height: clamp(38px, 5vw, 44px);
@@ -284,10 +330,12 @@
             transition: var(--transition);
             padding: 0;
         }
+
         .nav-right .nav-icon-btn:hover {
             color: var(--primary);
             background: var(--primary-pale);
         }
+
         .nav-right .nav-icon-btn:focus-visible {
             outline: 2px solid var(--primary);
             outline-offset: 2px;
@@ -308,29 +356,35 @@
             min-height: 44px;
             white-space: nowrap;
         }
+
         .btn-nav i {
             font-size: clamp(0.75rem, 1vw, 0.9rem);
         }
+
         .btn-call-nav {
             background: var(--primary);
             color: #fff;
             box-shadow: var(--shadow-primary);
         }
+
         .btn-call-nav:hover,
         .btn-call-nav:focus-visible {
             background: #BF360C;
             transform: translateY(-2px);
         }
+
         .btn-wa-nav {
             background: #25D366;
             color: #fff;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
         }
+
         .btn-wa-nav:hover,
         .btn-wa-nav:focus-visible {
             background: #1B9E4B;
             transform: translateY(-2px);
         }
+
         .btn-nav:focus-visible {
             outline: 2px solid var(--primary);
             outline-offset: 3px;
@@ -351,10 +405,12 @@
             border-radius: 8px;
             transition: var(--transition);
         }
+
         .hamburger:focus-visible {
             outline: 2px solid var(--primary);
             outline-offset: 2px;
         }
+
         .hamburger span {
             width: 26px;
             height: 2.5px;
@@ -363,12 +419,15 @@
             transition: var(--transition);
             display: block;
         }
+
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
+
         .hamburger.active span:nth-child(2) {
             opacity: 0;
         }
+
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
         }
@@ -376,22 +435,26 @@
         /* ── hero ── */
         .hero {
             min-height: 100vh;
+            min-height: 100svh;
             position: relative;
             display: flex;
             align-items: center;
             overflow: hidden;
             padding: calc(var(--header-h) + 2rem) clamp(12px, 4vw, 40px) 4rem;
         }
+
         .hero-bg {
             position: absolute;
             inset: 0;
             z-index: 0;
         }
+
         .hero-bg video {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .hero-bg .fallback-color {
             display: none;
             position: absolute;
@@ -399,9 +462,11 @@
             background: linear-gradient(135deg, #1a1a2e, #16213e);
             z-index: 1;
         }
+
         .hero-bg .fallback-color.show {
             display: block;
         }
+
         .hero-bg .hero-overlay {
             position: absolute;
             inset: 0;
@@ -420,9 +485,11 @@
             position: relative;
             z-index: 3;
         }
+
         .hero-text {
             min-width: 0;
         }
+
         .hero h1 {
             font-size: clamp(2rem, 6vw, 3.8rem);
             font-weight: 900;
@@ -432,12 +499,14 @@
             letter-spacing: -0.5px;
             word-break: break-word;
         }
+
         .hero h1 .highlight {
             background: linear-gradient(135deg, #FFB74D, var(--primary-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .hero p {
             font-size: clamp(0.95rem, 1.6vw, 1.15rem);
             color: rgba(255, 255, 255, 0.85);
@@ -445,11 +514,13 @@
             margin-bottom: clamp(1.4rem, 3vw, 2.2rem);
             line-height: 1.8;
         }
+
         .hero-btns {
             display: flex;
             gap: clamp(10px, 2vw, 14px);
             flex-wrap: wrap;
         }
+
         .btn-hero-primary {
             padding: clamp(12px, 1.8vw, 16px) clamp(24px, 4vw, 36px);
             border-radius: 60px;
@@ -467,15 +538,18 @@
             font-family: inherit;
             min-height: 48px;
         }
+
         .btn-hero-primary:hover,
         .btn-hero-primary:focus-visible {
             transform: translateY(-4px);
             box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
         }
+
         .btn-hero-primary:focus-visible {
             outline: 2px solid #fff;
             outline-offset: 3px;
         }
+
         .btn-hero-secondary {
             padding: clamp(12px, 1.8vw, 16px) clamp(24px, 4vw, 36px);
             border-radius: 60px;
@@ -492,12 +566,14 @@
             gap: 8px;
             min-height: 48px;
         }
+
         .btn-hero-secondary:hover,
         .btn-hero-secondary:focus-visible {
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.5);
             transform: translateY(-4px);
         }
+
         .btn-hero-secondary:focus-visible {
             outline: 2px solid #fff;
             outline-offset: 3px;
@@ -507,6 +583,7 @@
             position: relative;
             min-width: 0;
         }
+
         .hero-image-wrapper {
             position: relative;
             border-radius: var(--radius);
@@ -514,6 +591,7 @@
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
             border: 2px solid rgba(255, 255, 255, 0.1);
         }
+
         .hero-image-wrapper img {
             width: 100%;
             height: clamp(240px, 40vh, 460px);
@@ -534,15 +612,18 @@
             animation: cardFloat 4s ease-in-out infinite alternate;
             pointer-events: none;
         }
+
         .hero-float-card.card-a {
             bottom: clamp(-10px, 1vw, -20px);
             left: clamp(0px, 2vw, -30px);
         }
+
         .hero-float-card.card-b {
             top: clamp(-10px, 1vw, -20px);
             right: clamp(0px, 2vw, -20px);
             animation-delay: 1s;
         }
+
         .hero-float-card .icon-circle {
             width: clamp(36px, 4vw, 44px);
             height: clamp(36px, 4vw, 44px);
@@ -554,49 +635,66 @@
             color: #fff;
             flex-shrink: 0;
         }
+
         .hero-float-card .card-text strong {
             display: block;
             font-size: clamp(0.75rem, 0.9vw, 0.85rem);
             color: var(--dark);
         }
+
         .hero-float-card .card-text span {
             font-size: clamp(0.65rem, 0.8vw, 0.75rem);
             color: var(--text-light);
         }
+
         @keyframes cardFloat {
             0% {
                 transform: translateY(0);
             }
+
             100% {
                 transform: translateY(-10px);
             }
         }
 
-        .hero-scroll {
-            position: absolute;
-            bottom: clamp(20px, 4vh, 40px);
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            color: rgba(255, 255, 255, 0.6);
-            text-align: center;
-            animation: bounce 2.5s infinite;
-        }
-        .hero-scroll i {
-            font-size: clamp(1.2rem, 1.8vw, 1.5rem);
-            display: block;
-            margin-bottom: 2px;
-        }
-        .hero-scroll span {
-            font-size: clamp(0.6rem, 0.8vw, 0.72rem);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+       .hero-scroll {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(30px, 6vh, 55px);
+    margin-bottom: -100px;
+
+    transform: translateX(-50%);
+    z-index: 20;
+
+    width: max-content;
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    animation: bounce 2.5s infinite;
+    pointer-events: none;
+}
+
+.hero-scroll i {
+    display: block;
+    margin-bottom: 3px;
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+}
+
+.hero-scroll span {
+    display: block;
+    font-size: clamp(0.55rem, 0.8vw, 0.72rem);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
         @keyframes bounce {
+
             0%,
             100% {
                 transform: translateX(-50%) translateY(0);
             }
+
             50% {
                 transform: translateX(-50%) translateY(-10px);
             }
@@ -607,6 +705,7 @@
             padding: clamp(3rem, 8vh, 6rem) clamp(12px, 4vw, 40px);
             overflow: hidden;
         }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -618,6 +717,7 @@
             text-align: center;
             margin-bottom: clamp(2rem, 5vw, 4rem);
         }
+
         .section-tag {
             display: inline-flex;
             align-items: center;
@@ -629,6 +729,7 @@
             letter-spacing: 2px;
             margin-bottom: 0.6rem;
         }
+
         .section-tag::before,
         .section-tag::after {
             content: '';
@@ -637,6 +738,7 @@
             background: var(--primary);
             border-radius: 4px;
         }
+
         .section-title {
             font-size: clamp(1.8rem, 4.5vw, 2.8rem);
             font-weight: 800;
@@ -645,6 +747,7 @@
             line-height: 1.2;
             word-break: break-word;
         }
+
         .section-desc {
             color: var(--text-light);
             max-width: 600px;
@@ -656,16 +759,19 @@
         #about {
             background: var(--section);
         }
+
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: clamp(2rem, 5vw, 4rem);
             align-items: center;
         }
+
         .about-image {
             position: relative;
             min-width: 0;
         }
+
         .about-image img {
             width: 100%;
             height: clamp(240px, 40vh, 480px);
@@ -674,6 +780,7 @@
             box-shadow: var(--shadow-lg);
             display: block;
         }
+
         .about-exp-badge {
             position: absolute;
             bottom: clamp(12px, 2vw, 24px);
@@ -685,36 +792,43 @@
             text-align: center;
             box-shadow: var(--shadow-primary);
         }
+
         .about-exp-badge .num {
             font-size: clamp(1.8rem, 3.5vw, 2.6rem);
             font-weight: 800;
             line-height: 1;
         }
+
         .about-exp-badge .label {
             font-size: clamp(0.65rem, 0.8vw, 0.78rem);
             font-weight: 500;
             opacity: .9;
         }
+
         .about-content {
             min-width: 0;
         }
+
         .about-content h3 {
             font-size: clamp(1.3rem, 2.5vw, 1.8rem);
             font-weight: 700;
             margin-bottom: 0.8rem;
             color: var(--dark);
         }
+
         .about-content p {
             color: var(--text-light);
             margin-bottom: 1rem;
             font-size: clamp(0.85rem, 1vw, 0.98rem);
         }
+
         .about-features {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: clamp(8px, 1.2vw, 14px);
             margin: 1.5rem 0;
         }
+
         .about-feat {
             display: flex;
             align-items: center;
@@ -724,6 +838,7 @@
             color: var(--dark);
             min-height: 44px;
         }
+
         .about-feat i {
             color: var(--primary);
             font-size: clamp(0.85rem, 1vw, 1rem);
@@ -744,6 +859,7 @@
             gap: clamp(10px, 1.5vw, 16px);
             margin-top: 1.5rem;
         }
+
         .stat-box {
             background: var(--bg);
             padding: clamp(14px, 1.6vw, 20px) clamp(10px, 1.2vw, 14px);
@@ -753,17 +869,20 @@
             border: 1px solid rgba(0, 0, 0, 0.04);
             transition: var(--transition);
         }
+
         .stat-box:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-md);
             border-color: var(--primary);
         }
+
         .stat-num {
             font-size: clamp(1.6rem, 3vw, 2.2rem);
             font-weight: 800;
             color: var(--primary);
             line-height: 1;
         }
+
         .stat-label {
             font-size: clamp(0.65rem, 0.8vw, 0.8rem);
             color: var(--text-light);
@@ -776,6 +895,7 @@
             grid-template-columns: repeat(auto-fill, minmax(clamp(200px, 22vw, 280px), 1fr));
             gap: clamp(16px, 2vw, 24px);
         }
+
         .product-card {
             background: var(--bg);
             border-radius: var(--radius);
@@ -788,11 +908,13 @@
             flex-direction: column;
             min-width: 0;
         }
+
         .product-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-lg);
             border-color: rgba(230, 81, 0, 0.15);
         }
+
         .product-card .img-wrap {
             position: relative;
             overflow: hidden;
@@ -800,6 +922,7 @@
             background: #f5f5f5;
             flex-shrink: 0;
         }
+
         .product-card .img-wrap img {
             width: 100%;
             height: 100%;
@@ -807,12 +930,15 @@
             transition: transform .6s var(--ease), opacity .35s ease;
             display: block;
         }
+
         .product-card .img-wrap img.product-rotating.is-changing {
             opacity: 0;
         }
+
         .product-card:hover .img-wrap img {
             transform: scale(1.06);
         }
+
         .product-card .brand-badge {
             position: absolute;
             left: 12px;
@@ -827,6 +953,7 @@
             box-shadow: 0 4px 14px rgba(0, 0, 0, .10);
             pointer-events: none;
         }
+
         .product-card .card-body {
             padding: clamp(14px, 1.8vw, 20px);
             flex: 1;
@@ -834,6 +961,7 @@
             flex-direction: column;
             min-width: 0;
         }
+
         .product-card .card-cat {
             font-size: clamp(0.6rem, 0.7vw, 0.72rem);
             text-transform: uppercase;
@@ -841,6 +969,7 @@
             color: var(--primary);
             font-weight: 600;
         }
+
         .product-card h4 {
             font-size: clamp(0.9rem, 1.2vw, 1.05rem);
             font-weight: 600;
@@ -848,12 +977,14 @@
             color: var(--dark);
             word-break: break-word;
         }
+
         .product-card p {
             font-size: clamp(0.75rem, 0.9vw, 0.85rem);
             color: var(--text-light);
             margin-bottom: 10px;
             flex: 1;
         }
+
         .product-card .card-footer {
             display: flex;
             align-items: center;
@@ -861,11 +992,13 @@
             flex-wrap: wrap;
             gap: 8px;
         }
+
         .product-card .price {
             font-size: clamp(0.9rem, 1.2vw, 1.1rem);
             font-weight: 700;
             color: var(--primary);
         }
+
         .product-card .btn-quote {
             background: var(--primary-pale);
             color: var(--primary);
@@ -883,12 +1016,14 @@
             gap: 6px;
             white-space: nowrap;
         }
+
         .product-card .btn-quote:hover,
         .product-card .btn-quote:focus-visible {
             background: var(--primary);
             color: #fff;
             transform: translateY(-2px);
         }
+
         .product-card .btn-quote:focus-visible {
             outline: 2px solid var(--primary);
             outline-offset: 2px;
@@ -898,11 +1033,13 @@
         #services {
             background: var(--section);
         }
+
         .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(clamp(180px, 20vw, 260px), 1fr));
             gap: clamp(16px, 2vw, 24px);
         }
+
         .service-card {
             background: var(--bg);
             padding: clamp(20px, 3vw, 32px) clamp(16px, 2vw, 24px);
@@ -920,6 +1057,7 @@
             align-items: center;
             justify-content: center;
         }
+
         .service-card::before {
             content: '';
             position: absolute;
@@ -932,17 +1070,21 @@
             transform-origin: left;
             transition: transform .4s var(--ease);
         }
+
         .service-card:hover::before {
             transform: scaleX(1);
         }
+
         .service-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-md);
         }
+
         .service-card:focus-visible {
             outline: 2px solid var(--primary);
             outline-offset: 2px;
         }
+
         .service-icon {
             width: clamp(50px, 6vw, 64px);
             height: clamp(50px, 6vw, 64px);
@@ -957,16 +1099,19 @@
             transition: var(--transition);
             flex-shrink: 0;
         }
+
         .service-card:hover .service-icon {
             background: var(--primary);
             color: #fff;
         }
+
         .service-card h4 {
             font-size: clamp(0.9rem, 1.2vw, 1.05rem);
             font-weight: 600;
             color: var(--dark);
             margin-bottom: 6px;
         }
+
         .service-card p {
             font-size: clamp(0.75rem, 0.9vw, 0.85rem);
             color: var(--text-light);
@@ -977,6 +1122,7 @@
         #brands {
             padding-bottom: clamp(1rem, 4vh, 2rem);
         }
+
         .brand-track {
             display: flex;
             gap: clamp(12px, 1.8vw, 24px);
@@ -987,6 +1133,7 @@
             mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
+
         .brand-slide {
             display: flex;
             gap: clamp(12px, 1.8vw, 24px);
@@ -994,6 +1141,7 @@
             flex-shrink: 0;
             will-change: transform;
         }
+
         .brand-item {
             width: clamp(100px, 14vw, 160px);
             height: clamp(60px, 8vh, 80px);
@@ -1009,11 +1157,13 @@
             overflow: hidden;
             padding: clamp(6px, 1vw, 10px);
         }
+
         .brand-item:hover {
             border-color: var(--primary);
             box-shadow: var(--shadow-md);
             transform: scale(1.04);
         }
+
         .brand-item .brand-fallback {
             font-size: clamp(0.55rem, 0.8vw, 0.7rem);
             font-weight: 600;
@@ -1023,10 +1173,12 @@
             letter-spacing: 0.5px;
             word-break: break-word;
         }
+
         @keyframes scrollBrands {
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(-50%);
             }
@@ -1036,12 +1188,14 @@
         #gallery {
             background: var(--section);
         }
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-auto-rows: clamp(140px, 20vh, 220px);
             gap: clamp(10px, 1.2vw, 16px);
         }
+
         .gallery-item {
             overflow: hidden;
             border-radius: var(--radius-sm);
@@ -1050,12 +1204,15 @@
             background: #e0e0e0;
             min-height: 0;
         }
+
         .gallery-item.tall {
             grid-row: span 2;
         }
+
         .gallery-item.wide {
             grid-column: span 2;
         }
+
         .gallery-item img {
             width: 100%;
             height: 100%;
@@ -1063,9 +1220,11 @@
             transition: transform .6s var(--ease);
             display: block;
         }
+
         .gallery-item:hover img {
             transform: scale(1.06);
         }
+
         .gallery-item .gallery-overlay {
             position: absolute;
             inset: 0;
@@ -1076,19 +1235,23 @@
             opacity: 0;
             transition: var(--transition);
         }
+
         .gallery-item:hover .gallery-overlay {
             opacity: 1;
         }
+
         .gallery-item:focus-visible {
             outline: 2px solid var(--primary);
             outline-offset: 2px;
         }
+
         .gallery-overlay i {
             color: #fff;
             font-size: clamp(1.2rem, 2vw, 1.8rem);
             transform: scale(0.5);
             transition: var(--transition);
         }
+
         .gallery-item:hover .gallery-overlay i {
             transform: scale(1);
         }
@@ -1108,10 +1271,12 @@
             backdrop-filter: blur(8px);
             padding: 20px;
         }
+
         .lightbox.active {
             opacity: 1;
             visibility: visible;
         }
+
         .lightbox img {
             max-width: 90vw;
             max-height: 80vh;
@@ -1120,9 +1285,11 @@
             transform: scale(0.9);
             transition: transform .4s var(--ease);
         }
+
         .lightbox.active img {
             transform: scale(1);
         }
+
         .lightbox-close {
             position: absolute;
             top: clamp(12px, 3vh, 24px);
@@ -1140,10 +1307,12 @@
             transition: var(--transition);
             border: none;
         }
+
         .lightbox-close:hover,
         .lightbox-close:focus-visible {
             background: rgba(255, 255, 255, 0.2);
         }
+
         .lightbox-close:focus-visible {
             outline: 2px solid #fff;
             outline-offset: 3px;
@@ -1166,17 +1335,21 @@
             transition: var(--transition);
             border: none;
         }
+
         .lightbox-nav:hover,
         .lightbox-nav:focus-visible {
             background: rgba(255, 255, 255, 0.2);
         }
+
         .lightbox-nav:focus-visible {
             outline: 2px solid #fff;
             outline-offset: 3px;
         }
+
         .lightbox-prev {
             left: clamp(10px, 2vw, 24px);
         }
+
         .lightbox-next {
             right: clamp(10px, 2vw, 24px);
         }
@@ -1188,12 +1361,14 @@
             gap: clamp(2rem, 5vw, 4rem);
             align-items: start;
         }
+
         .contact-info-cards {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: clamp(10px, 1.2vw, 16px);
             margin-bottom: 1.5rem;
         }
+
         .contact-card {
             background: var(--primary-pale);
             padding: clamp(14px, 1.8vw, 20px);
@@ -1203,10 +1378,12 @@
             gap: 12px;
             transition: var(--transition);
         }
+
         .contact-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-md);
         }
+
         .contact-card .ci-icon {
             width: clamp(38px, 4vw, 44px);
             height: clamp(38px, 4vw, 44px);
@@ -1220,11 +1397,13 @@
             font-size: clamp(0.85rem, 1vw, 1rem);
             flex-shrink: 0;
         }
+
         .contact-card strong {
             display: block;
             font-size: clamp(0.8rem, 0.9vw, 0.9rem);
             color: var(--dark);
         }
+
         .contact-card span {
             font-size: clamp(0.7rem, 0.8vw, 0.82rem);
             color: var(--text-light);
@@ -1238,6 +1417,7 @@
             height: clamp(180px, 30vh, 220px);
             background: #eee;
         }
+
         .contact-map iframe {
             width: 100%;
             height: 100%;
@@ -1252,11 +1432,13 @@
             box-shadow: var(--shadow-md);
             border: 1px solid rgba(0, 0, 0, 0.04);
         }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: clamp(10px, 1.2vw, 16px);
         }
+
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -1271,16 +1453,19 @@
             outline: none;
             min-height: 48px;
         }
+
         .contact-form input:focus,
         .contact-form textarea:focus {
             border-color: var(--primary);
             box-shadow: 0 0 0 4px rgba(230, 81, 0, 0.08);
             background: #fff;
         }
+
         .contact-form textarea {
             resize: vertical;
             min-height: 100px;
         }
+
         .contact-form button {
             width: 100%;
             padding: clamp(14px, 1.8vw, 16px);
@@ -1300,11 +1485,13 @@
             justify-content: center;
             gap: 8px;
         }
+
         .contact-form button:hover,
         .contact-form button:focus-visible {
             transform: translateY(-3px);
             box-shadow: 0 14px 40px rgba(230, 81, 0, 0.35);
         }
+
         .contact-form button:focus-visible {
             outline: 2px solid var(--primary);
             outline-offset: 3px;
@@ -1315,8 +1502,8 @@
             background: var(--dark2);
             color: #aaa;
             padding: clamp(3rem, 8vh, 5rem) clamp(12px, 4vw, 40px) 10px;
-            /* ← bottom 10px gap */
         }
+
         .footer-top {
             max-width: 1400px;
             margin: 0 auto;
@@ -1326,23 +1513,27 @@
             padding-bottom: clamp(2rem, 4vh, 3rem);
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
+
         .footer-brand .logo-text {
             color: #fff;
             font-size: clamp(1rem, 2vw, 1.3rem);
             margin-bottom: 10px;
             display: inline-block;
         }
+
         .footer-brand p {
             font-size: clamp(0.8rem, 0.9vw, 0.88rem);
             line-height: 1.8;
             color: #888;
             margin-bottom: 1.2rem;
         }
+
         .footer-socials {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
+
         .footer-socials a {
             width: clamp(38px, 4vw, 44px);
             height: clamp(38px, 4vw, 44px);
@@ -1357,12 +1548,14 @@
             text-decoration: none;
             font-size: clamp(0.9rem, 1.2vw, 1rem);
         }
+
         .footer-socials a:hover,
         .footer-socials a:focus-visible {
             background: var(--primary);
             color: #fff;
             transform: translateY(-3px);
         }
+
         .footer-socials a:focus-visible {
             outline: 2px solid var(--primary);
             outline-offset: 2px;
@@ -1376,6 +1569,7 @@
             position: relative;
             padding-bottom: 10px;
         }
+
         .footer-col h4::after {
             content: '';
             position: absolute;
@@ -1386,6 +1580,7 @@
             background: var(--primary);
             border-radius: 4px;
         }
+
         .footer-col a {
             color: #888;
             text-decoration: none;
@@ -1397,16 +1592,19 @@
             display: flex;
             align-items: center;
         }
+
         .footer-col a:hover,
         .footer-col a:focus-visible {
             color: var(--primary);
             padding-left: 4px;
         }
+
         .footer-col a:focus-visible {
             outline: 2px solid var(--primary);
             outline-offset: 2px;
             border-radius: 4px;
         }
+
         .footer-col p {
             font-size: clamp(0.8rem, 0.9vw, 0.88rem);
             color: #888;
@@ -1416,6 +1614,7 @@
             margin-bottom: 8px;
             word-break: break-word;
         }
+
         .footer-col p i {
             color: var(--primary);
             width: 16px;
@@ -1436,6 +1635,7 @@
             flex-wrap: wrap;
             gap: 8px;
         }
+
         .footer-bottom a {
             color: var(--primary);
             text-decoration: none;
@@ -1465,15 +1665,18 @@
             align-items: center;
             justify-content: center;
         }
+
         #backTop.visible {
             opacity: 1;
             visibility: visible;
         }
+
         #backTop:hover,
         #backTop:focus-visible {
             transform: translateY(-4px);
             box-shadow: 0 14px 40px rgba(230, 81, 0, 0.4);
         }
+
         #backTop:focus-visible {
             outline: 2px solid #fff;
             outline-offset: 3px;
@@ -1485,6 +1688,7 @@
             transform: translateY(40px);
             transition: opacity .7s var(--ease), transform .7s var(--ease);
         }
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
@@ -1492,35 +1696,56 @@
 
         /* ── responsive ── */
         @media (max-width: 1100px) {
+              .hero-scroll {
+        display: none;
+    }
+            .logo-img {
+                width: clamp(100px, 6vw, 42px);
+                height: clamp(100px, 6vw, 42px);
+                margin-left: -30px;
+                
+            }
+
+            .logo-text {
+                font-size: clamp(0.6rem, 1.8vw, 0.85rem);
+            }
             .hero-inner {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
+
             .hero p {
                 margin: 0 auto 1.8rem;
             }
+
             .hero-btns {
                 justify-content: center;
             }
+
             .hero-right {
                 max-width: 500px;
                 margin: 0 auto;
             }
+
             .hero-float-card.card-a {
                 left: 10px;
                 bottom: -10px;
             }
+
             .hero-float-card.card-b {
                 right: 10px;
                 top: -10px;
             }
+
             .gallery-grid {
                 grid-template-columns: repeat(3, 1fr);
                 grid-auto-rows: clamp(120px, 18vh, 180px);
             }
+
             .gallery-item.wide {
                 grid-column: span 1;
             }
+
             .footer-top {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
@@ -1528,45 +1753,72 @@
         }
 
         @media (max-width: 820px) {
+              .hero-scroll {
+        display: none;
+    }
+            .logo-img {
+                width: clamp(100px, 6vw, 42px);
+                height: clamp(100px, 6vw, 42px);
+                margin-left: -30px;
+                
+            }
+
+            .logo-text {
+                font-size: clamp(0.6rem, 1.8vw, 0.85rem);
+            }
             .about-stats {
                 grid-template-columns: 1fr 1fr;
             }
+
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+
             .contact-info-cards {
                 grid-template-columns: 1fr 1fr;
             }
+
             .form-row {
                 grid-template-columns: 1fr;
             }
+
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
                 grid-auto-rows: clamp(120px, 20vh, 160px);
             }
+
             .gallery-item.tall {
                 grid-row: span 1;
             }
         }
 
         @media (max-width: 768px) {
+              .hero-scroll {
+        display: none;
+    }
             section {
                 padding: clamp(2rem, 6vh, 4rem) clamp(12px, 3vw, 20px);
             }
+
             :root {
                 --header-h: 64px;
             }
+
             .nav-wrap {
                 padding: 0 clamp(8px, 2vw, 16px);
                 min-height: var(--header-h);
             }
+
             .logo-img {
-                width: clamp(36px, 7vw, 48px);
-                height: clamp(36px, 7vw, 48px);
+                width: clamp(100px, 6vw, 42px);
+                height: clamp(100px, 6vw, 42px);
+                margin-left: -30px;
+                
             }
+
             .logo-text {
-                font-size: clamp(0.7rem, 2vw, 0.95rem);
+                font-size: clamp(0.6rem, 1.8vw, 0.85rem);
             }
 
             .nav-links {
@@ -1583,14 +1835,17 @@
                 border-top: 1px solid rgba(0, 0, 0, 0.06);
                 align-items: stretch;
             }
+
             .nav-links.active {
                 display: flex;
             }
+
             .nav-links a {
                 padding: 10px 0;
                 min-height: 44px;
                 font-size: 1rem;
             }
+
             .nav-links a::after {
                 display: none;
             }
@@ -1598,10 +1853,12 @@
             .hamburger {
                 display: flex;
             }
+
             .btn-call-nav,
             .btn-wa-nav {
                 display: none;
             }
+
             .nav-right .nav-icon-btn {
                 width: 38px;
                 height: 38px;
@@ -1613,139 +1870,187 @@
             .hero {
                 padding: calc(var(--header-h) + 1rem) clamp(12px, 3vw, 20px) 3rem;
             }
+
             .hero h1 {
                 font-size: clamp(1.6rem, 6vw, 2.4rem);
             }
+
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+
             .about-image img {
                 height: clamp(200px, 35vh, 300px);
             }
+
             .about-features {
                 grid-template-columns: 1fr 1fr;
             }
+
             .product-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             .service-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             .footer-top {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
             }
+
             .section-title {
                 font-size: clamp(1.5rem, 4vw, 2rem);
             }
+
             .hero-float-card {
                 display: none;
             }
+
+            .whatsapp-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .whatsapp-float {
+                right: 20px;
+                bottom: 95px;
+            }
+            
         }
 
         @media (max-width: 600px) {
+              .hero-scroll {
+        display: none;
+    }
             .about-features {
                 grid-template-columns: 1fr;
             }
+
             .contact-info-cards {
                 grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 480px) {
+              .hero-scroll {
+        display: none;
+    }
             .hero h1 {
                 font-size: clamp(1.3rem, 5vw, 1.8rem);
             }
+
             .product-grid {
                 grid-template-columns: 1fr;
             }
+
             .service-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
             .gallery-grid {
                 grid-template-columns: 1fr 1fr;
                 grid-auto-rows: clamp(100px, 18vh, 140px);
             }
+
             .about-stats {
                 grid-template-columns: 1fr 1fr;
                 gap: 8px;
             }
+
             .logo-text {
-                font-size: 0.6rem;
+                font-size: 0.55rem;
+                 margin-left: -20px;
             }
+
+            .logo-img {
+                width: 100px;
+                height: 100px;
+                margin-left: -30px;
+            }
+
             .brand-item {
                 width: clamp(70px, 20vw, 100px);
                 height: clamp(48px, 6vh, 60px);
             }
+
         }
 
         @media (max-width: 375px) {
+              .hero-scroll {
+        display: none;
+    }
             .hero h1 {
                 font-size: 1.2rem;
             }
+
             .service-grid {
                 grid-template-columns: 1fr;
             }
+
             .gallery-grid {
                 grid-template-columns: 1fr;
                 grid-auto-rows: 160px;
             }
+
             .about-stats {
                 grid-template-columns: 1fr 1fr;
             }
+
             .section-title {
                 font-size: 1.3rem;
             }
-            .logo-text {
-                font-size: 0.5rem;
-            }
-            .logo-img {
-                width: 30px;
-                height: 30px;
-            }
+
+            
             .btn-hero-primary,
             .btn-hero-secondary {
                 font-size: 0.75rem;
                 padding: 10px 18px;
                 min-height: 40px;
             }
-            .hero-scroll span {
-                font-size: 0.5rem;
-            }
+
+           
         }
 
         @media (max-width: 320px) {
+       
+    .hero-scroll {
+        display: none;
+    }
+
             .hero h1 {
                 font-size: 1rem;
             }
+
             .hero p {
                 font-size: 0.8rem;
             }
+
             .section-title {
                 font-size: 1.1rem;
             }
+
             .btn-hero-primary,
             .btn-hero-secondary {
                 font-size: 0.65rem;
                 padding: 8px 14px;
                 min-height: 36px;
             }
-            .logo-text {
-                font-size: 0.45rem;
-            }
-            .logo-img {
-                width: 26px;
-                height: 26px;
-            }
+
+         
+
             .nav-wrap {
                 padding: 0 6px;
                 gap: 4px;
             }
+
             .nav-right .nav-icon-btn {
                 width: 32px;
                 height: 32px;
@@ -1753,20 +2058,24 @@
                 min-height: 32px;
                 font-size: 0.8rem;
             }
+
             .hamburger span {
                 width: 20px;
                 height: 2px;
             }
+
             .hamburger {
                 min-width: 36px;
                 min-height: 36px;
                 padding: 6px;
             }
+
             .toast-container {
                 top: 60px;
                 right: 8px;
                 max-width: 85vw;
             }
+
             .toast {
                 font-size: 0.7rem;
                 padding: 10px 14px;
@@ -1778,6 +2087,7 @@
             background: #0d0d0d;
             color: #e0e0e0;
         }
+
         .dark-mode .product-card,
         .dark-mode .service-card,
         .dark-mode .stat-box,
@@ -1786,79 +2096,122 @@
             color: #e0e0e0;
             border-color: #2a2a2a;
         }
+
         .dark-mode .contact-card {
             background: #1a1a1a;
         }
+
         .dark-mode .contact-card strong {
             color: #e0e0e0;
         }
+
         .dark-mode header {
             background: rgba(13, 13, 13, 0.92);
             border-bottom-color: #222;
         }
+
         .dark-mode .nav-links a {
             color: #ccc;
         }
+
         .dark-mode .about-content h3,
         .dark-mode .product-card h4,
         .dark-mode .service-card h4,
         .dark-mode .section-title {
             color: #f0f0f0;
         }
+
         .dark-mode #about,
         .dark-mode #services,
         .dark-mode #gallery {
             background: #111;
         }
+
         .dark-mode .section-desc {
             color: #999;
         }
+
         .dark-mode .contact-form input,
         .dark-mode .contact-form textarea {
             background: #111;
             border-color: #333;
             color: #e0e0e0;
         }
+
         .dark-mode .brand-item {
             background: #1a1a1a;
             border-color: #2a2a2a;
         }
+
         .dark-mode .product-card .card-body {
             background: #1a1a1a;
         }
+
         .dark-mode .product-card .img-wrap {
             background: #111;
         }
+
         .dark-mode .about-features .about-feat {
             color: #ddd;
         }
+
         .dark-mode .hero-float-card {
             background: rgba(30, 30, 30, 0.95);
         }
+
         .dark-mode .hero-float-card .card-text strong {
             color: #f0f0f0;
         }
+
         .dark-mode .hero-float-card .card-text span {
             color: #aaa;
         }
+
         .dark-mode .brand-track {
             mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
+
         .dark-mode .footer-bottom {
             border-top-color: rgba(255, 255, 255, 0.06);
         }
 
-        /* ── ensure 10px bottom gap on all screen sizes ── */
         footer {
             padding-bottom: 10px;
         }
-        /* extra safety for very small screens */
+
         @media (max-width: 480px) {
             footer {
                 padding-bottom: 10px !important;
             }
         }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 80px;
+            right: clamp(16px, 3vw, 32px);
+            width: clamp(48px, 5vw, 52px);
+            height: clamp(48px, 5vw, 52px);
+            max-width: 60px;
+            background: #1B9E4B;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128C7E;
+        }
+
     </style>
 </head>
 
@@ -1870,7 +2223,8 @@
     </div>
 
     <!-- PROGRESS -->
-    <div id="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Page scroll progress"></div>
+    <div id="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+    aria-label="Page scroll progress"></div>
 
     <!-- TOAST CONTAINER -->
     <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
@@ -1878,8 +2232,10 @@
     <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery lightbox">
         <button class="lightbox-close" id="lbClose" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
-        <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
-        <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+        <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous image"><i
+            class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next image"><i
+            class="fas fa-chevron-right"></i></button>
         <img src="" alt="Gallery image" id="lbImg">
     </div>
 
@@ -1888,7 +2244,8 @@
         <div class="nav-wrap">
 
             <a href="#home" class="logo-wrap" aria-label="Royal Touch Computer TR - Home">
-                <img src="images/Logoo.jpg" alt="Royal Touch Computer TR logo" class="logo-img" onerror="this.style.display='none'">
+                <img src="images/Logoo.jpg" alt="Royal Touch Computer TR logo" class="logo-img"
+                onerror="this.style.display='none'">
                 <span class="logo-text">Royal Touch Computer TR</span>
             </a>
 
@@ -1901,56 +2258,64 @@
             </ul>
 
             <div class="nav-right">
-                <button class="btn-nav btn-call-nav" onclick="showToast('Calling +971 567113493...','fas fa-phone-alt')" aria-label="Call us">
-                    <i class="fas fa-phone-alt" aria-hidden="true"></i> <span class="nav-btn-label">Call</span>
-                </button>
-                <button class="btn-nav btn-wa-nav" onclick="showToast('Opening WhatsApp...','fab fa-whatsapp')" aria-label="Contact via WhatsApp">
-                    <i class="fab fa-whatsapp" aria-hidden="true"></i> <span class="nav-btn-label">WhatsApp</span>
-                </button>
-                <button class="nav-icon-btn" id="darkToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-                    <i class="fas fa-moon" aria-hidden="true"></i>
-                </button>
-                <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
+                <button class="btn-nav btn-call-nav" onclick="showToast('Calling +971 567113493...','fas fa-phone-alt')"
+                aria-label="Call us">
+                <i class="fas fa-phone-alt" aria-hidden="true"></i> <span class="nav-btn-label">Call</span>
+            </button>
+            <button class="btn-nav btn-wa-nav" onclick="showToast('Opening WhatsApp...','fab fa-whatsapp')"
+            aria-label="Contact via WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> <span class="nav-btn-label">WhatsApp</span>
+        </button>
+        <button class="nav-icon-btn" id="darkToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="navLinks"
+        aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+    </button>
+</div>
 
-        </div>
-    </header>
+</div>
+</header>
 
-    <!-- HERO with Video Background -->
-    <section id="home" class="hero" aria-label="Hero banner">
-        <div class="hero-bg">
-            <video autoplay muted loop playsinline preload="auto"
-            poster="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1920&q=80"
-            id="heroVideo" aria-label="Background video showing technology and computers">
-            <source src="images/herovide.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="fallback-color" id="heroFallback"></div>
-        <div class="hero-overlay"></div>
-    </div>
+<!-- HERO with Video Background -->
+<section id="home" class="hero" aria-label="Hero banner">
+    <div class="hero-bg">
+        <video autoplay muted loop playsinline preload="auto"
+        poster="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1920&q=80" id="heroVideo"
+        aria-label="Background video showing technology and computers">
+        <source src="images/herovide.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="fallback-color" id="heroFallback"></div>
+    <div class="hero-overlay"></div>
+</div>
 
-    <div class="hero-inner container">
-        <div class="hero-text">
-            <h1>Premium <span class="highlight">Computer &amp; Electronics</span> Solutions</h1>
-            <p>Discover cutting-edge IT products, expert repair services, and comprehensive networking solutions — all under
+<div class="hero-inner container">
+    <div class="hero-text">
+        <h1>Premium <span class="highlight">Computer &amp; Electronics</span> Solutions</h1>
+        <p>Discover cutting-edge IT products, expert repair services, and comprehensive networking solutions —
+            all under
             one roof at Royal Touch Computer TR.</p>
-            <div class="hero-btns">
-                <button class="btn-hero-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})" aria-label="Explore our products">
-                    <i class="fas fa-arrow-right" aria-hidden="true"></i> Explore Products
-                </button>
-                <button class="btn-hero-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Get in touch with us">
-                    <i class="fas fa-envelope" aria-hidden="true"></i> Get in Touch
-                </button>
-            </div>
-        </div>
+        <div class="hero-btns">
+            <button class="btn-hero-primary"
+            onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})"
+            aria-label="Explore our products">
+            <i class="fas fa-arrow-right" aria-hidden="true"></i> Explore Products
+        </button>
+        <button class="btn-hero-secondary"
+        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+        aria-label="Get in touch with us">
+        <i class="fas fa-envelope" aria-hidden="true"></i> Get in Touch
+    </button>
+</div>
+</div>
 
-        <div class="hero-scroll" aria-hidden="true">
-            <span>Scroll</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </div>
+<div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <i class="fas fa-chevron-down"></i>
+</div>
+</div>
 </section>
 
 <!-- ABOUT -->
@@ -1963,7 +2328,8 @@
         </div>
         <div class="about-grid">
             <div class="about-image reveal">
-                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80" alt="Royal Touch Computer TR office and team workspace" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80"
+                alt="Royal Touch Computer TR office and team workspace" loading="lazy">
                 <div class="about-exp-badge">
                     <div class="num">15+</div>
                     <div class="label">Years Experience</div>
@@ -1971,10 +2337,13 @@
             </div>
             <div class="about-content reveal">
                 <h3>Your Reliable Technology Partner</h3>
-                <p>Royal Touch Computer TR has been a premier IT solutions provider since 2012, delivering cutting-edge
-                computer electronics, professional repair, and enterprise networking services across the region.</p>
-                <p>We combine deep technical expertise with a genuine passion for innovation, ensuring every client receives
-                personalized solutions that drive real results.</p>
+                <p>Royal Touch Computer TR has been a premier IT solutions provider since 2012, delivering
+                    cutting-edge
+                    computer electronics, professional repair, and enterprise networking services across the region.
+                </p>
+                <p>We combine deep technical expertise with a genuine passion for innovation, ensuring every client
+                    receives
+                    personalized solutions that drive real results.</p>
                 <div class="about-features">
                     <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> Genuine Products</div>
                     <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> Expert Technicians</div>
@@ -2086,11 +2455,7 @@
                 <div class="contact-map">
                     <iframe
                     src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3801.6386896593285!2d55.38438247895027!3d25.351762429873027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDIxJzA2LjgiTiA1NcKwMjMnMTMuNSJF!5e0!3m2!1sen!2sae!4v1786448128429!5m2!1sen!2sae"
-                    width="600"
-                    height="450"
-                    style="border:0;"
-                    allowfullscreen
-                    loading="lazy"
+                    width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
                     referrerpolicy="strict-origin-when-cross-origin"
                     title="Google Maps location of Royal Touch Computer TR">
                 </iframe>
@@ -2098,18 +2463,21 @@
         </div>
         <form class="contact-form reveal" id="contactForm" novalidate aria-label="Contact form">
             <div class="form-row">
-                <input type="text" placeholder="Your Name" required aria-required="true" aria-label="Your name">
-                <input type="email" placeholder="Email Address" required aria-required="true" aria-label="Email address">
+                <input type="text" id="formName" placeholder="Your Name" required aria-required="true" aria-label="Your name">
+                <input type="email" id="formEmail" placeholder="Email Address" required aria-required="true"
+                aria-label="Email address">
             </div>
             <div class="form-row">
-                <input type="tel" placeholder="Phone Number" aria-label="Phone number">
-                <input type="text" placeholder="Subject" aria-label="Subject">
+                <input type="tel" id="formPhone" placeholder="Phone Number" aria-label="Phone number">
+                <input type="text" id="formSubject" placeholder="Subject" aria-label="Subject">
             </div>
-            <textarea rows="5" placeholder="Your Message..." required aria-required="true" aria-label="Your message"></textarea>
-            <button type="submit" aria-label="Send message"><i class="fas fa-paper-plane" aria-hidden="true"></i>&nbsp; Send Message</button>
-        </form>
+            <textarea id="formMessage" rows="5" placeholder="Your Message..." required aria-required="true"
+            aria-label="Your message"></textarea>
+            <button type="submit" aria-label="Send message"><i class="fas fa-paper-plane"
+                aria-hidden="true"></i>&nbsp; Send Message</button>
+            </form>
+        </div>
     </div>
-</div>
 </section>
 
 <!-- FOOTER -->
@@ -2117,11 +2485,13 @@
     <div class="footer-top">
         <div class="footer-brand">
             <a href="#home" class="logo-wrap" aria-label="Royal Touch Computer TR - Home">
-                <img src="images/Logoo.jpg" alt="Royal Touch Computer TR logo" class="logo-img" onerror="this.style.display='none'">
+                <img src="images/Logoo.jpg" alt="Royal Touch Computer TR logo" class="logo-img"
+                onerror="this.style.display='none'">
                 <span class="logo-text">Royal Touch Computer TR</span>
             </a>
-            <p>Your trusted IT partner delivering premium computer electronics, expert repair, and comprehensive networking
-            solutions since 2012.</p>
+            <p>Your trusted IT partner delivering premium computer electronics, expert repair, and comprehensive
+                networking
+                solutions since 2012.</p>
             <div class="footer-socials">
                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                 <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
@@ -2159,16 +2529,22 @@
     </div>
 </footer>
 
+<!-- Whatsapp Button-->
+<a href="https://wa.me/971568249900?text=Hi%20Royal%20Touch%20Computer!%20I%20need%20information%20about%20your%20services."
+class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+<i class="fab fa-whatsapp"></i>
+</a>
+
 <!-- BACK TO TOP -->
 <button id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
 
 <script>
-    (function() {
+    (function () {
         'use strict';
 
         // ── LOADER ──
-        window.addEventListener('load', function() {
-            setTimeout(function() {
+        window.addEventListener('load', function () {
+            setTimeout(function () {
                 document.getElementById('loader').classList.add('hide');
             }, 400);
         });
@@ -2179,14 +2555,14 @@
             var toast = document.createElement('div');
             toast.className = 'toast';
             toast.innerHTML = '<i class="' + (icon || 'fas fa-check-circle') + '" aria-hidden="true"></i><span>' + msg +
-                '</span>';
+            '</span>';
             container.appendChild(toast);
-            requestAnimationFrame(function() {
+            requestAnimationFrame(function () {
                 toast.classList.add('show');
             });
-            setTimeout(function() {
+            setTimeout(function () {
                 toast.classList.remove('show');
-                setTimeout(function() {
+                setTimeout(function () {
                     if (toast.parentNode) toast.remove();
                 }, 400);
             }, 3000);
@@ -2198,7 +2574,7 @@
         var header = document.getElementById('header');
         var backTop = document.getElementById('backTop');
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             var s = window.scrollY;
             var h = document.documentElement.scrollHeight - window.innerHeight;
             var pct = h > 0 ? (s / h * 100) : 0;
@@ -2209,7 +2585,7 @@
         }, { passive: true });
 
         // ── BACK TO TOP ──
-        backTop.addEventListener('click', function() {
+        backTop.addEventListener('click', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
@@ -2217,15 +2593,15 @@
         var hamburger = document.getElementById('hamburger');
         var navLinks = document.getElementById('navLinks');
 
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function () {
             var expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
             this.setAttribute('aria-expanded', expanded);
             this.classList.toggle('active');
             navLinks.classList.toggle('active');
         });
 
-        navLinks.querySelectorAll('a').forEach(function(a) {
-            a.addEventListener('click', function() {
+        navLinks.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () {
                 hamburger.setAttribute('aria-expanded', 'false');
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
@@ -2237,7 +2613,7 @@
         var darkMode = false;
         var darkIcon = darkToggle.querySelector('i');
 
-        darkToggle.addEventListener('click', function() {
+        darkToggle.addEventListener('click', function () {
             darkMode = !darkMode;
             document.body.classList.toggle('dark-mode', darkMode);
             if (darkMode) {
@@ -2254,26 +2630,26 @@
         var heroFallback = document.getElementById('heroFallback');
 
         if (heroVideo) {
-            heroVideo.addEventListener('error', function() {
+            heroVideo.addEventListener('error', function () {
                 heroFallback.classList.add('show');
                 this.style.display = 'none';
             });
 
-            heroVideo.addEventListener('stalled', function() {
+            heroVideo.addEventListener('stalled', function () {
                 if (this.networkState === 3) {
                     heroFallback.classList.add('show');
                     this.style.display = 'none';
                 }
             });
 
-            var videoTimeout = setTimeout(function() {
+            var videoTimeout = setTimeout(function () {
                 if (heroVideo.paused && heroVideo.currentTime === 0) {
                     heroFallback.classList.add('show');
                     heroVideo.style.display = 'none';
                 }
             }, 5000);
 
-            heroVideo.addEventListener('playing', function() {
+            heroVideo.addEventListener('playing', function () {
                 clearTimeout(videoTimeout);
             });
         }
@@ -2283,186 +2659,333 @@
             name: 'Laptops',
             cat: 'Mobile Computing',
             desc: 'Business, student & gaming laptops from leading brands',
-            variants: [
-                { brand: 'Dell', name: 'Dell Laptop',
-                    img: 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=700&q=85' },
-                { brand: 'HP', name: 'HP Laptop',
-                    img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700&q=85' },
-                { brand: 'Lenovo', name: 'Lenovo Laptop',
-                    img: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=700&q=85' },
-                { brand: 'ASUS', name: 'ASUS Laptop',
-                    img: 'https://images.unsplash.com/photo-1602080858428-57174f9431cf?w=700&q=85' },
-                { brand: 'Acer', name: 'Acer Laptop',
-                    img: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=700&q=85' },
-                { brand: 'Samsung', name: 'Samsung Laptop',
-                    img: 'https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=700&q=85' },
-                { brand: 'LG', name: 'LG Laptop',
-                    img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700&q=85' }
+            variants: [{
+                    brand: 'Dell',
+                    name: 'Dell Laptop',
+                    img: 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=700&q=85'
+                },
+                {
+                    brand: 'HP',
+                    name: 'HP Laptop',
+                    img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700&q=85'
+                },
+                {
+                    brand: 'Lenovo',
+                    name: 'Lenovo Laptop',
+                    img: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=700&q=85'
+                },
+                {
+                    brand: 'ASUS',
+                    name: 'ASUS Laptop',
+                    img: 'https://images.unsplash.com/photo-1602080858428-57174f9431cf?w=700&q=85'
+                },
+                {
+                    brand: 'Acer',
+                    name: 'Acer Laptop',
+                    img: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=700&q=85'
+                },
+                {
+                    brand: 'Samsung',
+                    name: 'Samsung Laptop',
+                    img: 'https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=700&q=85'
+                },
+                {
+                    brand: 'LG',
+                    name: 'LG Laptop',
+                    img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700&q=85'
+                }
             ]
         }, {
             name: 'Desktop PCs',
             cat: 'Workstations',
             desc: 'Powerful desktops for home, office & business',
-            variants: [
-                { brand: 'Dell', name: 'Dell Desktop PC',
-                    img: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=700&q=85' },
-                { brand: 'HP', name: 'HP Desktop PC',
-                    img: 'https://images.unsplash.com/photo-1547082299-de196ea013d6?w=700&q=85' },
-                { brand: 'Lenovo', name: 'Lenovo Desktop PC',
-                    img: 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=700&q=85' },
-                { brand: 'ASUS', name: 'ASUS Desktop PC',
-                    img: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=700&q=85' }
+            variants: [{
+                    brand: 'Dell',
+                    name: 'Dell Desktop PC',
+                    img: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=700&q=85'
+                },
+                {
+                    brand: 'HP',
+                    name: 'HP Desktop PC',
+                    img: 'https://images.unsplash.com/photo-1547082299-de196ea013d6?w=700&q=85'
+                },
+                {
+                    brand: 'Lenovo',
+                    name: 'Lenovo Desktop PC',
+                    img: 'https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=700&q=85'
+                },
+                {
+                    brand: 'ASUS',
+                    name: 'ASUS Desktop PC',
+                    img: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=700&q=85'
+                }
             ]
         }, {
             name: 'Gaming PCs',
             cat: 'Gaming',
             desc: 'High-performance gaming machines & RGB builds',
-            variants: [
-                { brand: 'ASUS ROG', name: 'ASUS ROG Gaming PC',
-                    img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=700&q=85' },
-                { brand: 'MSI', name: 'MSI Gaming PC',
-                    img: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=700&q=85' },
-                { brand: 'Alienware', name: 'Alienware Gaming PC',
-                    img: 'https://images.unsplash.com/photo-1603481546238-487240415921?w=700&q=85' },
-                { brand: 'HP Omen', name: 'HP Omen Gaming PC',
-                    img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85' }
+            variants: [{
+                    brand: 'ASUS ROG',
+                    name: 'ASUS ROG Gaming PC',
+                    img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=700&q=85'
+                },
+                {
+                    brand: 'MSI',
+                    name: 'MSI Gaming PC',
+                    img: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=700&q=85'
+                },
+                {
+                    brand: 'Alienware',
+                    name: 'Alienware Gaming PC',
+                    img: 'https://images.unsplash.com/photo-1603481546238-487240415921?w=700&q=85'
+                },
+                {
+                    brand: 'HP Omen',
+                    name: 'HP Omen Gaming PC',
+                    img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85'
+                }
             ]
         }, {
             name: 'Monitors',
             cat: 'Displays',
             desc: '4K, ultrawide, business & gaming displays',
-            variants: [
-                { brand: 'LG', name: 'LG Monitor',
-                    img: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=700&q=85' },
-                { brand: 'Samsung', name: 'Samsung Monitor',
-                    img: 'https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=700&q=85' },
-                { brand: 'Dell', name: 'Dell Monitor',
-                    img: 'https://images.unsplash.com/photo-1593642532400-2682810df593?w=700&q=85' },
-                { brand: 'ASUS', name: 'ASUS Monitor',
-                    img: 'https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=700&q=85' },
-                { brand: 'HP', name: 'HP Monitor',
-                    img: 'https://images.unsplash.com/photo-1527443195645-1133f7f28990?w=700&q=85' }
+            variants: [{
+                    brand: 'LG',
+                    name: 'LG Monitor',
+                    img: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=700&q=85'
+                },
+                {
+                    brand: 'Samsung',
+                    name: 'Samsung Monitor',
+                    img: 'https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=700&q=85'
+                },
+                {
+                    brand: 'Dell',
+                    name: 'Dell Monitor',
+                    img: 'https://images.unsplash.com/photo-1593642532400-2682810df593?w=700&q=85'
+                },
+                {
+                    brand: 'ASUS',
+                    name: 'ASUS Monitor',
+                    img: 'https://images.unsplash.com/photo-1585792180666-f7347c490ee2?w=700&q=85'
+                },
+                {
+                    brand: 'HP',
+                    name: 'HP Monitor',
+                    img: 'https://images.unsplash.com/photo-1527443195645-1133f7f28990?w=700&q=85'
+                }
             ]
         }, {
             name: 'Printers',
             cat: 'Peripherals',
             desc: 'Laser, inkjet & multifunction printers',
-            variants: [
-                { brand: 'HP', name: 'HP Printer',
-                    img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85' },
-                { brand: 'Canon', name: 'Canon Printer',
-                    img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85' },
-                { brand: 'Epson', name: 'Epson Printer',
-                    img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85' },
-                { brand: 'Brother', name: 'Brother Printer',
-                    img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85' }
+            variants: [{
+                    brand: 'HP',
+                    name: 'HP Printer',
+                    img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85'
+                },
+                {
+                    brand: 'Canon',
+                    name: 'Canon Printer',
+                    img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85'
+                },
+                {
+                    brand: 'Epson',
+                    name: 'Epson Printer',
+                    img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85'
+                },
+                {
+                    brand: 'Brother',
+                    name: 'Brother Printer',
+                    img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85'
+                }
             ]
         }, {
             name: 'Networking',
             cat: 'Infrastructure',
             desc: 'Switches, routers, access points & network gear',
-            variants: [
-                { brand: 'TP-Link', name: 'TP-Link Network Equipment',
-                    img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=700&q=85' },
-                { brand: 'Cisco', name: 'Cisco Network Equipment',
-                    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=85' },
-                { brand: 'D-Link', name: 'D-Link Network Equipment',
-                    img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85' },
-                { brand: 'Ubiquiti', name: 'Ubiquiti Network Equipment',
-                    img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&q=85' }
+            variants: [{
+                    brand: 'TP-Link',
+                    name: 'TP-Link Network Equipment',
+                    img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=700&q=85'
+                },
+                {
+                    brand: 'Cisco',
+                    name: 'Cisco Network Equipment',
+                    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=85'
+                },
+                {
+                    brand: 'D-Link',
+                    name: 'D-Link Network Equipment',
+                    img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85'
+                },
+                {
+                    brand: 'Ubiquiti',
+                    name: 'Ubiquiti Network Equipment',
+                    img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&q=85'
+                }
             ]
         }, {
             name: 'CCTV Cameras',
             cat: 'Security',
             desc: 'Professional surveillance cameras & systems',
-            variants: [
-                { brand: 'Hikvision', name: 'Hikvision CCTV Camera',
-                    img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85' },
-                { brand: 'Dahua', name: 'Dahua CCTV Camera',
-                    img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85' },
-                { brand: 'TP-Link VIGI', name: 'TP-Link VIGI Camera',
-                    img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85' },
-                { brand: 'Uniview', name: 'Uniview CCTV Camera',
-                    img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85' }
+            variants: [{
+                    brand: 'Hikvision',
+                    name: 'Hikvision CCTV Camera',
+                    img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85'
+                },
+                {
+                    brand: 'Dahua',
+                    name: 'Dahua CCTV Camera',
+                    img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85'
+                },
+                {
+                    brand: 'TP-Link VIGI',
+                    name: 'TP-Link VIGI Camera',
+                    img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85'
+                },
+                {
+                    brand: 'Uniview',
+                    name: 'Uniview CCTV Camera',
+                    img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85'
+                }
             ]
         }, {
             name: 'Keyboards',
             cat: 'Accessories',
             desc: 'Mechanical, wireless & ergonomic keyboards',
-            variants: [
-                { brand: 'Logitech', name: 'Logitech Keyboard',
-                    img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85' },
-                { brand: 'HP', name: 'HP Keyboard',
-                    img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85' },
-                { brand: 'Dell', name: 'Dell Keyboard',
-                    img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85' },
-                { brand: 'Lenovo', name: 'Lenovo Keyboard',
-                    img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85' },
-                { brand: 'Razer', name: 'Razer Gaming Keyboard',
-                    img: 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=700&q=85' }
+            variants: [{
+                    brand: 'Logitech',
+                    name: 'Logitech Keyboard',
+                    img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85'
+                },
+                {
+                    brand: 'HP',
+                    name: 'HP Keyboard',
+                    img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85'
+                },
+                {
+                    brand: 'Dell',
+                    name: 'Dell Keyboard',
+                    img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85'
+                },
+                {
+                    brand: 'Lenovo',
+                    name: 'Lenovo Keyboard',
+                    img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85'
+                },
+                {
+                    brand: 'Razer',
+                    name: 'Razer Gaming Keyboard',
+                    img: 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=700&q=85'
+                }
             ]
         }, {
             name: 'Graphic Cards',
             cat: 'Components',
             desc: 'NVIDIA GeForce RTX & AMD Radeon GPUs',
-            variants: [
-                { brand: 'NVIDIA', name: 'NVIDIA GeForce RTX',
-                    img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85' },
-                { brand: 'ASUS', name: 'ASUS GeForce RTX',
-                    img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85' },
-                { brand: 'MSI', name: 'MSI GeForce RTX',
-                    img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85' },
-                { brand: 'AMD', name: 'AMD Radeon',
-                    img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85' }
+            variants: [{
+                    brand: 'NVIDIA',
+                    name: 'NVIDIA GeForce RTX',
+                    img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85'
+                },
+                {
+                    brand: 'ASUS',
+                    name: 'ASUS GeForce RTX',
+                    img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85'
+                },
+                {
+                    brand: 'MSI',
+                    name: 'MSI GeForce RTX',
+                    img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85'
+                },
+                {
+                    brand: 'AMD',
+                    name: 'AMD Radeon',
+                    img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85'
+                }
             ]
         }, {
             name: 'SSD Storage',
             cat: 'Storage',
             desc: 'NVMe & SATA high-speed storage drives',
-            variants: [
-                { brand: 'Samsung', name: 'Samsung SSD',
-                    img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85' },
-                { brand: 'Kingston', name: 'Kingston SSD',
-                    img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85' },
-                { brand: 'WD', name: 'WD SSD',
-                    img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85' },
-                { brand: 'Crucial', name: 'Crucial SSD',
-                    img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85' }
+            variants: [{
+                    brand: 'Samsung',
+                    name: 'Samsung SSD',
+                    img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85'
+                },
+                {
+                    brand: 'Kingston',
+                    name: 'Kingston SSD',
+                    img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85'
+                },
+                {
+                    brand: 'WD',
+                    name: 'WD SSD',
+                    img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85'
+                },
+                {
+                    brand: 'Crucial',
+                    name: 'Crucial SSD',
+                    img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85'
+                }
             ]
         }, {
             name: 'RAM Memory',
             cat: 'Components',
             desc: 'DDR4 & DDR5 high-speed memory',
-            variants: [
-                { brand: 'Kingston', name: 'Kingston RAM',
-                    img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85' },
-                { brand: 'Corsair', name: 'Corsair RAM',
-                    img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85' },
-                { brand: 'Crucial', name: 'Crucial RAM',
-                    img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85' },
-                { brand: 'G.Skill', name: 'G.Skill RAM',
-                    img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85' }
+            variants: [{
+                    brand: 'Kingston',
+                    name: 'Kingston RAM',
+                    img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85'
+                },
+                {
+                    brand: 'Corsair',
+                    name: 'Corsair RAM',
+                    img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85'
+                },
+                {
+                    brand: 'Crucial',
+                    name: 'Crucial RAM',
+                    img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85'
+                },
+                {
+                    brand: 'G.Skill',
+                    name: 'G.Skill RAM',
+                    img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85'
+                }
             ]
         }, {
             name: 'Routers',
             cat: 'Networking',
             desc: 'WiFi 6/6E, mesh & business network systems',
-            variants: [
-                { brand: 'TP-Link', name: 'TP-Link Router',
-                    img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85' },
-                { brand: 'ASUS', name: 'ASUS Router',
-                    img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85' },
-                { brand: 'D-Link', name: 'D-Link Router',
-                    img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85' },
-                { brand: 'NETGEAR', name: 'NETGEAR Router',
-                    img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85' }
+            variants: [{
+                    brand: 'TP-Link',
+                    name: 'TP-Link Router',
+                    img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85'
+                },
+                {
+                    brand: 'ASUS',
+                    name: 'ASUS Router',
+                    img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85'
+                },
+                {
+                    brand: 'D-Link',
+                    name: 'D-Link Router',
+                    img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85'
+                },
+                {
+                    brand: 'NETGEAR',
+                    name: 'NETGEAR Router',
+                    img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85'
+                }
             ]
         }];
 
         var pGrid = document.getElementById('productGrid');
         var ROTATION_MS = 3000;
 
-        products.forEach(function(p, i) {
+        products.forEach(function (p, i) {
             var first = p.variants[0];
             var card = document.createElement('div');
             card.className = 'product-card reveal';
@@ -2492,17 +3015,17 @@
             var inquireBtn = card.querySelector('.btn-quote');
             var variantIndex = 0;
 
-            var updateProduct = function(animate) {
+            var updateProduct = function (animate) {
                 variantIndex = (variantIndex + 1) % p.variants.length;
                 var variant = p.variants[variantIndex];
                 if (animate) img.classList.add('is-changing');
-                setTimeout(function() {
+                setTimeout(function () {
                     img.src = variant.img;
                     img.alt = variant.name;
                     badge.textContent = variant.brand;
                     productName.textContent = variant.name;
                     if (animate) {
-                        requestAnimationFrame(function() {
+                        requestAnimationFrame(function () {
                             img.classList.remove('is-changing');
                         });
                     }
@@ -2510,48 +3033,67 @@
             };
 
             if (p.variants.length > 1) {
-                setInterval(function() { updateProduct(true); }, ROTATION_MS);
+                setInterval(function () { updateProduct(true); }, ROTATION_MS);
             }
 
-            inquireBtn.addEventListener('click', function(e) {
+            inquireBtn.addEventListener('click', function (e) {
                 e.stopPropagation();
                 var variant = p.variants[variantIndex];
                 var message = 'Hello, I am interested in ' + variant.name;
                 window.open('https://wa.me/971568249900?text=' + encodeURIComponent(message), '_blank');
             });
 
-            img.addEventListener('error', function() {
+            img.addEventListener('error', function () {
                 this.style.opacity = '0.25';
                 this.alt = 'Product image unavailable';
             });
         });
 
         // ── SERVICES ──
-        var services = [
-            { name: 'Computer Sales', desc: 'Wide range of desktops and all-in-one PCs for home and office.',
-                icon: 'fas fa-desktop' },
-            { name: 'Laptop Sales', desc: 'Premium laptops from all major brands with warranty support.',
-                icon: 'fas fa-laptop' },
-            { name: 'Computer Repair', desc: 'Expert hardware and software troubleshooting and repair.',
-                icon: 'fas fa-screwdriver-wrench' },
-            { name: 'Laptop Repair', desc: 'Screen replacement, battery, keyboard, and motherboard repair.',
-                icon: 'fas fa-tools' },
-            { name: 'Networking', desc: 'LAN, WAN, WiFi, and structured cabling solutions.',
-                icon: 'fas fa-network-wired' },
-            { name: 'CCTV Installation', desc: 'Professional security camera setup and monitoring.',
-                icon: 'fas fa-video' },
-            { name: 'Printer Services', desc: 'Setup, maintenance, and repair for all printer types.',
-                icon: 'fas fa-print' },
-            { name: 'Data Recovery', desc: 'Recover lost data from HDD, SSD, and USB drives.',
-                icon: 'fas fa-database' },
-            { name: 'AMC Contracts', desc: 'Annual maintenance contracts for businesses of all sizes.',
-                icon: 'fas fa-file-contract' },
-            { name: 'IT Consulting', desc: 'Strategic technology planning and infrastructure advice.',
-                icon: 'fas fa-lightbulb' },
-        ];
+        var services = [{
+            name: 'Computer Sales',
+            desc: 'Wide range of desktops and all-in-one PCs for home and office.',
+            icon: 'fas fa-desktop'
+        }, {
+            name: 'Laptop Sales',
+            desc: 'Premium laptops from all major brands with warranty support.',
+            icon: 'fas fa-laptop'
+        }, {
+            name: 'Computer Repair',
+            desc: 'Expert hardware and software troubleshooting and repair.',
+            icon: 'fas fa-screwdriver-wrench'
+        }, {
+            name: 'Laptop Repair',
+            desc: 'Screen replacement, battery, keyboard, and motherboard repair.',
+            icon: 'fas fa-tools'
+        }, {
+            name: 'Networking',
+            desc: 'LAN, WAN, WiFi, and structured cabling solutions.',
+            icon: 'fas fa-network-wired'
+        }, {
+            name: 'CCTV Installation',
+            desc: 'Professional security camera setup and monitoring.',
+            icon: 'fas fa-video'
+        }, {
+            name: 'Printer Services',
+            desc: 'Setup, maintenance, and repair for all printer types.',
+            icon: 'fas fa-print'
+        }, {
+            name: 'Data Recovery',
+            desc: 'Recover lost data from HDD, SSD, and USB drives.',
+            icon: 'fas fa-database'
+        }, {
+            name: 'AMC Contracts',
+            desc: 'Annual maintenance contracts for businesses of all sizes.',
+            icon: 'fas fa-file-contract'
+        }, {
+            name: 'IT Consulting',
+            desc: 'Strategic technology planning and infrastructure advice.',
+            icon: 'fas fa-lightbulb'
+        }, ];
 
         var sGrid = document.getElementById('serviceGrid');
-        services.forEach(function(s, i) {
+        services.forEach(function (s, i) {
             var card = document.createElement('div');
             card.className = 'service-card reveal';
             card.style.transitionDelay = (i % 5) * 0.08 + 's';
@@ -2560,10 +3102,10 @@
                 '</h4><p>' + s.desc + '</p>';
             card.setAttribute('role', 'button');
             card.setAttribute('tabindex', '0');
-            card.addEventListener('click', function() {
+            card.addEventListener('click', function () {
                 showToast('Learning more about ' + s.name, s.icon);
             });
-            card.addEventListener('keydown', function(e) {
+            card.addEventListener('keydown', function (e) {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
                     showToast('Learning more about ' + s.name, s.icon);
@@ -2581,7 +3123,7 @@
         var brandSlide = document.getElementById('brandSlide');
         var allBrands = brandList.concat(brandList);
 
-        allBrands.forEach(function(name) {
+        allBrands.forEach(function (name) {
             var item = document.createElement('div');
             item.className = 'brand-item';
             item.innerHTML = '<span class="brand-fallback">' + name + '</span>';
@@ -2590,28 +3132,24 @@
 
         // ── GALLERY ──
         var galleryImages = [
-            { src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80', cls: 'tall' },
-            { src: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&q=80', cls: '' },
-            { src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80', cls: '' },
-            { src: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80', cls: '' },
-            { src: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80', cls: 'wide' },
-            { src: 'https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?w=600&q=80', cls: '' },
-            { src: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80', cls: '' },
-            { src: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80', cls: 'wide' },
-            { src: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=600&q=80', cls: '' },
-            { src: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80', cls: '' },
-            { src: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80', cls: 'tall' },
-            { src: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80', cls: '' },
-            { src: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80', cls: '' },
-            { src: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80', cls: '' },
-            { src: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80', cls: '' },
-            { src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80', cls: '' }
+            { src: './images/Gallery/gaimage1.jpg', cls: 'tall' },
+            { src: './images/Gallery/gaimage2.jpg', cls: 'tall' },
+            { src: './images/Gallery/gaimage3.jpg', cls: 'tall' },
+            { src: './images/Gallery/gaimage4.jpg', cls: 'tall' },
+            { src: './images/Gallery/gaimage5.jpg', cls: 'tall' },
+            { src: './images/Gallery/gaimage6.jpg', cls: 'tall' },
+            { src: './images/Gallery/gaimage7.jpg', cls: 'tall' },
+            { src: './images/Gallery/gaimage8.jpg', cls: 'tall' },
+            { src: './images/Gallery/gaimage9.jpg', cls: 'tall' },
+            { src: './images/Gallery/gaimage10.jpg', cls: 'tall' },
+            { src: './images/Gallery/gaimage11.jpg', cls: 'tall' },
+            { src: './images/Gallery/gaimage12.jpg', cls: 'tall' },
         ];
 
         var gGrid = document.getElementById('galleryGrid');
-        var gallerySrcs = galleryImages.map(function(g) { return g.src; });
+        var gallerySrcs = galleryImages.map(function (g) { return g.src; });
 
-        galleryImages.forEach(function(g, i) {
+        galleryImages.forEach(function (g, i) {
             var item = document.createElement('div');
             item.className = 'gallery-item ' + g.cls + ' reveal';
             item.style.transitionDelay = (i % 4) * 0.1 + 's';
@@ -2623,7 +3161,7 @@
             img.src = g.src;
             img.alt = 'Gallery image ' + (i + 1);
             img.loading = 'lazy';
-            img.onerror = function() {
+            img.onerror = function () {
                 this.style.display = 'none';
                 this.parentElement.style.background = '#e0e0e0';
                 var fallback = document.createElement('span');
@@ -2640,8 +3178,8 @@
             item.appendChild(img);
             item.appendChild(overlay);
 
-            item.addEventListener('click', function() { openLightbox(i); });
-            item.addEventListener('keydown', function(e) {
+            item.addEventListener('click', function () { openLightbox(i); });
+            item.addEventListener('keydown', function (e) {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
                     openLightbox(i);
@@ -2671,23 +3209,23 @@
         }
 
         document.getElementById('lbClose').addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', function(e) {
+        lightbox.addEventListener('click', function (e) {
             if (e.target === lightbox) closeLightbox();
         });
 
-        document.getElementById('lbPrev').addEventListener('click', function() {
+        document.getElementById('lbPrev').addEventListener('click', function () {
             currentLB = (currentLB - 1 + gallerySrcs.length) % gallerySrcs.length;
             lbImg.src = gallerySrcs[currentLB];
             lbImg.alt = 'Gallery image ' + (currentLB + 1);
         });
 
-        document.getElementById('lbNext').addEventListener('click', function() {
+        document.getElementById('lbNext').addEventListener('click', function () {
             currentLB = (currentLB + 1) % gallerySrcs.length;
             lbImg.src = gallerySrcs[currentLB];
             lbImg.alt = 'Gallery image ' + (currentLB + 1);
         });
 
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (!lightbox.classList.contains('active')) return;
             if (e.key === 'Escape') closeLightbox();
             if (e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
@@ -2696,14 +3234,14 @@
 
         // ── ANIMATED COUNTERS ──
         var counters = document.querySelectorAll('.stat-num');
-        var counterObs = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
+        var counterObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     var el = entry.target;
                     var target = +el.dataset.target;
                     var current = 0;
                     var inc = target / 50;
-                    var timer = setInterval(function() {
+                    var timer = setInterval(function () {
                         current += inc;
                         if (current >= target) {
                             el.textContent = target + (target === 98 ? '%' : '+');
@@ -2714,40 +3252,61 @@
                 }
             });
         }, { threshold: 0.5 });
-        counters.forEach(function(c) { counterObs.observe(c); });
+        counters.forEach(function (c) { counterObs.observe(c); });
 
         // ── SCROLL REVEAL ──
-        var revealObs = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
+        var revealObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                     revealObs.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal').forEach(function(el) { revealObs.observe(el); });
+        document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
 
         // ── CONTACT FORM ──
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            var inputs = this.querySelectorAll('input[required], textarea[required]');
+
+            var name = document.getElementById('formName');
+            var email = document.getElementById('formEmail');
+            var phone = document.getElementById('formPhone');
+            var subject = document.getElementById('formSubject');
+            var message = document.getElementById('formMessage');
+
+            var required = [name, email, message];
             var allFilled = true;
-            inputs.forEach(function(inp) {
-                if (!inp.value.trim()) allFilled = false;
+            required.forEach(function (field) {
+                if (!field.value.trim()) allFilled = false;
             });
-            if (allFilled) {
-                showToast('Message sent successfully! We\'ll get back to you soon.', 'fas fa-check-circle');
-                this.reset();
-            } else {
+
+            if (!allFilled) {
                 showToast('Please fill in all required fields.', 'fas fa-exclamation-circle');
+                return;
             }
+
+            var phoneNumber = '971568249900';
+
+            var whatsappMsg =
+                'New Contact Form Submission*%0A%0A' +
+                'Name: ' + encodeURIComponent(name.value.trim()) + '%0A' +
+                'Email: ' + encodeURIComponent(email.value.trim()) + '%0A' +
+                'Phone: ' + encodeURIComponent(phone.value.trim() || 'Not provided') + '%0A' +
+                'Subject: ' + encodeURIComponent(subject.value.trim() || 'Not provided') + '%0A' +
+                'Message: ' + encodeURIComponent(message.value.trim());
+
+            window.open('https://wa.me/' + phoneNumber + '?text=' + whatsappMsg, '_blank');
+
+            showToast('✅ Message sent successfully via WhatsApp!', 'fas fa-check-circle');
+            this.reset();
         });
 
         // ── RESPONSIVE NAV BUTTON LABELS ──
         function handleNavLabels() {
             var labels = document.querySelectorAll('.nav-btn-label');
             var isSmall = window.innerWidth < 600;
-            labels.forEach(function(label) {
+            labels.forEach(function (label) {
                 label.style.display = isSmall ? 'none' : 'inline';
             });
         }
