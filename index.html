@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         /* ── reset & vars ── */
@@ -197,7 +197,7 @@
             text-decoration: none;
             flex-shrink: 0;
             min-width: 0;
-          
+
         }
 
         .logo-img {
@@ -232,11 +232,13 @@
                 letter-spacing: -0.2px;
                 margin-left: 0;
             }
+
             .logo-img {
                 width: 450px;
                 height: 450px;
                 margin-left: 0px;
             }
+
             .logo-wrap {
                 gap: 4px;
             }
@@ -247,6 +249,7 @@
                 font-size: 0.45rem;
                 margin-left: 0px;
             }
+
             .logo-img {
                 width: 24px;
                 height: 24px;
@@ -657,36 +660,36 @@
             }
         }
 
-       .hero-scroll {
-    position: absolute;
-    left: 50%;
-    bottom: clamp(30px, 6vh, 55px);
-    margin-bottom: -100px;
+        .hero-scroll {
+            position: absolute;
+            left: 50%;
+            bottom: clamp(30px, 6vh, 55px);
+            margin-bottom: -100px;
 
-    transform: translateX(-50%);
-    z-index: 20;
+            transform: translateX(-50%);
+            z-index: 20;
 
-    width: max-content;
-    text-align: center;
+            width: max-content;
+            text-align: center;
 
-    color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.75);
 
-    animation: bounce 2.5s infinite;
-    pointer-events: none;
-}
+            animation: bounce 2.5s infinite;
+            pointer-events: none;
+        }
 
-.hero-scroll i {
-    display: block;
-    margin-bottom: 3px;
-    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
-}
+        .hero-scroll i {
+            display: block;
+            margin-bottom: 3px;
+            font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+        }
 
-.hero-scroll span {
-    display: block;
-    font-size: clamp(0.55rem, 0.8vw, 0.72rem);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
+        .hero-scroll span {
+            display: block;
+            font-size: clamp(0.55rem, 0.8vw, 0.72rem);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
 
         @keyframes bounce {
 
@@ -1378,6 +1381,14 @@
             gap: 12px;
             transition: var(--transition);
         }
+        .contact-card a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    font-size:12px ;
+    font-style: bold;
+    
+}
 
         .contact-card:hover {
             transform: translateY(-4px);
@@ -1695,20 +1706,29 @@
         }
 
         /* ── responsive ── */
-        @media (max-width: 1100px) {
-              .hero-scroll {
+@media (max-width:1200px) {
+    
+        #darkToggle {
         display: none;
     }
+    
+}
+        @media (max-width: 1100px) {
+            .hero-scroll {
+                display: none;
+            }
+
             .logo-img {
                 width: clamp(100px, 6vw, 42px);
                 height: clamp(100px, 6vw, 42px);
                 margin-left: -30px;
-                
+
             }
 
             .logo-text {
                 font-size: clamp(0.6rem, 1.8vw, 0.85rem);
             }
+
             .hero-inner {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -1750,23 +1770,26 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
             }
+            
         }
 
         @media (max-width: 820px) {
-            
-              .hero-scroll {
-        display: none;
-    }
+
+            .hero-scroll {
+                display: none;
+            }
+
             .logo-img {
                 width: clamp(100px, 6vw, 42px);
                 height: clamp(100px, 6vw, 42px);
                 margin-left: -30px;
-                
+
             }
 
             .logo-text {
                 font-size: clamp(1rem, 1.8vw, 1rem);
             }
+
             .about-stats {
                 grid-template-columns: 1fr 1fr;
             }
@@ -1792,14 +1815,19 @@
             .gallery-item.tall {
                 grid-row: span 1;
             }
+          
+       
         }
 
         @media (max-width: 768px) {
             .logo-text {
-                font-size: 1.2rem;}
-              .hero-scroll {
-        display: none;
-    }
+                font-size: 1.2rem;
+            }
+
+            .hero-scroll {
+                display: none;
+            }
+
             section {
                 padding: clamp(2rem, 6vh, 4rem) clamp(12px, 3vw, 20px);
             }
@@ -1817,7 +1845,7 @@
                 width: clamp(100px, 6vw, 42px);
                 height: clamp(100px, 6vw, 42px);
                 margin-left: -30px;
-                
+
             }
 
             .logo-text {
@@ -1926,16 +1954,18 @@
                 right: 20px;
                 bottom: 95px;
             }
-            
+
         }
 
         @media (max-width: 600px) {
             .logo-text {
                 font-size: 1rem;
             }
-              .hero-scroll {
-        display: none;
-    }
+
+            .hero-scroll {
+                display: none;
+            }
+
             .about-features {
                 grid-template-columns: 1fr;
             }
@@ -1943,12 +1973,14 @@
             .contact-info-cards {
                 grid-template-columns: 1fr;
             }
+              
         }
 
         @media (max-width: 480px) {
-              .hero-scroll {
-        display: none;
-    }
+            .hero-scroll {
+                display: none;
+            }
+
             .hero h1 {
                 font-size: clamp(1.3rem, 5vw, 1.8rem);
             }
@@ -1973,7 +2005,7 @@
 
             .logo-text {
                 font-size: 1rem;
-                 margin-left: -20px;
+                margin-left: -20px;
             }
 
             .logo-img {
@@ -1990,9 +2022,15 @@
         }
 
         @media (max-width: 375px) {
-              .hero-scroll {
-        display: none;
-    }
+               .logo-text {
+                margin-left: -25px;
+            }
+          
+
+            .hero-scroll {
+                display: none;
+            }
+
             .hero h1 {
                 font-size: 1.2rem;
             }
@@ -2014,7 +2052,7 @@
                 font-size: 1.3rem;
             }
 
-            
+
             .btn-hero-primary,
             .btn-hero-secondary {
                 font-size: 0.75rem;
@@ -2022,14 +2060,14 @@
                 min-height: 40px;
             }
 
-           
+
         }
 
         @media (max-width: 320px) {
-       
-    .hero-scroll {
-        display: none;
-    }
+
+            .hero-scroll {
+                display: none;
+            }
 
             .hero h1 {
                 font-size: 1rem;
@@ -2050,7 +2088,7 @@
                 min-height: 36px;
             }
 
-         
+
 
             .nav-wrap {
                 padding: 0 6px;
@@ -2217,7 +2255,6 @@
             transform: scale(1.1);
             background: #128C7E;
         }
-
     </style>
 </head>
 
@@ -2230,7 +2267,7 @@
 
     <!-- PROGRESS -->
     <div id="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
-    aria-label="Page scroll progress"></div>
+        aria-label="Page scroll progress"></div>
 
     <!-- TOAST CONTAINER -->
     <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
@@ -2239,9 +2276,9 @@
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery lightbox">
         <button class="lightbox-close" id="lbClose" aria-label="Close lightbox"><i class="fas fa-times"></i></button>
         <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous image"><i
-            class="fas fa-chevron-left"></i></button>
+                class="fas fa-chevron-left"></i></button>
         <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next image"><i
-            class="fas fa-chevron-right"></i></button>
+                class="fas fa-chevron-right"></i></button>
         <img src="" alt="Gallery image" id="lbImg">
     </div>
 
@@ -2251,7 +2288,7 @@
 
             <a href="#home" class="logo-wrap" aria-label="Royal Touch Computer TR - Home">
                 <img src="images/Logoo.jpg" alt="Royal Touch Computer TR logo" class="logo-img"
-                onerror="this.style.display='none'">
+                    onerror="this.style.display='none'">
                 <span class="logo-text">Royal Touch Computer TR</span>
             </a>
 
@@ -2265,447 +2302,486 @@
 
             <div class="nav-right">
                 <button class="btn-nav btn-call-nav" onclick="showToast('Calling +971 567113493...','fas fa-phone-alt')"
-                aria-label="Call us">
-                <i class="fas fa-phone-alt" aria-hidden="true"></i> <span class="nav-btn-label">Call</span>
-            </button>
-            <button class="btn-nav btn-wa-nav" onclick="showToast('Opening WhatsApp...','fab fa-whatsapp')"
-            aria-label="Contact via WhatsApp">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i> <span class="nav-btn-label">WhatsApp</span>
-        </button>
-        <button class="nav-icon-btn" id="darkToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-            <i class="fas fa-moon" aria-hidden="true"></i>
-        </button>
-        <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="navLinks"
-        aria-label="Toggle navigation menu">
-        <span></span><span></span><span></span>
-    </button>
-</div>
+                    aria-label="Call us">
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i> <span class="nav-btn-label">Call</span>
+                </button>
+             <button class="btn-nav btn-wa-nav"
+        onclick="window.open('https://wa.me/567113493', '_blank')"
+        aria-label="Contact via WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    <span class="nav-btn-label">WhatsApp</span>
+</button>
+                <button class="nav-icon-btn" id="darkToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="navLinks"
+                    aria-label="Toggle navigation menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
 
-</div>
-</header>
-
-<!-- HERO with Video Background -->
-<section id="home" class="hero" aria-label="Hero banner">
-    <div class="hero-bg">
-        <video autoplay muted loop playsinline preload="auto"
-        poster="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1920&q=80" id="heroVideo"
-        aria-label="Background video showing technology and computers">
-        <source src="images/herovide.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="fallback-color" id="heroFallback"></div>
-    <div class="hero-overlay"></div>
-</div>
-
-<div class="hero-inner container">
-    <div class="hero-text">
-        <h1>Premium <span class="highlight">Computer &amp; Electronics</span> Solutions</h1>
-        <p>Discover cutting-edge IT products, expert repair services, and comprehensive networking solutions —
-            all under
-            one roof at Royal Touch Computer TR.</p>
-        <div class="hero-btns">
-            <button class="btn-hero-primary"
-            onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})"
-            aria-label="Explore our products">
-            <i class="fas fa-arrow-right" aria-hidden="true"></i> Explore Products
-        </button>
-        <button class="btn-hero-secondary"
-        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
-        aria-label="Get in touch with us">
-        <i class="fas fa-envelope" aria-hidden="true"></i> Get in Touch
-    </button>
-</div>
-</div>
-
-<div class="hero-scroll" aria-hidden="true">
-    <span>Scroll</span>
-    <i class="fas fa-chevron-down"></i>
-</div>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" aria-label="About us">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">Who We Are</div>
-            <h2 class="section-title">About Royal Touch</h2>
-            <p class="section-desc">A decade of excellence in IT solutions, built on trust and innovation.</p>
         </div>
-        <div class="about-grid">
-            <div class="about-image reveal">
-                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80"
-                alt="Royal Touch Computer TR office and team workspace" loading="lazy">
-                <div class="about-exp-badge">
-                    <div class="num">15+</div>
-                    <div class="label">Years Experience</div>
+    </header>
+
+    <!-- HERO with Video Background -->
+    <section id="home" class="hero" aria-label="Hero banner">
+        <div class="hero-bg">
+            <video autoplay muted loop playsinline preload="auto"
+                poster="" id="heroVideo"
+                aria-label="Background video showing technology and computers">
+                <source src="images/herovide.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="fallback-color" id="heroFallback"></div>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-inner container">
+            <div class="hero-text">
+                <h1>Premium <span class="highlight">Computer &amp; Electronics</span> Solutions</h1>
+                <p>Discover cutting-edge IT products, expert repair services, and comprehensive networking solutions —
+                    all under
+                    one roof at Royal Touch Computer TR.</p>
+                <div class="hero-btns">
+                    <button class="btn-hero-primary"
+                        onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})"
+                        aria-label="Explore our products">
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i> Explore Products
+                    </button>
+                    <button class="btn-hero-secondary"
+                        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+                        aria-label="Get in touch with us">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Get in Touch
+                    </button>
                 </div>
             </div>
-            <div class="about-content reveal">
-                <h3>Your Reliable Technology Partner</h3>
-                <p>Royal Touch Computer TR has been a premier IT solutions provider since 2012, delivering
-                    cutting-edge
-                    computer electronics, professional repair, and enterprise networking services across the region.
-                </p>
-                <p>We combine deep technical expertise with a genuine passion for innovation, ensuring every client
-                    receives
-                    personalized solutions that drive real results.</p>
-                <div class="about-features">
-                    <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> Genuine Products</div>
-                    <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> Expert Technicians</div>
-                    <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> Fast Turnaround</div>
-                    <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> Warranty Covered</div>
-                    <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> Free Diagnostics</div>
-                    <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> On-Site Support</div>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-box">
-                        <div class="stat-num" data-target="15">0</div>
-                        <div class="stat-label">Years</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-num" data-target="1200">0</div>
-                        <div class="stat-label">Clients</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-num" data-target="98">0</div>
-                        <div class="stat-label">Satisfaction %</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-num" data-target="24">0</div>
-                        <div class="stat-label">hr Support</div>
+
+            <div class="hero-scroll" aria-hidden="true">
+                <span>Scroll</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-label="About us">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Who We Are</div>
+                <h2 class="section-title">About Royal Touch</h2>
+                <p class="section-desc">A decade of excellence in IT solutions, built on trust and innovation.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80"
+                        alt="Royal Touch Computer TR office and team workspace" loading="lazy">
+                    <div class="about-exp-badge">
+                        <div class="num">15+</div>
+                        <div class="label">Years Experience</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PRODUCTS -->
-<section id="products" aria-label="Our products">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">Our Collection</div>
-            <h2 class="section-title">Featured Products</h2>
-            <p class="section-desc">Premium computer and electronics gear from world-leading brands.</p>
-        </div>
-        <div class="product-grid" id="productGrid"></div>
-    </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" aria-label="Our services">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">What We Do</div>
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-desc">Comprehensive IT solutions tailored to your needs.</p>
-        </div>
-        <div class="service-grid" id="serviceGrid"></div>
-    </div>
-</section>
-
-<!-- BRANDS -->
-<section id="brands" aria-label="Brands we carry">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">Partners</div>
-            <h2 class="section-title">Brands We Carry</h2>
-        </div>
-    </div>
-    <div class="brand-track" role="presentation">
-        <div class="brand-slide" id="brandSlide"></div>
-    </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery" aria-label="Photo gallery">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">Our Work</div>
-            <h2 class="section-title">Photo Gallery</h2>
-            <p class="section-desc">A glimpse into our store, products, and installations.</p>
-        </div>
-        <div class="gallery-grid" id="galleryGrid"></div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" aria-label="Contact us">
-    <div class="container">
-        <div class="section-header reveal">
-            <div class="section-tag">Get in Touch</div>
-            <h2 class="section-title">Contact Us</h2>
-            <p class="section-desc">We'd love to hear from you. Reach out anytime.</p>
-        </div>
-        <div class="contact-grid">
-            <div class="reveal">
-                <div class="contact-info-cards">
-                    <div class="contact-card">
-                        <div class="ci-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
-                        <div><strong>Visit Us</strong><span>123 Tech Park, Dubai, UAE</span></div>
+                <div class="about-content reveal">
+                    <h3>Your Reliable Technology Partner</h3>
+                    <p>Royal Touch Computer TR has been a premier IT solutions provider since 2012, delivering
+                        cutting-edge
+                        computer electronics, professional repair, and enterprise networking services across the region.
+                    </p>
+                    <p>We combine deep technical expertise with a genuine passion for innovation, ensuring every client
+                        receives
+                        personalized solutions that drive real results.</p>
+                    <div class="about-features">
+                        <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> Genuine Products</div>
+                        <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> Expert Technicians</div>
+                        <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> Fast Turnaround</div>
+                        <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> Warranty Covered</div>
+                        <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> Free Diagnostics</div>
+                        <div class="about-feat"><i class="fas fa-check" aria-hidden="true"></i> On-Site Support</div>
                     </div>
-                    <div class="contact-card">
-                        <div class="ci-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
-                        <div><strong>Call Us</strong><span>+971 567113493</span></div>
-                    </div>
-                    <div class="contact-card">
-                        <div class="ci-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-                        <div><strong>Email Us</strong><span>Rtouchcomputer@gmail.com</span></div>
-                    </div>
-                    <div class="contact-card">
-                        <div class="ci-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
-                        <div><strong>Working Hours</strong><span>Mon–Sat: 9:00 – 6:00</span></div>
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <div class="stat-num" data-target="15">0</div>
+                            <div class="stat-label">Years</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num" data-target="1200">0</div>
+                            <div class="stat-label">Clients</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num" data-target="98">0</div>
+                            <div class="stat-label">Satisfaction %</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num" data-target="24">0</div>
+                            <div class="stat-label">hr Support</div>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-map">
-                    <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3801.6386896593285!2d55.38438247895027!3d25.351762429873027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDIxJzA2LjgiTiA1NcKwMjMnMTMuNSJF!5e0!3m2!1sen!2sae!4v1786448128429!5m2!1sen!2sae"
-                    width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    title="Google Maps location of Royal Touch Computer TR">
-                </iframe>
             </div>
         </div>
-        <form class="contact-form reveal" id="contactForm" novalidate aria-label="Contact form">
-            <div class="form-row">
-                <input type="text" id="formName" placeholder="Your Name" required aria-required="true" aria-label="Your name">
-                <input type="email" id="formEmail" placeholder="Email Address" required aria-required="true"
-                aria-label="Email address">
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" aria-label="Our products">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Our Collection</div>
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-desc">Premium computer and electronics gear from world-leading brands.</p>
             </div>
-            <div class="form-row">
-                <input type="tel" id="formPhone" placeholder="Phone Number" aria-label="Phone number">
-                <input type="text" id="formSubject" placeholder="Subject" aria-label="Subject">
-            </div>
-            <textarea id="formMessage" rows="5" placeholder="Your Message..." required aria-required="true"
-            aria-label="Your message"></textarea>
-            <button type="submit" aria-label="Send message"><i class="fas fa-paper-plane"
-                aria-hidden="true"></i>&nbsp; Send Message</button>
-            </form>
+            <div class="product-grid" id="productGrid"></div>
         </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" aria-label="Our services">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">What We Do</div>
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-desc">Comprehensive IT solutions tailored to your needs.</p>
+            </div>
+            <div class="service-grid" id="serviceGrid"></div>
+        </div>
+    </section>
+
+    <!-- BRANDS -->
+    <section id="brands" aria-label="Brands we carry">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Partners</div>
+                <h2 class="section-title">Brands We Carry</h2>
+            </div>
+        </div>
+        <div class="brand-track" role="presentation">
+            <div class="brand-slide" id="brandSlide"></div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" aria-label="Photo gallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Our Work</div>
+                <h2 class="section-title">Photo Gallery</h2>
+                <p class="section-desc">A glimpse into our store, products, and installations.</p>
+            </div>
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-label="Contact us">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Get in Touch</div>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-desc">We'd love to hear from you. Reach out anytime.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="reveal">
+                    <div class="contact-info-cards">
+                        <div class="contact-card">
+                            <div class="ci-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+                            <div><strong>Visit Us</strong><span>Ibrahim Mohammed Al Medfa'a Street - Al Soor
+                    -Sharjah</span></div>
+                        </div>
+  <div class="contact-card">
+    <div class="ci-icon">
+        <i class="fas fa-phone-alt" aria-hidden="true"></i>
     </div>
-</section>
 
-<!-- FOOTER -->
-<footer role="contentinfo">
-    <div class="footer-top">
-        <div class="footer-brand">
-            <a href="#home" class="logo-wrap" aria-label="Royal Touch Computer TR - Home">
-                <img src="images/Logoo.jpg" alt="Royal Touch Computer TR logo" class="logo-img"
-                onerror="this.style.display='none'">
-                <span class="logo-text">Royal Touch Computer TR</span>
-            </a>
-            <p>Your trusted IT partner delivering premium computer electronics, expert repair, and comprehensive
-                networking
-                solutions since 2012.</p>
-            <div class="footer-socials">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+    <div>
+        <strong>Call Us</strong>
+        <a href="tel:+971567113493">+971 567113493</a>
+
+        <br>
+
+        <strong>Telephone</strong>
+        <a href="tel:067021647">06-7021647</a>
+    </div>
+</div>
+<div class="contact-card">
+    <div class="ci-icon">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+    </div>
+
+    <div>
+        <strong>Email Us</strong>
+
+        <a href="mailto:Rtouchcomputer@gmail.com">
+            Rtouchcomputer@gmail.com
+        </a>
+
+        <a href="mailto:info@royaltouchcomputer.com">
+            info@royaltouchcomputer.com
+        </a>
+    </div>
+</div>
+                        <div class="contact-card">
+                            <div class="ci-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+                            <div><strong>Working Hours</strong><span>9:30am to 9:30pm</span></div>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3801.6386896593285!2d55.38438247895027!3d25.351762429873027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDIxJzA2LjgiTiA1NcKwMjMnMTMuNSJF!5e0!3m2!1sen!2sae!4v1786448128429!5m2!1sen!2sae"
+                            width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            title="Google Maps location of Royal Touch Computer TR">
+                        </iframe>
+                    </div>
+                </div>
+                <form class="contact-form reveal" id="contactForm" novalidate aria-label="Contact form">
+                    <div class="form-row">
+                        <input type="text" id="formName" placeholder="Your Name" required aria-required="true"
+                            aria-label="Your name">
+                        <input type="email" id="formEmail" placeholder="Email Address" required aria-required="true"
+                            aria-label="Email address">
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" id="formPhone" placeholder="Phone Number" aria-label="Phone number">
+                        <input type="text" id="formSubject" placeholder="Subject" aria-label="Subject">
+                    </div>
+                    <textarea id="formMessage" rows="5" placeholder="Your Message..." required aria-required="true"
+                        aria-label="Your message"></textarea>
+                    <button type="submit" aria-label="Send message"><i class="fas fa-paper-plane"
+                            aria-hidden="true"></i>&nbsp; Send Message</button>
+                </form>
             </div>
         </div>
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#products">Products</a>
-            <a href="#services">Services</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer role="contentinfo">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#home" class="logo-wrap" aria-label="Royal Touch Computer TR - Home">
+                    <img src="images/Logoo.jpg" alt="Royal Touch Computer TR logo" class="logo-img"
+                        onerror="this.style.display='none'">
+                    <span class="logo-text">Royal Touch Computer TR</span>
+                </a>
+                <p>Your trusted IT partner delivering premium computer electronics, expert repair, and comprehensive
+                    networking
+                    solutions since 2012.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#products">Products</a>
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="#">Computer Repair</a>
+                <a href="#">Laptop Repair</a>
+                <a href="#">Networking</a>
+                <a href="#">CCTV Installation</a>
+                <a href="#">Data Recovery</a>
+                <a href="#">AMC Contracts</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Ibrahim Mohammed Al Medfa'a Street - Al Soor
+                    -Sharjah</p>
+    <p>
+    <i class="fas fa-phone-alt" aria-hidden="true"></i>
+    +971 567113493<br>
+    
+    06-7021647
+</p>
+
+<p>
+    <i class="fas fa-envelope" aria-hidden="true"></i>
+    info@royaltouchcomputer.com<br>
+    Rtouchcomputer@gmail.com
+</p>
+                <p><i class="fas fa-clock" aria-hidden="true"></i> 9:30am to 9:30pm</p>
+            </div>
         </div>
-        <div class="footer-col">
-            <h4>Services</h4>
-            <a href="#">Computer Repair</a>
-            <a href="#">Laptop Repair</a>
-            <a href="#">Networking</a>
-            <a href="#">CCTV Installation</a>
-            <a href="#">Data Recovery</a>
-            <a href="#">AMC Contracts</a>
+        <div class="footer-bottom">
+            <span>© 2026 Royal Touch Computer TR. All rights reserved.</span>
         </div>
-        <div class="footer-col">
-            <h4>Contact Info</h4>
-            <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 123 Tech Park, Dubai, UAE</p>
-            <p><i class="fas fa-phone-alt" aria-hidden="true"></i> +971 567113493</p>
-            <p><i class="fas fa-envelope" aria-hidden="true"></i> Rtouchcomputer@gmail.com</p>
-            <p><i class="fas fa-clock" aria-hidden="true"></i> Mon–Sat: 9AM – 6PM</p>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 Royal Touch Computer TR. All rights reserved.</span>
-    </div>
-</footer>
+    </footer>
 
-<!-- Whatsapp Button-->
-<a href="https://wa.me/971568249900?text=Hi%20Royal%20Touch%20Computer!%20I%20need%20information%20about%20your%20services."
-class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-<i class="fab fa-whatsapp"></i>
-</a>
+    <!-- Whatsapp Button-->
+    <a href="https://wa.me/971567113493?text=Hi%20Royal%20Touch%20Computer!%20I%20need%20information%20about%20your%20services."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-<!-- BACK TO TOP -->
-<button id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
+    <!-- BACK TO TOP -->
+    <button id="backTop" aria-label="Back to top"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
 
-<script>
-    (function () {
-        'use strict';
+    <script>
+        (function () {
+            'use strict';
 
-        // ── LOADER ──
-        window.addEventListener('load', function () {
-            setTimeout(function () {
-                document.getElementById('loader').classList.add('hide');
-            }, 400);
-        });
-
-        // ── TOAST ──
-        function showToast(msg, icon) {
-            var container = document.getElementById('toastContainer');
-            var toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.innerHTML = '<i class="' + (icon || 'fas fa-check-circle') + '" aria-hidden="true"></i><span>' + msg +
-            '</span>';
-            container.appendChild(toast);
-            requestAnimationFrame(function () {
-                toast.classList.add('show');
-            });
-            setTimeout(function () {
-                toast.classList.remove('show');
+            // ── LOADER ──
+            window.addEventListener('load', function () {
                 setTimeout(function () {
-                    if (toast.parentNode) toast.remove();
+                    document.getElementById('loader').classList.add('hide');
                 }, 400);
-            }, 3000);
-        }
-        window.showToast = showToast;
-
-        // ── SCROLL PROGRESS & HEADER ──
-        var progressBar = document.getElementById('progress');
-        var header = document.getElementById('header');
-        var backTop = document.getElementById('backTop');
-
-        window.addEventListener('scroll', function () {
-            var s = window.scrollY;
-            var h = document.documentElement.scrollHeight - window.innerHeight;
-            var pct = h > 0 ? (s / h * 100) : 0;
-            progressBar.style.width = pct + '%';
-            progressBar.setAttribute('aria-valuenow', Math.round(pct));
-            header.classList.toggle('scrolled', s > 50);
-            backTop.classList.toggle('visible', s > 500);
-        }, { passive: true });
-
-        // ── BACK TO TOP ──
-        backTop.addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // ── HAMBURGER ──
-        var hamburger = document.getElementById('hamburger');
-        var navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', function () {
-            var expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
-            this.setAttribute('aria-expanded', expanded);
-            this.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        navLinks.querySelectorAll('a').forEach(function (a) {
-            a.addEventListener('click', function () {
-                hamburger.setAttribute('aria-expanded', 'false');
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
             });
-        });
 
-        // ── DARK MODE ──
-        var darkToggle = document.getElementById('darkToggle');
-        var darkMode = false;
-        var darkIcon = darkToggle.querySelector('i');
-
-        darkToggle.addEventListener('click', function () {
-            darkMode = !darkMode;
-            document.body.classList.toggle('dark-mode', darkMode);
-            if (darkMode) {
-                darkIcon.className = 'fas fa-sun';
-                this.setAttribute('aria-label', 'Switch to light mode');
-            } else {
-                darkIcon.className = 'fas fa-moon';
-                this.setAttribute('aria-label', 'Switch to dark mode');
+            // ── TOAST ──
+            function showToast(msg, icon) {
+                var container = document.getElementById('toastContainer');
+                var toast = document.createElement('div');
+                toast.className = 'toast';
+                toast.innerHTML = '<i class="' + (icon || 'fas fa-check-circle') + '" aria-hidden="true"></i><span>' + msg +
+                    '</span>';
+                container.appendChild(toast);
+                requestAnimationFrame(function () {
+                    toast.classList.add('show');
+                });
+                setTimeout(function () {
+                    toast.classList.remove('show');
+                    setTimeout(function () {
+                        if (toast.parentNode) toast.remove();
+                    }, 400);
+                }, 3000);
             }
-        });
+            window.showToast = showToast;
 
-        // ── HERO VIDEO FALLBACK ──
-        var heroVideo = document.getElementById('heroVideo');
-        var heroFallback = document.getElementById('heroFallback');
+            // ── SCROLL PROGRESS & HEADER ──
+            var progressBar = document.getElementById('progress');
+            var header = document.getElementById('header');
+            var backTop = document.getElementById('backTop');
 
-        if (heroVideo) {
-            heroVideo.addEventListener('error', function () {
-                heroFallback.classList.add('show');
-                this.style.display = 'none';
+            window.addEventListener('scroll', function () {
+                var s = window.scrollY;
+                var h = document.documentElement.scrollHeight - window.innerHeight;
+                var pct = h > 0 ? (s / h * 100) : 0;
+                progressBar.style.width = pct + '%';
+                progressBar.setAttribute('aria-valuenow', Math.round(pct));
+                header.classList.toggle('scrolled', s > 50);
+                backTop.classList.toggle('visible', s > 500);
+            }, { passive: true });
+
+            // ── BACK TO TOP ──
+            backTop.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            heroVideo.addEventListener('stalled', function () {
-                if (this.networkState === 3) {
+            // ── HAMBURGER ──
+            var hamburger = document.getElementById('hamburger');
+            var navLinks = document.getElementById('navLinks');
+
+            hamburger.addEventListener('click', function () {
+                var expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
+                this.setAttribute('aria-expanded', expanded);
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            navLinks.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // ── DARK MODE ──
+            var darkToggle = document.getElementById('darkToggle');
+            var darkMode = false;
+            var darkIcon = darkToggle.querySelector('i');
+
+            darkToggle.addEventListener('click', function () {
+                darkMode = !darkMode;
+                document.body.classList.toggle('dark-mode', darkMode);
+                if (darkMode) {
+                    darkIcon.className = 'fas fa-sun';
+                    this.setAttribute('aria-label', 'Switch to light mode');
+                } else {
+                    darkIcon.className = 'fas fa-moon';
+                    this.setAttribute('aria-label', 'Switch to dark mode');
+                }
+            });
+
+            // ── HERO VIDEO FALLBACK ──
+            var heroVideo = document.getElementById('heroVideo');
+            var heroFallback = document.getElementById('heroFallback');
+
+            if (heroVideo) {
+                heroVideo.addEventListener('error', function () {
                     heroFallback.classList.add('show');
                     this.style.display = 'none';
-                }
-            });
+                });
 
-            var videoTimeout = setTimeout(function () {
-                if (heroVideo.paused && heroVideo.currentTime === 0) {
-                    heroFallback.classList.add('show');
-                    heroVideo.style.display = 'none';
-                }
-            }, 5000);
+                heroVideo.addEventListener('stalled', function () {
+                    if (this.networkState === 3) {
+                        heroFallback.classList.add('show');
+                        this.style.display = 'none';
+                    }
+                });
 
-            heroVideo.addEventListener('playing', function () {
-                clearTimeout(videoTimeout);
-            });
-        }
+                var videoTimeout = setTimeout(function () {
+                    if (heroVideo.paused && heroVideo.currentTime === 0) {
+                        heroFallback.classList.add('show');
+                        heroVideo.style.display = 'none';
+                    }
+                }, 5000);
 
-        // ── PRODUCTS ──
-        var products = [{
-            name: 'Laptops',
-            cat: 'Mobile Computing',
-            desc: 'Business, student & gaming laptops from leading brands',
-            variants: [{
+                heroVideo.addEventListener('playing', function () {
+                    clearTimeout(videoTimeout);
+                });
+            }
+
+            // ── PRODUCTS ──
+            var products = [{
+                name: 'Laptops',
+                cat: 'Mobile Computing',
+                desc: 'Business, student & gaming laptops from leading brands',
+                variants: [{
                     brand: 'Dell',
                     name: 'Dell Laptop',
-                    img: 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=700&q=85'
+                    img: 'images/Products/Laptopsimg/laptopimg1.jpg'
                 },
                 {
                     brand: 'HP',
                     name: 'HP Laptop',
-                    img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700&q=85'
+                    img: 'images/Products/Laptopsimg/laptopimg2.jpg'
                 },
                 {
                     brand: 'Lenovo',
                     name: 'Lenovo Laptop',
-                    img: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=700&q=85'
+                    img: 'images/Products/Laptopsimg/laptopimg3.jpg'
                 },
                 {
                     brand: 'ASUS',
                     name: 'ASUS Laptop',
-                    img: 'https://images.unsplash.com/photo-1602080858428-57174f9431cf?w=700&q=85'
+                    img: 'images/Products/Laptopsimg/laptopimg4.jpg'
                 },
                 {
                     brand: 'Acer',
                     name: 'Acer Laptop',
-                    img: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=700&q=85'
+                    img: 'images/Products/Laptopsimg/laptopimg5.jpg'
                 },
                 {
                     brand: 'Samsung',
                     name: 'Samsung Laptop',
-                    img: 'https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=700&q=85'
+                    img: 'images/Products/Laptopsimg/laptopimg6.jpg'
                 },
                 {
                     brand: 'LG',
                     name: 'LG Laptop',
-                    img: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700&q=85'
+                    img: 'images/Products/Laptopsimg/laptopimg7.jpg'
                 }
-            ]
-        }, {
-            name: 'Desktop PCs',
-            cat: 'Workstations',
-            desc: 'Powerful desktops for home, office & business',
-            variants: [{
+                ]
+            }, {
+                name: 'Desktop PCs',
+                cat: 'Workstations',
+                desc: 'Powerful desktops for home, office & business',
+                variants: [{
                     brand: 'Dell',
                     name: 'Dell Desktop PC',
                     img: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=700&q=85'
@@ -2725,12 +2801,12 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
                     name: 'ASUS Desktop PC',
                     img: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=700&q=85'
                 }
-            ]
-        }, {
-            name: 'Gaming PCs',
-            cat: 'Gaming',
-            desc: 'High-performance gaming machines & RGB builds',
-            variants: [{
+                ]
+            }, {
+                name: 'Gaming PCs',
+                cat: 'Gaming',
+                desc: 'High-performance gaming machines & RGB builds',
+                variants: [{
                     brand: 'ASUS ROG',
                     name: 'ASUS ROG Gaming PC',
                     img: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=700&q=85'
@@ -2750,12 +2826,12 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
                     name: 'HP Omen Gaming PC',
                     img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85'
                 }
-            ]
-        }, {
-            name: 'Monitors',
-            cat: 'Displays',
-            desc: '4K, ultrawide, business & gaming displays',
-            variants: [{
+                ]
+            }, {
+                name: 'Monitors',
+                cat: 'Displays',
+                desc: '4K, ultrawide, business & gaming displays',
+                variants: [{
                     brand: 'LG',
                     name: 'LG Monitor',
                     img: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=700&q=85'
@@ -2780,12 +2856,12 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
                     name: 'HP Monitor',
                     img: 'https://images.unsplash.com/photo-1527443195645-1133f7f28990?w=700&q=85'
                 }
-            ]
-        }, {
-            name: 'Printers',
-            cat: 'Peripherals',
-            desc: 'Laser, inkjet & multifunction printers',
-            variants: [{
+                ]
+            }, {
+                name: 'Printers',
+                cat: 'Peripherals',
+                desc: 'Laser, inkjet & multifunction printers',
+                variants: [{
                     brand: 'HP',
                     name: 'HP Printer',
                     img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85'
@@ -2805,12 +2881,12 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
                     name: 'Brother Printer',
                     img: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=700&q=85'
                 }
-            ]
-        }, {
-            name: 'Networking',
-            cat: 'Infrastructure',
-            desc: 'Switches, routers, access points & network gear',
-            variants: [{
+                ]
+            }, {
+                name: 'Networking',
+                cat: 'Infrastructure',
+                desc: 'Switches, routers, access points & network gear',
+                variants: [{
                     brand: 'TP-Link',
                     name: 'TP-Link Network Equipment',
                     img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=700&q=85'
@@ -2830,12 +2906,12 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
                     name: 'Ubiquiti Network Equipment',
                     img: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&q=85'
                 }
-            ]
-        }, {
-            name: 'CCTV Cameras',
-            cat: 'Security',
-            desc: 'Professional surveillance cameras & systems',
-            variants: [{
+                ]
+            }, {
+                name: 'CCTV Cameras',
+                cat: 'Security',
+                desc: 'Professional surveillance cameras & systems',
+                variants: [{
                     brand: 'Hikvision',
                     name: 'Hikvision CCTV Camera',
                     img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85'
@@ -2855,12 +2931,12 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
                     name: 'Uniview CCTV Camera',
                     img: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=700&q=85'
                 }
-            ]
-        }, {
-            name: 'Keyboards',
-            cat: 'Accessories',
-            desc: 'Mechanical, wireless & ergonomic keyboards',
-            variants: [{
+                ]
+            }, {
+                name: 'Keyboards',
+                cat: 'Accessories',
+                desc: 'Mechanical, wireless & ergonomic keyboards',
+                variants: [{
                     brand: 'Logitech',
                     name: 'Logitech Keyboard',
                     img: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=700&q=85'
@@ -2885,12 +2961,12 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
                     name: 'Razer Gaming Keyboard',
                     img: 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=700&q=85'
                 }
-            ]
-        }, {
-            name: 'Graphic Cards',
-            cat: 'Components',
-            desc: 'NVIDIA GeForce RTX & AMD Radeon GPUs',
-            variants: [{
+                ]
+            }, {
+                name: 'Graphic Cards',
+                cat: 'Components',
+                desc: 'NVIDIA GeForce RTX & AMD Radeon GPUs',
+                variants: [{
                     brand: 'NVIDIA',
                     name: 'NVIDIA GeForce RTX',
                     img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85'
@@ -2910,12 +2986,12 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
                     name: 'AMD Radeon',
                     img: 'https://images.unsplash.com/photo-1591488320449-011701bb6704?w=700&q=85'
                 }
-            ]
-        }, {
-            name: 'SSD Storage',
-            cat: 'Storage',
-            desc: 'NVMe & SATA high-speed storage drives',
-            variants: [{
+                ]
+            }, {
+                name: 'SSD Storage',
+                cat: 'Storage',
+                desc: 'NVMe & SATA high-speed storage drives',
+                variants: [{
                     brand: 'Samsung',
                     name: 'Samsung SSD',
                     img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85'
@@ -2935,12 +3011,12 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
                     name: 'Crucial SSD',
                     img: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=700&q=85'
                 }
-            ]
-        }, {
-            name: 'RAM Memory',
-            cat: 'Components',
-            desc: 'DDR4 & DDR5 high-speed memory',
-            variants: [{
+                ]
+            }, {
+                name: 'RAM Memory',
+                cat: 'Components',
+                desc: 'DDR4 & DDR5 high-speed memory',
+                variants: [{
                     brand: 'Kingston',
                     name: 'Kingston RAM',
                     img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85'
@@ -2960,12 +3036,12 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
                     name: 'G.Skill RAM',
                     img: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=700&q=85'
                 }
-            ]
-        }, {
-            name: 'Routers',
-            cat: 'Networking',
-            desc: 'WiFi 6/6E, mesh & business network systems',
-            variants: [{
+                ]
+            }, {
+                name: 'Routers',
+                cat: 'Networking',
+                desc: 'WiFi 6/6E, mesh & business network systems',
+                variants: [{
                     brand: 'TP-Link',
                     name: 'TP-Link Router',
                     img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85'
@@ -2985,342 +3061,336 @@ class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Cha
                     name: 'NETGEAR Router',
                     img: 'https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=700&q=85'
                 }
-            ]
-        }];
+                ]
+            }];
 
-        var pGrid = document.getElementById('productGrid');
-        var ROTATION_MS = 3000;
+            var pGrid = document.getElementById('productGrid');
+            var ROTATION_MS = 3000;
 
-        products.forEach(function (p, i) {
-            var first = p.variants[0];
-            var card = document.createElement('div');
-            card.className = 'product-card reveal';
-            card.style.transitionDelay = (i % 4) * 0.08 + 's';
+            products.forEach(function (p, i) {
+                var first = p.variants[0];
+                var card = document.createElement('div');
+                card.className = 'product-card reveal';
+                card.style.transitionDelay = (i % 4) * 0.08 + 's';
 
-            var inner = '<div class="img-wrap">' +
-                '<img class="product-rotating" src="' + first.img + '" alt="' + first.name + '" loading="lazy">' +
-                '<span class="brand-badge">' + first.brand + '</span>' +
-                '</div>' +
-                '<div class="card-body">' +
-                '<div class="card-cat">' + p.cat + '</div>' +
-                '<h4 class="product-name">' + first.name + '</h4>' +
-                '<p>' + p.desc + '</p>' +
-                '<div class="card-footer">' +
-                '<button class="btn-quote" aria-label="Get a quote for ' + first.name + '">' +
-                '<i class="fas fa-plus" aria-hidden="true"></i> Get Quote' +
-                '</button>' +
-                '</div>' +
-                '</div>';
+                var inner = '<div class="img-wrap">' +
+                    '<img class="product-rotating" src="' + first.img + '" alt="' + first.name + '" loading="lazy">' +
+                    '<span class="brand-badge">' + first.brand + '</span>' +
+                    '</div>' +
+                    '<div class="card-body">' +
+                    '<div class="card-cat">' + p.cat + '</div>' +
+                    '<h4 class="product-name">' + first.name + '</h4>' +
+                    '<p>' + p.desc + '</p>' +
+                    '<div class="card-footer">' +
+                    '<button class="btn-quote" aria-label="Get a quote for ' + first.name + '">' +
+                    '<i class="fas fa-plus" aria-hidden="true"></i> Get Quote' +
+                    '</button>' +
+                    '</div>' +
+                    '</div>';
 
-            card.innerHTML = inner;
-            pGrid.appendChild(card);
+                card.innerHTML = inner;
+                pGrid.appendChild(card);
 
-            var img = card.querySelector('.product-rotating');
-            var badge = card.querySelector('.brand-badge');
-            var productName = card.querySelector('.product-name');
-            var inquireBtn = card.querySelector('.btn-quote');
-            var variantIndex = 0;
+                var img = card.querySelector('.product-rotating');
+                var badge = card.querySelector('.brand-badge');
+                var productName = card.querySelector('.product-name');
+                var inquireBtn = card.querySelector('.btn-quote');
+                var variantIndex = 0;
 
-            var updateProduct = function (animate) {
-                variantIndex = (variantIndex + 1) % p.variants.length;
-                var variant = p.variants[variantIndex];
-                if (animate) img.classList.add('is-changing');
-                setTimeout(function () {
-                    img.src = variant.img;
-                    img.alt = variant.name;
-                    badge.textContent = variant.brand;
-                    productName.textContent = variant.name;
-                    if (animate) {
-                        requestAnimationFrame(function () {
-                            img.classList.remove('is-changing');
-                        });
+                var updateProduct = function (animate) {
+                    variantIndex = (variantIndex + 1) % p.variants.length;
+                    var variant = p.variants[variantIndex];
+                    if (animate) img.classList.add('is-changing');
+                    setTimeout(function () {
+                        img.src = variant.img;
+                        img.alt = variant.name;
+                        badge.textContent = variant.brand;
+                        productName.textContent = variant.name;
+                        if (animate) {
+                            requestAnimationFrame(function () {
+                                img.classList.remove('is-changing');
+                            });
+                        }
+                    }, animate ? 220 : 0);
+                };
+
+                if (p.variants.length > 1) {
+                    setInterval(function () { updateProduct(true); }, ROTATION_MS);
+                }
+
+                inquireBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    var variant = p.variants[variantIndex];
+                    var message = 'Hello, I am interested in ' + variant.name;
+                    window.open('https://wa.me/971568249900?text=' + encodeURIComponent(message), '_blank');
+                });
+
+                img.addEventListener('error', function () {
+                    this.style.opacity = '0.25';
+                    this.alt = 'Product image unavailable';
+                });
+            });
+
+            // ── SERVICES ──
+            var services = [{
+                name: 'Computer Sales',
+                desc: 'Wide range of desktops and all-in-one PCs for home and office.',
+                icon: 'fas fa-desktop'
+            }, {
+                name: 'Laptop Sales',
+                desc: 'Premium laptops from all major brands with warranty support.',
+                icon: 'fas fa-laptop'
+            }, {
+                name: 'Computer Repair',
+                desc: 'Expert hardware and software troubleshooting and repair.',
+                icon: 'fas fa-screwdriver-wrench'
+            }, {
+                name: 'Laptop Repair',
+                desc: 'Screen replacement, battery, keyboard, and motherboard repair.',
+                icon: 'fas fa-tools'
+            }, {
+                name: 'Networking',
+                desc: 'LAN, WAN, WiFi, and structured cabling solutions.',
+                icon: 'fas fa-network-wired'
+            }, {
+                name: 'CCTV Installation',
+                desc: 'Professional security camera setup and monitoring.',
+                icon: 'fas fa-video'
+            }, {
+                name: 'Printer Services',
+                desc: 'Setup, maintenance, and repair for all printer types.',
+                icon: 'fas fa-print'
+            }, {
+                name: 'Data Recovery',
+                desc: 'Recover lost data from HDD, SSD, and USB drives.',
+                icon: 'fas fa-database'
+            }, {
+                name: 'AMC Contracts',
+                desc: 'Annual maintenance contracts for businesses of all sizes.',
+                icon: 'fas fa-file-contract'
+            }, {
+                name: 'IT Consulting',
+                desc: 'Strategic technology planning and infrastructure advice.',
+                icon: 'fas fa-lightbulb'
+            },];
+
+          var sGrid = document.getElementById('serviceGrid');
+
+services.forEach(function (s, i) {
+    var card = document.createElement('div');
+
+    card.className = 'service-card reveal';
+    card.style.transitionDelay = (i % 5) * 0.08 + 's';
+
+    card.innerHTML =
+        '<div class="service-icon"><i class="' + s.icon + '" aria-hidden="true"></i></div>' +
+        '<h4>' + s.name + '</h4>' +
+        '<p>' + s.desc + '</p>';
+
+    sGrid.appendChild(card);
+});
+
+            // ── BRANDS ──
+            var brandList = [
+                'Dell', 'HP', 'Lenovo', 'ASUS', 'Acer',
+                'Logitech', 'Canon', 'Epson', 'Intel', 'Samsung'
+            ];
+
+            var brandSlide = document.getElementById('brandSlide');
+            var allBrands = brandList.concat(brandList);
+
+            allBrands.forEach(function (name) {
+                var item = document.createElement('div');
+                item.className = 'brand-item';
+                item.innerHTML = '<span class="brand-fallback">' + name + '</span>';
+                brandSlide.appendChild(item);
+            });
+
+            // ── GALLERY ──
+            var galleryImages = [
+                { src: './images/Gallery/gaimage1.jpg', cls: 'tall' },
+                { src: './images/Gallery/gaimage2.jpg', cls: 'tall' },
+                { src: './images/Gallery/gaimage3.jpg', cls: 'tall' },
+                { src: './images/Gallery/gaimage4.jpg', cls: 'tall' },
+                { src: './images/Gallery/gaimage5.jpg', cls: 'tall' },
+                { src: './images/Gallery/gaimage6.jpg', cls: 'tall' },
+                { src: './images/Gallery/gaimage7.jpg', cls: 'tall' },
+                { src: './images/Gallery/gaimage8.jpg', cls: 'tall' },
+                { src: './images/Gallery/gaimage9.jpg', cls: 'tall' },
+                { src: './images/Gallery/gaimage10.jpg', cls: 'tall' },
+                { src: './images/Gallery/gaimage11.jpg', cls: 'tall' },
+                { src: './images/Gallery/gaimage12.jpg', cls: 'tall' },
+            ];
+
+            var gGrid = document.getElementById('galleryGrid');
+            var gallerySrcs = galleryImages.map(function (g) { return g.src; });
+
+            galleryImages.forEach(function (g, i) {
+                var item = document.createElement('div');
+                item.className = 'gallery-item ' + g.cls + ' reveal';
+                item.style.transitionDelay = (i % 4) * 0.1 + 's';
+                item.setAttribute('role', 'button');
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('aria-label', 'Open gallery image ' + (i + 1) + ' of ' + galleryImages.length);
+
+                var img = document.createElement('img');
+                img.src = g.src;
+                img.alt = 'Gallery image ' + (i + 1);
+                img.loading = 'lazy';
+                img.onerror = function () {
+                    this.style.display = 'none';
+                    this.parentElement.style.background = '#e0e0e0';
+                    var fallback = document.createElement('span');
+                    fallback.style.cssText =
+                        'display:flex;align-items:center;justify-content:center;height:100%;color:#999;font-size:.8rem;';
+                    fallback.textContent = 'Image';
+                    this.parentElement.appendChild(fallback);
+                };
+
+                var overlay = document.createElement('div');
+                overlay.className = 'gallery-overlay';
+                overlay.innerHTML = '<i class="fas fa-expand" aria-hidden="true"></i>';
+
+                item.appendChild(img);
+                item.appendChild(overlay);
+
+                item.addEventListener('click', function () { openLightbox(i); });
+                item.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(i);
                     }
-                }, animate ? 220 : 0);
-            };
+                });
 
-            if (p.variants.length > 1) {
-                setInterval(function () { updateProduct(true); }, ROTATION_MS);
+                gGrid.appendChild(item);
+            });
+
+            // ── LIGHTBOX ──
+            var currentLB = 0;
+            var lightbox = document.getElementById('lightbox');
+            var lbImg = document.getElementById('lbImg');
+
+            function openLightbox(i) {
+                currentLB = i;
+                lbImg.src = gallerySrcs[i] || '';
+                lbImg.alt = 'Gallery image ' + (i + 1);
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                document.getElementById('lbClose').focus();
             }
 
-            inquireBtn.addEventListener('click', function (e) {
-                e.stopPropagation();
-                var variant = p.variants[variantIndex];
-                var message = 'Hello, I am interested in ' + variant.name;
-                window.open('https://wa.me/971568249900?text=' + encodeURIComponent(message), '_blank');
-            });
-
-            img.addEventListener('error', function () {
-                this.style.opacity = '0.25';
-                this.alt = 'Product image unavailable';
-            });
-        });
-
-        // ── SERVICES ──
-        var services = [{
-            name: 'Computer Sales',
-            desc: 'Wide range of desktops and all-in-one PCs for home and office.',
-            icon: 'fas fa-desktop'
-        }, {
-            name: 'Laptop Sales',
-            desc: 'Premium laptops from all major brands with warranty support.',
-            icon: 'fas fa-laptop'
-        }, {
-            name: 'Computer Repair',
-            desc: 'Expert hardware and software troubleshooting and repair.',
-            icon: 'fas fa-screwdriver-wrench'
-        }, {
-            name: 'Laptop Repair',
-            desc: 'Screen replacement, battery, keyboard, and motherboard repair.',
-            icon: 'fas fa-tools'
-        }, {
-            name: 'Networking',
-            desc: 'LAN, WAN, WiFi, and structured cabling solutions.',
-            icon: 'fas fa-network-wired'
-        }, {
-            name: 'CCTV Installation',
-            desc: 'Professional security camera setup and monitoring.',
-            icon: 'fas fa-video'
-        }, {
-            name: 'Printer Services',
-            desc: 'Setup, maintenance, and repair for all printer types.',
-            icon: 'fas fa-print'
-        }, {
-            name: 'Data Recovery',
-            desc: 'Recover lost data from HDD, SSD, and USB drives.',
-            icon: 'fas fa-database'
-        }, {
-            name: 'AMC Contracts',
-            desc: 'Annual maintenance contracts for businesses of all sizes.',
-            icon: 'fas fa-file-contract'
-        }, {
-            name: 'IT Consulting',
-            desc: 'Strategic technology planning and infrastructure advice.',
-            icon: 'fas fa-lightbulb'
-        }, ];
-
-        var sGrid = document.getElementById('serviceGrid');
-        services.forEach(function (s, i) {
-            var card = document.createElement('div');
-            card.className = 'service-card reveal';
-            card.style.transitionDelay = (i % 5) * 0.08 + 's';
-            card.innerHTML =
-                '<div class="service-icon"><i class="' + s.icon + '" aria-hidden="true"></i></div><h4>' + s.name +
-                '</h4><p>' + s.desc + '</p>';
-            card.setAttribute('role', 'button');
-            card.setAttribute('tabindex', '0');
-            card.addEventListener('click', function () {
-                showToast('Learning more about ' + s.name, s.icon);
-            });
-            card.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    showToast('Learning more about ' + s.name, s.icon);
-                }
-            });
-            sGrid.appendChild(card);
-        });
-
-        // ── BRANDS ──
-        var brandList = [
-            'Dell', 'HP', 'Lenovo', 'ASUS', 'Acer',
-            'Logitech', 'Canon', 'Epson', 'Intel', 'Samsung'
-        ];
-
-        var brandSlide = document.getElementById('brandSlide');
-        var allBrands = brandList.concat(brandList);
-
-        allBrands.forEach(function (name) {
-            var item = document.createElement('div');
-            item.className = 'brand-item';
-            item.innerHTML = '<span class="brand-fallback">' + name + '</span>';
-            brandSlide.appendChild(item);
-        });
-
-        // ── GALLERY ──
-        var galleryImages = [
-            { src: './images/Gallery/gaimage1.jpg', cls: 'tall' },
-            { src: './images/Gallery/gaimage2.jpg', cls: 'tall' },
-            { src: './images/Gallery/gaimage3.jpg', cls: 'tall' },
-            { src: './images/Gallery/gaimage4.jpg', cls: 'tall' },
-            { src: './images/Gallery/gaimage5.jpg', cls: 'tall' },
-            { src: './images/Gallery/gaimage6.jpg', cls: 'tall' },
-            { src: './images/Gallery/gaimage7.jpg', cls: 'tall' },
-            { src: './images/Gallery/gaimage8.jpg', cls: 'tall' },
-            { src: './images/Gallery/gaimage9.jpg', cls: 'tall' },
-            { src: './images/Gallery/gaimage10.jpg', cls: 'tall' },
-            { src: './images/Gallery/gaimage11.jpg', cls: 'tall' },
-            { src: './images/Gallery/gaimage12.jpg', cls: 'tall' },
-        ];
-
-        var gGrid = document.getElementById('galleryGrid');
-        var gallerySrcs = galleryImages.map(function (g) { return g.src; });
-
-        galleryImages.forEach(function (g, i) {
-            var item = document.createElement('div');
-            item.className = 'gallery-item ' + g.cls + ' reveal';
-            item.style.transitionDelay = (i % 4) * 0.1 + 's';
-            item.setAttribute('role', 'button');
-            item.setAttribute('tabindex', '0');
-            item.setAttribute('aria-label', 'Open gallery image ' + (i + 1) + ' of ' + galleryImages.length);
-
-            var img = document.createElement('img');
-            img.src = g.src;
-            img.alt = 'Gallery image ' + (i + 1);
-            img.loading = 'lazy';
-            img.onerror = function () {
-                this.style.display = 'none';
-                this.parentElement.style.background = '#e0e0e0';
-                var fallback = document.createElement('span');
-                fallback.style.cssText =
-                    'display:flex;align-items:center;justify-content:center;height:100%;color:#999;font-size:.8rem;';
-                fallback.textContent = 'Image';
-                this.parentElement.appendChild(fallback);
-            };
-
-            var overlay = document.createElement('div');
-            overlay.className = 'gallery-overlay';
-            overlay.innerHTML = '<i class="fas fa-expand" aria-hidden="true"></i>';
-
-            item.appendChild(img);
-            item.appendChild(overlay);
-
-            item.addEventListener('click', function () { openLightbox(i); });
-            item.addEventListener('keydown', function (e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    openLightbox(i);
-                }
-            });
-
-            gGrid.appendChild(item);
-        });
-
-        // ── LIGHTBOX ──
-        var currentLB = 0;
-        var lightbox = document.getElementById('lightbox');
-        var lbImg = document.getElementById('lbImg');
-
-        function openLightbox(i) {
-            currentLB = i;
-            lbImg.src = gallerySrcs[i] || '';
-            lbImg.alt = 'Gallery image ' + (i + 1);
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            document.getElementById('lbClose').focus();
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        document.getElementById('lbClose').addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', function (e) {
-            if (e.target === lightbox) closeLightbox();
-        });
-
-        document.getElementById('lbPrev').addEventListener('click', function () {
-            currentLB = (currentLB - 1 + gallerySrcs.length) % gallerySrcs.length;
-            lbImg.src = gallerySrcs[currentLB];
-            lbImg.alt = 'Gallery image ' + (currentLB + 1);
-        });
-
-        document.getElementById('lbNext').addEventListener('click', function () {
-            currentLB = (currentLB + 1) % gallerySrcs.length;
-            lbImg.src = gallerySrcs[currentLB];
-            lbImg.alt = 'Gallery image ' + (currentLB + 1);
-        });
-
-        document.addEventListener('keydown', function (e) {
-            if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
-            if (e.key === 'ArrowRight') document.getElementById('lbNext').click();
-        });
-
-        // ── ANIMATED COUNTERS ──
-        var counters = document.querySelectorAll('.stat-num');
-        var counterObs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    var el = entry.target;
-                    var target = +el.dataset.target;
-                    var current = 0;
-                    var inc = target / 50;
-                    var timer = setInterval(function () {
-                        current += inc;
-                        if (current >= target) {
-                            el.textContent = target + (target === 98 ? '%' : '+');
-                            clearInterval(timer);
-                        } else el.textContent = Math.floor(current);
-                    }, 25);
-                    counterObs.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-        counters.forEach(function (c) { counterObs.observe(c); });
-
-        // ── SCROLL REVEAL ──
-        var revealObs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObs.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
-
-        // ── CONTACT FORM ──
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            var name = document.getElementById('formName');
-            var email = document.getElementById('formEmail');
-            var phone = document.getElementById('formPhone');
-            var subject = document.getElementById('formSubject');
-            var message = document.getElementById('formMessage');
-
-            var required = [name, email, message];
-            var allFilled = true;
-            required.forEach(function (field) {
-                if (!field.value.trim()) allFilled = false;
-            });
-
-            if (!allFilled) {
-                showToast('Please fill in all required fields.', 'fas fa-exclamation-circle');
-                return;
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
             }
 
-            var phoneNumber = '971568249900';
-
-            var whatsappMsg =
-                'New Contact Form Submission*%0A%0A' +
-                'Name: ' + encodeURIComponent(name.value.trim()) + '%0A' +
-                'Email: ' + encodeURIComponent(email.value.trim()) + '%0A' +
-                'Phone: ' + encodeURIComponent(phone.value.trim() || 'Not provided') + '%0A' +
-                'Subject: ' + encodeURIComponent(subject.value.trim() || 'Not provided') + '%0A' +
-                'Message: ' + encodeURIComponent(message.value.trim());
-
-            window.open('https://wa.me/' + phoneNumber + '?text=' + whatsappMsg, '_blank');
-
-            showToast('✅ Message sent successfully via WhatsApp!', 'fas fa-check-circle');
-            this.reset();
-        });
-
-        // ── RESPONSIVE NAV BUTTON LABELS ──
-        function handleNavLabels() {
-            var labels = document.querySelectorAll('.nav-btn-label');
-            var isSmall = window.innerWidth < 600;
-            labels.forEach(function (label) {
-                label.style.display = isSmall ? 'none' : 'inline';
+            document.getElementById('lbClose').addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) closeLightbox();
             });
-        }
-        handleNavLabels();
-        window.addEventListener('resize', handleNavLabels);
 
-    })();
-</script>
+            document.getElementById('lbPrev').addEventListener('click', function () {
+                currentLB = (currentLB - 1 + gallerySrcs.length) % gallerySrcs.length;
+                lbImg.src = gallerySrcs[currentLB];
+                lbImg.alt = 'Gallery image ' + (currentLB + 1);
+            });
+
+            document.getElementById('lbNext').addEventListener('click', function () {
+                currentLB = (currentLB + 1) % gallerySrcs.length;
+                lbImg.src = gallerySrcs[currentLB];
+                lbImg.alt = 'Gallery image ' + (currentLB + 1);
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
+                if (e.key === 'ArrowRight') document.getElementById('lbNext').click();
+            });
+
+            // ── ANIMATED COUNTERS ──
+            var counters = document.querySelectorAll('.stat-num');
+            var counterObs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        var el = entry.target;
+                        var target = +el.dataset.target;
+                        var current = 0;
+                        var inc = target / 50;
+                        var timer = setInterval(function () {
+                            current += inc;
+                            if (current >= target) {
+                                el.textContent = target + (target === 98 ? '%' : '+');
+                                clearInterval(timer);
+                            } else el.textContent = Math.floor(current);
+                        }, 25);
+                        counterObs.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+            counters.forEach(function (c) { counterObs.observe(c); });
+
+            // ── SCROLL REVEAL ──
+            var revealObs = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
+
+            // ── CONTACT FORM ──
+            document.getElementById('contactForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var name = document.getElementById('formName');
+                var email = document.getElementById('formEmail');
+                var phone = document.getElementById('formPhone');
+                var subject = document.getElementById('formSubject');
+                var message = document.getElementById('formMessage');
+
+                var required = [name, email, message];
+                var allFilled = true;
+                required.forEach(function (field) {
+                    if (!field.value.trim()) allFilled = false;
+                });
+
+                if (!allFilled) {
+                    showToast('Please fill in all required fields.', 'fas fa-exclamation-circle');
+                    return;
+                }
+
+                var phoneNumber = '971568249900';
+
+                var whatsappMsg =
+                    'New Contact Form Submission*%0A%0A' +
+                    'Name: ' + encodeURIComponent(name.value.trim()) + '%0A' +
+                    'Email: ' + encodeURIComponent(email.value.trim()) + '%0A' +
+                    'Phone: ' + encodeURIComponent(phone.value.trim() || 'Not provided') + '%0A' +
+                    'Subject: ' + encodeURIComponent(subject.value.trim() || 'Not provided') + '%0A' +
+                    'Message: ' + encodeURIComponent(message.value.trim());
+
+                window.open('https://wa.me/' + phoneNumber + '?text=' + whatsappMsg, '_blank');
+
+                showToast('✅ Message sent successfully via WhatsApp!', 'fas fa-check-circle');
+                this.reset();
+            });
+
+            // ── RESPONSIVE NAV BUTTON LABELS ──
+            function handleNavLabels() {
+                var labels = document.querySelectorAll('.nav-btn-label');
+                var isSmall = window.innerWidth < 600;
+                labels.forEach(function (label) {
+                    label.style.display = isSmall ? 'none' : 'inline';
+                });
+            }
+            handleNavLabels();
+            window.addEventListener('resize', handleNavLabels);
+
+        })();
+    </script>
 
 </body>
 
